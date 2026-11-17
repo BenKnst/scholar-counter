@@ -37,13 +37,18 @@ tests/fixtures/                 Testdaten für Läufe ohne Internet
 1. **Repository anlegen:** auf github.com ein **öffentliches** Repository `scholar-counter` anlegen
    und diese Dateien hochladen. Achtung: Der Ordner `.github` ist auf dem Mac im Finder versteckt
    (Cmd+Shift+Punkt zeigt ihn). Ohne ihn läuft keine Action.
-2. **GitHub Pages einschalten:** Settings → Pages → Source „Deploy from a branch“ →
+2. **SerpApi-Schlüssel hinterlegen:** Google Scholar blockiert direkte Abfragen von GitHub-Servern.
+   Deshalb läuft der Abruf über SerpApi (kostenloser Tarif: 250 Anfragen im Monat, die Action
+   braucht etwa 30). Auf serpapi.com ein Konto anlegen, den API-Key kopieren und im Repository unter
+   Settings → Secrets and variables → Actions → New repository secret mit dem Namen `SERPAPI_KEY`
+   speichern. Ohne diesen Schlüssel versucht die Action, Scholar direkt abzufragen.
+3. **GitHub Pages einschalten:** Settings → Pages → Source „Deploy from a branch“ →
    Branch `main`, Ordner `/docs` → Save.
-3. **Action zum ersten Mal starten:** Actions → „Scholar aktualisieren“ → Run workflow.
+4. **Action zum ersten Mal starten:** Actions → „Scholar aktualisieren“ → Run workflow.
    Nach ein bis zwei Minuten sollte es diese Datei geben:
    `https://benknst.github.io/scholar-counter/clock.json`
    Der erste Lauf legt nur den Ausgangsstand fest. Neuigkeiten gibt es ab dem zweiten Lauf.
-4. **Uhr:** In der Weboberfläche von AWTRIX NG den Inhalt von `awtrix/scholar.be` in den
+5. **Uhr:** In der Weboberfläche von AWTRIX NG den Inhalt von `awtrix/scholar.be` in den
    Skript-Editor einfügen und speichern. Die Adresse der `clock.json` lässt sich dort in den
    App-Einstellungen ändern.
 
@@ -76,8 +81,8 @@ zurückholen.
 
 ## Bekannte Grenzen
 
-- Google Scholar hat keine offizielle API und kann Abfragen aus Rechenzentren mit CAPTCHAs blockieren.
-  Dann bleibt die alte Anzeige stehen, die Uhr zeigt den roten Punkt, und die Action schlägt fehl.
+- Google Scholar hat keine offizielle API und blockiert Abfragen von GitHub-Servern (getestet:
+  `MaxTriesExceededException`). Deshalb SerpApi. Schlägt auch das fehl, bleibt die alte Anzeige stehen, die Uhr zeigt den roten Punkt, und die Action schlägt fehl.
   GitHub verschickt in dem Fall eine E-Mail.
 - In öffentlichen Repositories deaktiviert GitHub geplante Workflows nach 60 Tagen ohne Aktivität.
   Die Action committet zwar täglich, falls sie trotzdem einmal stehen bleibt:

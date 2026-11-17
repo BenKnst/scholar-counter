@@ -1,0 +1,204 @@
+{
+ "author": {
+  "name": "Benjamin Kinast",
+  "affiliations": "Research Associate, University Hospital Schleswig-Holstein"
+ },
+ "cited_by": {
+  "table": [
+   {
+    "citations": {
+     "all": 125,
+     "since_2021": 117
+    }
+   },
+   {
+    "h_index": {
+     "all": 5,
+     "since_2021": 5
+    }
+   },
+   {
+    "i10_index": {
+     "all": 4,
+     "since_2021": 4
+    }
+   }
+  ],
+  "graph": [
+   {
+    "year": 2018,
+    "citations": "1"
+   },
+   {
+    "year": 2019,
+    "citations": "2"
+   },
+   {
+    "year": 2020,
+    "citations": "4"
+   },
+   {
+    "year": 2021,
+    "citations": "5"
+   },
+   {
+    "year": 2022,
+    "citations": "13"
+   },
+   {
+    "year": 2023,
+    "citations": "11"
+   },
+   {
+    "year": 2024,
+    "citations": "30"
+   },
+   {
+    "year": 2025,
+    "citations": "28"
+   },
+   {
+    "year": 2026,
+    "citations": "29"
+   }
+  ]
+ },
+ "articles": [
+  {
+   "title": "Telemonitoring of real-world health data in cardiology: a systematic review",
+   "citation_id": "Z05rTXoAAAAJ:d1gkVwhDpl0C",
+   "year": "2021",
+   "cited_by": {
+    "value": 40
+   }
+  },
+  {
+   "title": "Functional requirements for medical data integration into knowledge management environments: requirements elicitation approach based on systematic literature analysis",
+   "citation_id": "Z05rTXoAAAAJ:u5HHmVD_uO8C",
+   "year": "2023",
+   "cited_by": {
+    "value": 35
+   }
+  },
+  {
+   "title": "\" Dinner is ready!\" Virtual Reality Assisted Training for Chronic Pain Rehabilitation",
+   "citation_id": "Z05rTXoAAAAJ:u-x6o8ySG0sC",
+   "year": "2017",
+   "cited_by": {
+    "value": 17
+   }
+  },
+  {
+   "title": "Medical data engineering–theory and practice",
+   "citation_id": "Z05rTXoAAAAJ:qjMakFHDy7sC",
+   "year": "2021",
+   "cited_by": {
+    "value": 15
+   }
+  },
+  {
+   "title": "Large-scale standardized image integration for secondary use research projects",
+   "citation_id": "Z05rTXoAAAAJ:Y0pCki6q_DkC",
+   "year": "2024",
+   "cited_by": {
+    "value": 6
+   }
+  },
+  {
+   "title": "The ‘Advancing cardiovascular risk identification with structured clinical documentation and biosignal derived phenotypes synthesis’ project: conceptual design, project …",
+   "citation_id": "Z05rTXoAAAAJ:UebtZRa9Y70C",
+   "year": "2025",
+   "cited_by": {
+    "value": 4
+   }
+  },
+  {
+   "title": "Challenges and lessons learned in mapping HL7 v2 data to openEHR: insights from UKSH medical data integration center",
+   "citation_id": "Z05rTXoAAAAJ:UeHWp8X0CEIC",
+   "year": "2024",
+   "cited_by": {
+    "value": 3
+   }
+  },
+  {
+   "title": "Extracting LOINC codes from a laboratory information system’s index: addressing semantic interoperability with web scraping",
+   "citation_id": "Z05rTXoAAAAJ:9yKSN-GCB0IC",
+   "year": "2025",
+   "cited_by": {
+    "value": 2
+   }
+  },
+  {
+   "title": "A Data-Centric Approach for Health Care and Research in a Health Knowledge Management Platform: Implementation and Requirement-Based Evaluation Study",
+   "citation_id": "Z05rTXoAAAAJ:ufrVoPGSRksC",
+   "year": "2026",
+   "cited_by": {
+    "value": 1
+   }
+  },
+  {
+   "title": "Implementation of a Patient Consent Management at a German Medical Data Integration Center",
+   "citation_id": "Z05rTXoAAAAJ:Tyk-4Ss8FVUC",
+   "year": "2025",
+   "cited_by": {
+    "value": 1
+   }
+  },
+  {
+   "title": "Implementation of an atrioventricular valve intervention registry: comparative study of REDCap vs. CDR-based openEHR registry",
+   "citation_id": "Z05rTXoAAAAJ:eQOLeE2rZwMC",
+   "year": "2024",
+   "cited_by": {
+    "value": 1
+   }
+  },
+  {
+   "title": "What Users Say About Reimbursable Digital Therapeutics in Germany: Large-Scale App Store Review Analysis Using a Large Language Model",
+   "citation_id": "Z05rTXoAAAAJ:hqOjcs7Dif8C",
+   "year": "2026",
+   "cited_by": {
+    "value": null
+   }
+  },
+  {
+   "title": "The Anatomy of a Failed DiGA: Taxonomic Insights from Withdrawn Reimbursable Digital Therapeutics",
+   "citation_id": "Z05rTXoAAAAJ:Se3iqnhoufwC",
+   "year": "2026",
+   "cited_by": {
+    "value": null
+   }
+  },
+  {
+   "title": "ePA für alle–alles geklärt? Ergebnisse eines interdisziplinären Panels auf der GMDS-Jahrestagung 2025",
+   "citation_id": "Z05rTXoAAAAJ:_FxGoFyzp5QC",
+   "year": "2026",
+   "cited_by": {
+    "value": null
+   }
+  },
+  {
+   "title": "Die Wissensmanagementplattform für Versorgung und Forschung am Universitätsklinikum Schleswig-Holstein–Ein Praxisbeispiel",
+   "citation_id": "Z05rTXoAAAAJ:2osOgNQ5qMEC",
+   "year": "2024",
+   "cited_by": {
+    "value": null
+   }
+  },
+  {
+   "title": "Der Einsatz von Virtual Reality in der stationären Therapie chronischer Rückenschmerz und Bewegungsapparaterzpatienten",
+   "citation_id": "Z05rTXoAAAAJ:W7OEmFMy1HYC",
+   "year": "2018",
+   "cited_by": {
+    "value": null
+   }
+  },
+  {
+   "title": "Virtual Reality in der Schmerztherapie–Status quo und Perspektiven",
+   "citation_id": "Z05rTXoAAAAJ:zYLM7Y9cAGgC",
+   "year": "",
+   "cited_by": {
+    "value": null
+   }
+  }
+ ]
+}

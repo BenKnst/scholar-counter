@@ -6,6 +6,12 @@ Holt das Google-Scholar-Profil, vergleicht es mit dem letzten Stand und schreibt
   docs/full.json    alle Daten (Paperliste, Verlauf) zum Nachschauen
   data/state.json   Gedaechtnis fuer den naechsten Lauf (bekannte Paper, Ereignisse)
 
+Datenquelle:
+  Ist die Umgebungsvariable SERPAPI_KEY gesetzt, kommt das Profil ueber SerpApi
+  (kostenloser Tarif: 250 Anfragen im Monat, ein Lauf braucht meist 1).
+  Sonst wird Google Scholar direkt abgefragt (scholarly). Das klappt vom eigenen
+  Rechner aus, wird aber von Google bei GitHub-Servern meist blockiert.
+
 Aufruf:
   python scripts/update.py                       normaler Lauf (Scholar + optional OpenAlex)
   python scripts/update.py --fixture prof.json   ohne Netz, Profil aus Datei (zum Testen)
@@ -133,6 +139,89 @@ def fetch_scholar(scholar_id: str, known_ids: set) -> dict:
         "pro_jahr": {str(k): v for k, v in (author.get("cites_per_year") or {}).items()},
         "publikationen": pubs,
     }
+
+
+def _int(v, default=0):
+    try:
+        return int(str(v).replace(",", "").replace(".", "").strip())
+    except (TypeError, ValueError):
+        return default
+
+
+def parse_serpapi(data: dict) -> dict:
+    """Wandelt eine SerpApi-Antwort (engine=google_scholar_author) in unser Profilformat um."""
+    author = data.get("author", {})
+    table = data.get("cited_by", {}).get("table", [])
+
+    def cell(i, key):
+        # Eintraege sind {"citations": {"all": .., "since_2021": ..}}; Schluessel je nach Sprache
+        if i >= len(table) or not isinstance(table[i], dict) or not table[i]:
+            return None
+        vals = next(iter(table[i].values()))
+        if key == "all":
+            return _int(vals.get("all"), None)
+        others = [v for k, v in vals.items() if k != "all"]
+        return _int(others[0], None) if others else None
+
+    pubs = []
+    for a in data.get("articles", []):
+        pubs.append({
+            "id": a.get("citation_id"),
+            "titel": a.get("title") or "",
+            "jahr": a.get("year") or None,
+            "zitationen": _int((a.get("cited_by") or {}).get("value"), 0),
+        })
+    graph = data.get("cited_by", {}).get("graph", [])
+    return {
+        "name": author.get("name"),
+        "affiliation": author.get("affiliations"),
+        "zitationen": cell(0, "all") or 0,
+        "zitationen_5j": cell(0, "recent"),
+        "h_index": cell(1, "all"),
+        "i10_index": cell(2, "all"),
+        "pro_jahr": {str(g["year"]): _int(g.get("citations")) for g in graph if "year" in g},
+        "publikationen": pubs,
+    }
+
+
+def fetch_serpapi(scholar_id: str, api_key: str, known_ids: set) -> dict:
+    """Scholar-Profil ueber SerpApi (kostenlos: 250 Anfragen/Monat). Meist 1 Anfrage pro Lauf."""
+    import requests
+
+    url = "https://serpapi.com/search.json"
+    base = {"engine": "google_scholar_author", "author_id": scholar_id,
+            "hl": "en", "num": 100, "api_key": api_key}
+    first, articles, start = None, [], 0
+    while True:
+        r = requests.get(url, params={**base, "start": start}, timeout=60)
+        data = r.json()
+        if r.status_code != 200 or data.get("error"):
+            if first is None:
+                raise RuntimeError(f"SerpApi: {data.get('error') or r.status_code}")
+            break   # Folgeseite fehlgeschlagen: mit dem bisherigen weitermachen
+        if first is None:
+            first = data
+        page = data.get("articles", [])
+        articles += page
+        if len(page) < 100 or start >= 900:   # mehr als 100 Paper -> weitere Seiten
+            break
+        start += 100
+    prof = parse_serpapi({**first, "articles": articles})
+
+    # Gekuerzte Titel neuer Paper nachladen (1 Anfrage je neuem Paper, kommt selten vor)
+    if known_ids:
+        for p in prof["publikationen"]:
+            if p["id"] not in known_ids and p["titel"].endswith("…"):
+                try:
+                    r = requests.get(url, timeout=60, params={
+                        "engine": "google_scholar_author", "view_op": "view_citation",
+                        "citation_id": p["id"], "hl": "en", "api_key": api_key})
+                    full = (r.json().get("citation") or {}).get("title")
+                    if full:
+                        p["titel"] = full
+                except Exception as e:
+                    print(f"Hinweis: voller Titel nicht abrufbar ({e})")
+    return prof
 
 
 def fetch_openalex_citing(orcid: str, n: int = 25) -> list:
@@ -301,6 +390,7 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime) -
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fixture", help="Profil aus JSON-Datei statt Scholar (Test)")
+    ap.add_argument("--serpapi-fixture", help="gespeicherte SerpApi-Antwort statt Abruf (Test)")
     ap.add_argument("--citing-fixture", help="OpenAlex-Ergebnis aus JSON-Datei (Test)")
     ap.add_argument("--now", help="Zeitpunkt vorgeben, z. B. 2026-11-18T05:00:00Z (Test)")
     args = ap.parse_args()
@@ -311,10 +401,18 @@ def main():
 
     # --- Scholar
     try:
+        known = set(state.get("pubs", {}))
+        serpapi_key = os.environ.get("SERPAPI_KEY", "").strip()
         if args.fixture:
             prof = load_json(Path(args.fixture), None)
+        elif args.serpapi_fixture:
+            prof = parse_serpapi(load_json(Path(args.serpapi_fixture), {}))
+        elif serpapi_key:
+            print("Quelle: SerpApi")
+            prof = fetch_serpapi(cfg["scholar_id"], serpapi_key, known)
         else:
-            prof = fetch_scholar(cfg["scholar_id"], set(state.get("pubs", {})))
+            print("Quelle: Google Scholar direkt (scholarly)")
+            prof = fetch_scholar(cfg["scholar_id"], known)
         if not prof or not prof.get("publikationen"):
             raise RuntimeError("leeres Profil erhalten")
     except Exception as e:
