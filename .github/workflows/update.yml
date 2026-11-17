@@ -2,7 +2,7 @@ name: Scholar aktualisieren
 
 on:
   schedule:
-    - cron: "17 4 * * *"   # täglich 04:17 UTC (05:17 Winterzeit / 06:17 Sommerzeit)
+       - cron: "17 6-21/3 * * *"   # 6x täglich, 7-22 Uhr Winterzeit
   workflow_dispatch:         # manuell starten: Actions -> "Scholar aktualisieren" -> Run workflow
 
 permissions:
