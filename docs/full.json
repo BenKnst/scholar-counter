@@ -1,0 +1,132 @@
+{
+  "aktualisiert": "2026-11-17T18:12:04Z",
+  "profil": {
+    "name": "Benjamin Kinast",
+    "affiliation": "Research Associate, University Hospital Schleswig-Holstein",
+    "zitationen": 125,
+    "zitationen_5j": 117,
+    "h_index": 5,
+    "i10_index": 4,
+    "pro_jahr": {
+      "2018": 1,
+      "2019": 2,
+      "2020": 4,
+      "2021": 5,
+      "2022": 13,
+      "2023": 11,
+      "2024": 30,
+      "2025": 28,
+      "2026": 29
+    }
+  },
+  "h_countdown": {
+    "naechster": 6,
+    "fehlend": 2
+  },
+  "publikationen": [
+    {
+      "id": "Z05rTXoAAAAJ:d1gkVwhDpl0C",
+      "titel": "Telemonitoring of real-world health data in cardiology: a systematic review",
+      "jahr": "2021",
+      "zitationen": 40
+    },
+    {
+      "id": "Z05rTXoAAAAJ:u5HHmVD_uO8C",
+      "titel": "Functional requirements for medical data integration into knowledge management environments: requirements elicitation approach based on systematic literature analysis",
+      "jahr": "2023",
+      "zitationen": 35
+    },
+    {
+      "id": "Z05rTXoAAAAJ:u-x6o8ySG0sC",
+      "titel": "\" Dinner is ready!\" Virtual Reality Assisted Training for Chronic Pain Rehabilitation",
+      "jahr": "2017",
+      "zitationen": 17
+    },
+    {
+      "id": "Z05rTXoAAAAJ:qjMakFHDy7sC",
+      "titel": "Medical data engineering–theory and practice",
+      "jahr": "2021",
+      "zitationen": 15
+    },
+    {
+      "id": "Z05rTXoAAAAJ:Y0pCki6q_DkC",
+      "titel": "Large-scale standardized image integration for secondary use research projects",
+      "jahr": "2024",
+      "zitationen": 6
+    },
+    {
+      "id": "Z05rTXoAAAAJ:UebtZRa9Y70C",
+      "titel": "The ‘Advancing cardiovascular risk identification with structured clinical documentation and biosignal derived phenotypes synthesis’ project: conceptual design, project …",
+      "jahr": "2025",
+      "zitationen": 4
+    },
+    {
+      "id": "Z05rTXoAAAAJ:UeHWp8X0CEIC",
+      "titel": "Challenges and lessons learned in mapping HL7 v2 data to openEHR: insights from UKSH medical data integration center",
+      "jahr": "2024",
+      "zitationen": 3
+    },
+    {
+      "id": "Z05rTXoAAAAJ:9yKSN-GCB0IC",
+      "titel": "Extracting LOINC codes from a laboratory information system’s index: addressing semantic interoperability with web scraping",
+      "jahr": "2025",
+      "zitationen": 2
+    },
+    {
+      "id": "Z05rTXoAAAAJ:ufrVoPGSRksC",
+      "titel": "A Data-Centric Approach for Health Care and Research in a Health Knowledge Management Platform: Implementation and Requirement-Based Evaluation Study",
+      "jahr": "2026",
+      "zitationen": 1
+    },
+    {
+      "id": "Z05rTXoAAAAJ:Tyk-4Ss8FVUC",
+      "titel": "Implementation of a Patient Consent Management at a German Medical Data Integration Center",
+      "jahr": "2025",
+      "zitationen": 1
+    },
+    {
+      "id": "Z05rTXoAAAAJ:eQOLeE2rZwMC",
+      "titel": "Implementation of an atrioventricular valve intervention registry: comparative study of REDCap vs. CDR-based openEHR registry",
+      "jahr": "2024",
+      "zitationen": 1
+    },
+    {
+      "id": "Z05rTXoAAAAJ:hqOjcs7Dif8C",
+      "titel": "What Users Say About Reimbursable Digital Therapeutics in Germany: Large-Scale App Store Review Analysis Using a Large Language Model",
+      "jahr": "2026",
+      "zitationen": 0
+    },
+    {
+      "id": "Z05rTXoAAAAJ:Se3iqnhoufwC",
+      "titel": "The Anatomy of a Failed DiGA: Taxonomic Insights from Withdrawn Reimbursable Digital Therapeutics",
+      "jahr": "2026",
+      "zitationen": 0
+    },
+    {
+      "id": "Z05rTXoAAAAJ:_FxGoFyzp5QC",
+      "titel": "ePA für alle–alles geklärt? Ergebnisse eines interdisziplinären Panels auf der GMDS-Jahrestagung 2025",
+      "jahr": "2026",
+      "zitationen": 0
+    },
+    {
+      "id": "Z05rTXoAAAAJ:2osOgNQ5qMEC",
+      "titel": "Die Wissensmanagementplattform für Versorgung und Forschung am Universitätsklinikum Schleswig-Holstein–Ein Praxisbeispiel",
+      "jahr": "2024",
+      "zitationen": 0
+    },
+    {
+      "id": "Z05rTXoAAAAJ:W7OEmFMy1HYC",
+      "titel": "Der Einsatz von Virtual Reality in der stationären Therapie chronischer Rückenschmerz und Bewegungsapparaterzpatienten",
+      "jahr": "2018",
+      "zitationen": 0
+    },
+    {
+      "id": "Z05rTXoAAAAJ:zYLM7Y9cAGgC",
+      "titel": "Virtual Reality in der Schmerztherapie–Status quo und Perspektiven",
+      "jahr": null,
+      "zitationen": 0
+    }
+  ],
+  "zitierend_openalex": [],
+  "ereignisse": []
+}
