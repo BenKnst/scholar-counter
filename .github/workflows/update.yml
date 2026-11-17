@@ -2,7 +2,7 @@ name: Scholar aktualisieren
 
 on:
   schedule:
-       - cron: "17 6-21/3 * * *"   # 6x täglich, 7-22 Uhr Winterzeit
+    - cron: "17 6-21/3 * * *"   # 6x täglich: 06:17-21:17 UTC alle 3 h (Winterzeit 7-22 Uhr, Sommerzeit 8-23 Uhr)
   workflow_dispatch:         # manuell starten: Actions -> "Scholar aktualisieren" -> Run workflow
 
 permissions:
@@ -47,6 +47,13 @@ jobs:
             git commit -m "Daten aktualisiert $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      - name: clock.json ins Gist kopieren
+        # Für die Uhr: Das Repository bleibt privat, nur diese Datei ist per Link lesbar.
+        env:
+          GIST_ID: ${{ secrets.GIST_ID }}
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+        run: python scripts/push_gist.py
 
       - name: Bei Fehler Bescheid geben
         # Schlägt fehl, wenn Scholar nicht abrufbar war -> GitHub schickt eine E-Mail.
