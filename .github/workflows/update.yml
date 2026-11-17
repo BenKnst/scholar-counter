@@ -1,0 +1,50 @@
+name: Scholar aktualisieren
+
+on:
+  schedule:
+    - cron: "17 4 * * *"   # täglich 04:17 UTC (05:17 Winterzeit / 06:17 Sommerzeit)
+  workflow_dispatch:         # manuell starten: Actions -> "Scholar aktualisieren" -> Run workflow
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scholar-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pakete installieren
+        # scholarly ohne Abhängigkeiten, weil es sonst unnötig Sphinx mitinstalliert
+        run: |
+          pip install --no-deps scholarly
+          pip install -r requirements.txt
+
+      - name: Daten abrufen
+        run: python scripts/update.py
+
+      - name: Änderungen speichern
+        run: |
+          git config user.name "scholar-bot"
+          git config user.email "scholar-bot@users.noreply.github.com"
+          git add docs data
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Daten aktualisiert $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Bei Fehler Bescheid geben
+        # Schlägt fehl, wenn Scholar nicht abrufbar war -> GitHub schickt eine E-Mail.
+        run: |
+          python -c "import json,sys; s=json.load(open('data/status.json')); print(s); sys.exit(0 if s.get('ok') else 1)"

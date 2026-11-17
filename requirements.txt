@@ -1,0 +1,13 @@
+# scholarly selbst wird mit --no-deps installiert (siehe Workflow/README),
+# hier stehen die Pakete, die es zur Laufzeit wirklich braucht.
+requests
+bibtexparser<2
+beautifulsoup4
+arrow
+deprecated
+fake-useragent
+free-proxy
+httpx
+python-dotenv
+selenium
+typing-extensions
