@@ -28,7 +28,7 @@
     },
     "Z05rTXoAAAAJ:UebtZRa9Y70C": {
       "titel": "The ‘Advancing cardiovascular risk identification with structured clinical documentation and biosignal derived phenotypes synthesis’ project: conceptual design, project …",
-      "zitationen": 4,
+      "zitationen": 5,
       "jahr": "2025"
     },
     "Z05rTXoAAAAJ:UeHWp8X0CEIC": {
@@ -87,21 +87,42 @@
       "jahr": null
     }
   },
-  "zitationen": 125,
+  "zitationen": 126,
   "h_index": 5,
   "taeglich": {
-    "2026-11-21": 125
+    "2026-11-21": 126
   },
-  "events": [],
+  "events": [
+    {
+      "typ": "zitiert_in",
+      "text": "Cited by Günther et al. 2026: \"Risk communication strategies in patients with cardiovasc...\" -> \"The 'Advancing cardiovascular risk identificati...\"",
+      "zeit": "2026-11-21T20:56:11Z",
+      "bis": "2026-11-23T20:56:11Z"
+    },
+    {
+      "typ": "party",
+      "text": "+1 citation!",
+      "zeit": "2026-11-21T20:56:11Z",
+      "bis": "2026-11-23T20:56:11Z",
+      "key": "z2026-11-21T20:56:11Z"
+    }
+  ],
   "openalex_seen": [],
-  "letzter_erfolg": "2026-11-21T15:32:26Z",
+  "letzter_erfolg": "2026-11-21T20:56:11Z",
   "pubdates": {
     "Z05rTXoAAAAJ:UebtZRa9Y70C": "2025-09",
     "Z05rTXoAAAAJ:9yKSN-GCB0IC": "2025",
     "Z05rTXoAAAAJ:ufrVoPGSRksC": "2026-04-30",
     "Z05rTXoAAAAJ:Tyk-4Ss8FVUC": "2025-08-07",
-    "Z05rTXoAAAAJ:hqOjcs7Dif8C": "2026-10-08"
+    "Z05rTXoAAAAJ:hqOjcs7Dif8C": "2026-10-08",
+    "Z05rTXoAAAAJ:Se3iqnhoufwC": "2026-06-29",
+    "Z05rTXoAAAAJ:_FxGoFyzp5QC": "2026-05-04"
   },
-  "scholar_citing_seen": [],
+  "scholar_citing_seen": [
+    "6PegqcEHH1MJ",
+    "Tlq856wUBPYJ",
+    "aNtH9BwK_MAJ",
+    "jzXnaZvfqrQJ"
+  ],
   "neueste_geprueft": null
 }

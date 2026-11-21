@@ -1,10 +1,10 @@
 {
-  "aktualisiert": "2026-11-21T15:32:26Z",
+  "aktualisiert": "2026-11-21T20:56:11Z",
   "profil": {
     "name": "Benjamin Kinast",
     "affiliation": "Research Associate, University Hospital Schleswig-Holstein",
-    "zitationen": 125,
-    "zitationen_5j": 117,
+    "zitationen": 126,
+    "zitationen_5j": 118,
     "h_index": 5,
     "i10_index": 4,
     "pro_jahr": {
@@ -16,12 +16,12 @@
       "2023": 11,
       "2024": 30,
       "2025": 28,
-      "2026": 29
+      "2026": 30
     }
   },
   "h_countdown": {
     "naechster": 6,
-    "fehlend": 2
+    "fehlend": 1
   },
   "publikationen": [
     {
@@ -63,7 +63,7 @@
       "id": "Z05rTXoAAAAJ:UebtZRa9Y70C",
       "titel": "The ‘Advancing cardiovascular risk identification with structured clinical documentation and biosignal derived phenotypes synthesis’ project: conceptual design, project …",
       "jahr": "2025",
-      "zitationen": 4,
+      "zitationen": 5,
       "cites_id": "14671592087249503107"
     },
     {
@@ -145,5 +145,19 @@
     }
   ],
   "zitierend_openalex": [],
-  "ereignisse": []
+  "ereignisse": [
+    {
+      "typ": "zitiert_in",
+      "text": "Cited by Günther et al. 2026: \"Risk communication strategies in patients with cardiovasc...\" -> \"The 'Advancing cardiovascular risk identificati...\"",
+      "zeit": "2026-11-21T20:56:11Z",
+      "bis": "2026-11-23T20:56:11Z"
+    },
+    {
+      "typ": "party",
+      "text": "+1 citation!",
+      "zeit": "2026-11-21T20:56:11Z",
+      "bis": "2026-11-23T20:56:11Z",
+      "key": "z2026-11-21T20:56:11Z"
+    }
+  ]
 }
