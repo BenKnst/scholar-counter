@@ -1,533 +1,145 @@
 {
-  "aktualisiert": "2026-11-21T15:19:11Z",
+  "aktualisiert": "2026-11-21T15:32:26Z",
   "profil": {
-    "name": "Hannes Ulrich",
-    "affiliation": "Postdoctoral Reseacher at Department of Medical Informatics, University Medicine Greifswald",
-    "zitationen": 812,
-    "zitationen_5j": 692,
-    "h_index": 14,
-    "i10_index": 19,
+    "name": "Benjamin Kinast",
+    "affiliation": "Research Associate, University Hospital Schleswig-Holstein",
+    "zitationen": 125,
+    "zitationen_5j": 117,
+    "h_index": 5,
+    "i10_index": 4,
     "pro_jahr": {
-      "2015": 3,
-      "2016": 7,
-      "2017": 13,
-      "2018": 31,
-      "2019": 29,
-      "2020": 26,
-      "2021": 41,
-      "2022": 74,
-      "2023": 74,
-      "2024": 127,
-      "2025": 163,
-      "2026": 199
+      "2018": 1,
+      "2019": 2,
+      "2020": 4,
+      "2021": 5,
+      "2022": 13,
+      "2023": 11,
+      "2024": 30,
+      "2025": 28,
+      "2026": 29
     }
   },
   "h_countdown": {
-    "naechster": 15,
+    "naechster": 6,
     "fehlend": 2
   },
   "publikationen": [
     {
-      "id": "5TMNA1oAAAAJ:4TOpqqG69KYC",
-      "titel": "Understanding the Nature of Metadata: Systematic Review",
-      "jahr": "2022",
-      "zitationen": 156,
-      "cites_id": "14659452941731490703"
+      "id": "Z05rTXoAAAAJ:d1gkVwhDpl0C",
+      "titel": "Telemonitoring of real-world health data in cardiology: a systematic review",
+      "jahr": "2021",
+      "zitationen": 40,
+      "cites_id": "5069632005784473128"
     },
     {
-      "id": "5TMNA1oAAAAJ:9ZlFYXVOiuMC",
-      "titel": "MIMIC-IV on FHIR: converting a decade of in-patient data into an exchangeable, interoperable format",
-      "jahr": "2023",
-      "zitationen": 69,
-      "cites_id": "2006187158673081816"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:RHpTSmoSYBkC",
-      "titel": "LLM-AIx: An open source pipeline for Information Extraction from unstructured medical text based on privacy preserving Large Language Models",
-      "jahr": "2024",
-      "zitationen": 60,
-      "cites_id": "14870531658141829784"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:Tyk-4Ss8FVUC",
-      "titel": "Metadata repository for improved data sharing and reuse based on HL7 FHIR",
-      "jahr": "2016",
-      "zitationen": 55,
-      "cites_id": "16378712034723481484"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:QIV2ME_5wuYC",
-      "titel": "Functional Requirements for Medical Data Integration into Knowledge Management Environments: Requirements Elicitation Approach Based on Systematic Literature Analysis",
+      "id": "Z05rTXoAAAAJ:u5HHmVD_uO8C",
+      "titel": "Functional requirements for medical data integration into knowledge management environments: requirements elicitation approach based on systematic literature analysis",
       "jahr": "2023",
       "zitationen": 35,
       "cites_id": "31747998217104567"
     },
     {
-      "id": "5TMNA1oAAAAJ:ULOm3_A8WrAC",
-      "titel": "Hands on the Medical Informatics Initiative Core Data Set—Lessons Learned from Converting the MIMIC-IV",
-      "jahr": "2021",
-      "zitationen": 35,
-      "cites_id": "7604610025701953138"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:d1gkVwhDpl0C",
-      "titel": "Connecting the clinical IT infrastructure to a service-oriented architecture of medical devices",
-      "jahr": "2018",
-      "zitationen": 35,
-      "cites_id": "6868424216155040312"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:isC4tDSrTZIC",
-      "titel": "A software pipeline for medical information extraction with large language models, open source and suitable for oncology",
-      "jahr": "2025",
-      "zitationen": 32,
-      "cites_id": "7693431752789436161"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:W7OEmFMy1HYC",
-      "titel": "QL 4 MDR: A GraphQL query language for ISO 11179-based metadata repositories",
-      "jahr": "2019",
-      "zitationen": 25,
-      "cites_id": "3899680555546288838"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:u5HHmVD_uO8C",
-      "titel": "Linked data applications through ontology based data access in clinical research",
+      "id": "Z05rTXoAAAAJ:u-x6o8ySG0sC",
+      "titel": "\" Dinner is ready!\" Virtual Reality Assisted Training for Chronic Pain Rehabilitation",
       "jahr": "2017",
-      "zitationen": 24,
-      "cites_id": "90364407547013711"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:9yKSN-GCB0IC",
-      "titel": "Point-of-care medical devices and systems interoperability: A mapping of ICE and FHIR",
-      "jahr": "2016",
-      "zitationen": 22,
-      "cites_id": "9811937523600527157"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:qjMakFHDy7sC",
-      "titel": "Semantic interoperability in the OR. NET project on networking of medical devices and information systems—A requirements analysis",
-      "jahr": "2014",
       "zitationen": 17,
-      "cites_id": "10820974112994820831"
+      "cites_id": "4264491197947917013"
     },
     {
-      "id": "5TMNA1oAAAAJ:R3hNpaxXUhUC",
-      "titel": "The sample locator: A federated search tool for biosamples and associated data in Europe using HL7 FHIR",
-      "jahr": "2024",
-      "zitationen": 16,
-      "cites_id": "12412095555674397197"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:Zph67rFs4hoC",
-      "titel": "Medical Data Engineering–Theory and Practice",
+      "id": "Z05rTXoAAAAJ:qjMakFHDy7sC",
+      "titel": "Medical data engineering–theory and practice",
       "jahr": "2021",
       "zitationen": 15,
       "cites_id": "7190718447115828511"
     },
     {
-      "id": "5TMNA1oAAAAJ:kNdYIx-mwKoC",
-      "titel": "APERITIF–Automatic Patient Recruiting for Clinical Trials Based on HL7 FHIR",
-      "jahr": "2021",
-      "zitationen": 13,
-      "cites_id": "14054838153440620722"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:YOwf2qJgpHMC",
-      "titel": "Providing ART-DECOR ValueSets via FHIR Terminology Servers–A Technical Report",
-      "jahr": "2021",
-      "zitationen": 11,
-      "cites_id": "16274924427131849623"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:roLk4NBRz8UC",
-      "titel": "One Step Away from Technology but One Step Towards Domain Experts—MDRBridge: A Template-Based ISO 11179-Compliant Metadata Processing Pipeline",
-      "jahr": "2019",
-      "zitationen": 11,
-      "cites_id": "12404818125303076747"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:zYLM7Y9cAGgC",
-      "titel": "Reporting device observations for semantic interoperability of surgical devices and clinical information systems",
-      "jahr": "2015",
-      "zitationen": 11,
-      "cites_id": "15724543744341931742"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:mB3voiENLucC",
-      "titel": "On the Way to Close the Loop in Information Logistics: Data from the Patient—Value for the Patient: Findings from the Clinical Information Systems Perspective for 2017",
-      "jahr": "2018",
-      "zitationen": 10,
-      "cites_id": "5727959711688288809"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:Y0pCki6q_DkC",
-      "titel": "Using graph tools on metadata repositories",
-      "jahr": "2018",
-      "zitationen": 9,
-      "cites_id": "13990982886513705059"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:IjCSPb-OGe4C",
-      "titel": "Practical extension of provenance to healthcare data based on the W3C PROV standard",
-      "jahr": "2018",
-      "zitationen": 9,
-      "cites_id": "6741748715051221531"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:4DMP91E08xMC",
-      "titel": "Improving findability of digital assets in research data repositories using the W3C DCAT vocabulary",
-      "jahr": "2022",
-      "zitationen": 8,
-      "cites_id": "8616152974337540942"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:JV2RwH3_ST0C",
-      "titel": "MIMIC-IV clinical database demo on FHIR (version 2.0)",
-      "jahr": "2022",
-      "zitationen": 8,
-      "cites_id": "14669914770312843513"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:3fE2CSJIrl8C",
-      "titel": "Mapping of medical device data from ISO/IEEE 11073-10207 to HL7 FHIR",
-      "jahr": "2021",
-      "zitationen": 8,
-      "cites_id": "4198887334736360801"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:hFOr9nPyWt4C",
-      "titel": "MDRCupid: a configurable metadata matching toolbox",
-      "jahr": "2019",
-      "zitationen": 8,
-      "cites_id": "2192522215530895806"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:2osOgNQ5qMEC",
-      "titel": "IEEE 11073 SDC and HL7 FHIR–Emerging Standards for Interoperability of Medical Systems",
-      "jahr": "2018",
-      "zitationen": 8,
-      "cites_id": "13577105255313986841"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:j3f4tGmQtD8C",
-      "titel": "A Generic Transformation Approach for Complex Laboratory Data Using the Fast Healthcare Interoperability Resources Mapping Language: Method Development and Implementation",
-      "jahr": "2024",
-      "zitationen": 7,
-      "cites_id": "7434388171917854798"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:KlAtU1dfN6UC",
-      "titel": "Desiderata for a Synthetic Clinical Data Generator",
-      "jahr": "2021",
-      "zitationen": 7,
-      "cites_id": "15338859395189873903"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:hqOjcs7Dif8C",
-      "titel": "A Smart Mapping Editor for Standardised Data Transformation",
-      "jahr": "2020",
-      "zitationen": 7,
-      "cites_id": "1095249775833761512"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:_Qo2XoVZTnwC",
-      "titel": "Advancing Healthcare Research Through Live-Data Integration: Implementing IEEE 11073 and FHIR in Clinical Environment",
-      "jahr": "2024",
-      "zitationen": 6,
-      "cites_id": "17722117696277165845"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:HDshCWvjkbEC",
-      "titel": "Large-Scale Standardized Image Integration for Secondary Use Research Projects.",
+      "id": "Z05rTXoAAAAJ:Y0pCki6q_DkC",
+      "titel": "Large-scale standardized image integration for secondary use research projects",
       "jahr": "2024",
       "zitationen": 6,
       "cites_id": "7742224286949654710"
     },
     {
-      "id": "5TMNA1oAAAAJ:0EnyYjriUFMC",
-      "titel": "Analysis of ISO/TS 21526 Towards the Extension of a Standardized Query API",
-      "jahr": "2020",
-      "zitationen": 6,
-      "cites_id": "10824325621649262242"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:UeHWp8X0CEIC",
-      "titel": "A Method to use Metadata in legacy Web Applications: The Samply. MDR. Injector",
-      "jahr": "2018",
-      "zitationen": 6,
-      "cites_id": "12593346058248708446"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:UebtZRa9Y70C",
-      "titel": "Analysis of Annotated Data Models for Improving Data Quality",
-      "jahr": "2017",
-      "zitationen": 6,
-      "cites_id": "15386940386689127038"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:qxL8FJ1GzNcC",
-      "titel": "TerminoDiff-Detecting Semantic Differences in HL7 FHIR CodeSystems",
-      "jahr": "2022",
-      "zitationen": 5,
-      "cites_id": "16743786796991024281"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:aqlVkmm33-oC",
-      "titel": "TermiCron–Bridging the Gap Between FHIR Terminology Servers and Metadata Repositories",
-      "jahr": "2022",
-      "zitationen": 5,
-      "cites_id": "12108107163136131779"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:YsMSGLbcyi4C",
-      "titel": "Compatibility between metadata standards: import pipeline of cdisc odm to the samply. mdr",
-      "jahr": "2018",
-      "zitationen": 5,
-      "cites_id": "109204102471021572"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:k_IJM867U9cC",
-      "titel": "MIMIC-IV Clinical Database Demo on FHIR",
+      "id": "Z05rTXoAAAAJ:UebtZRa9Y70C",
+      "titel": "The ‘Advancing cardiovascular risk identification with structured clinical documentation and biosignal derived phenotypes synthesis’ project: conceptual design, project …",
       "jahr": "2025",
       "zitationen": 4,
-      "cites_id": "1350919480975685161"
+      "cites_id": "14671592087249503107"
     },
     {
-      "id": "5TMNA1oAAAAJ:8k81kl-MbHgC",
-      "titel": "openEHR Mapper–A Tool to Fuse Clinical and Genomic Data Using the openEHR Standard",
-      "jahr": "2021",
-      "zitationen": 4,
-      "cites_id": "47895932393702003"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:_FxGoFyzp5QC",
-      "titel": "Towards a Federation of Metadata Repositories: Addressing Technical Interoperability.",
-      "jahr": "2019",
-      "zitationen": 4,
-      "cites_id": "13888749014643830885"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:Wp0gIr-vW9MC",
-      "titel": "Strategies and Recommendation for Data Loading of FHIR-Based Data Marts with Focus on GDPR Compliance",
-      "jahr": "2022",
+      "id": "Z05rTXoAAAAJ:UeHWp8X0CEIC",
+      "titel": "Challenges and lessons learned in mapping HL7 v2 data to openEHR: insights from UKSH medical data integration center",
+      "jahr": "2024",
       "zitationen": 3,
-      "cites_id": "7365884958710502564"
+      "cites_id": "10098728268661759585"
     },
     {
-      "id": "5TMNA1oAAAAJ:MXK_kJrjxJIC",
-      "titel": "Fit for Purpose: Analyzing the German Archiving and Exchange Interface for Medical Practice Management Systems",
-      "jahr": "2021",
-      "zitationen": 3,
-      "cites_id": "3427883743556610180"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:WF5omc3nYNoC",
-      "titel": "Scientific Challenge in eHealth: MAPPATHON, a Metadata Mapping Challenge.",
-      "jahr": "2019",
-      "zitationen": 3,
-      "cites_id": "31870341088203040"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:_kc_bZDykSQC",
-      "titel": "Konvertierung von MIMIC-III-Daten zu FHIR",
-      "jahr": "2018",
-      "zitationen": 3,
-      "cites_id": "8580329390218513168"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:bEWYMUwI8FkC",
-      "titel": "From Text to Knowledge: An End-To-End Extraction Pipeline for Clinical Information",
-      "jahr": "2025",
-      "zitationen": 2,
-      "cites_id": "3015841827011645158"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:iH-uZ7U-co4C",
-      "titel": "Extracting LOINC Codes from a Laboratory Information System's Index: Addressing Semantic Interoperability with Web Scraping",
+      "id": "Z05rTXoAAAAJ:9yKSN-GCB0IC",
+      "titel": "Extracting LOINC codes from a laboratory information system’s index: addressing semantic interoperability with web scraping",
       "jahr": "2025",
       "zitationen": 2,
       "cites_id": "5423158887254211623"
     },
     {
-      "id": "5TMNA1oAAAAJ:blknAaTinKkC",
-      "titel": "Provenance Core Data Set",
-      "jahr": "2023",
-      "zitationen": 2,
-      "cites_id": "5487267799571255433"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:qUcmZB5y_30C",
-      "titel": "Mapping clinical care and research data to HL7 FHIR to improve sharing and reuse",
-      "jahr": "2017",
-      "zitationen": 2,
-      "cites_id": "10956332971828499551"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:hMod-77fHWUC",
+      "id": "Z05rTXoAAAAJ:ufrVoPGSRksC",
       "titel": "A Data-Centric Approach for Health Care and Research in a Health Knowledge Management Platform: Implementation and Requirement-Based Evaluation Study",
       "jahr": "2026",
       "zitationen": 1,
       "cites_id": "7123541304496811788"
     },
     {
-      "id": "5TMNA1oAAAAJ:TFP_iSt0sucC",
+      "id": "Z05rTXoAAAAJ:Tyk-4Ss8FVUC",
       "titel": "Implementation of a Patient Consent Management at a German Medical Data Integration Center",
       "jahr": "2025",
       "zitationen": 1,
       "cites_id": "10586426759088829635"
     },
     {
-      "id": "5TMNA1oAAAAJ:u-x6o8ySG0sC",
-      "titel": "Automatic Evaluation of Metadata Quality in ISO 11179-3 Conformant Healthcare Metadata Repositories",
-      "jahr": "2019",
+      "id": "Z05rTXoAAAAJ:eQOLeE2rZwMC",
+      "titel": "Implementation of an atrioventricular valve intervention registry: comparative study of REDCap vs. CDR-based openEHR registry",
+      "jahr": "2024",
       "zitationen": 1,
-      "cites_id": "4500046111355707971"
+      "cites_id": "16956276650398708235"
     },
     {
-      "id": "5TMNA1oAAAAJ:7PzlFSSx8tAC",
-      "titel": "A gateway for reporting medical device observations to clinical information systems",
-      "jahr": "2015",
-      "zitationen": 1,
-      "cites_id": "16115855384167338114"
-    },
-    {
-      "id": "5TMNA1oAAAAJ:GnPB-g6toBAC",
+      "id": "Z05rTXoAAAAJ:hqOjcs7Dif8C",
       "titel": "What Users Say About Reimbursable Digital Therapeutics in Germany: Large-Scale App Store Review Analysis Using a Large Language Model",
       "jahr": "2026",
       "zitationen": 0,
       "cites_id": null
     },
     {
-      "id": "5TMNA1oAAAAJ:BqipwSGYUEgC",
-      "titel": "Comparison of Metadata Catalog Schemas for Cross-Border Health Dataset Discovery",
+      "id": "Z05rTXoAAAAJ:Se3iqnhoufwC",
+      "titel": "The Anatomy of a Failed DiGA: Taxonomic Insights from Withdrawn Reimbursable Digital Therapeutics",
       "jahr": "2026",
       "zitationen": 0,
       "cites_id": null
     },
     {
-      "id": "5TMNA1oAAAAJ:NMxIlDl6LWMC",
-      "titel": "GlobalMedQA: A Standardized Multilingual Dataset for Assessing Medical Knowledge in LLMs",
+      "id": "Z05rTXoAAAAJ:_FxGoFyzp5QC",
+      "titel": "ePA für alle–alles geklärt? Ergebnisse eines interdisziplinären Panels auf der GMDS-Jahrestagung 2025",
       "jahr": "2026",
       "zitationen": 0,
       "cites_id": null
     },
     {
-      "id": "5TMNA1oAAAAJ:e5wmG9Sq2KIC",
-      "titel": "Full-scale indexing and semantic annotation of CT imaging: boosting FAIRness",
-      "jahr": "2026",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:ns9cj8rnVeAC",
-      "titel": "A multi-method radiomics pipeline for survival analysis: robust feature identification in computed tomography data",
-      "jahr": "2026",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:O3NaXMp0MMsC",
-      "titel": "Evaluating Medical Report Generation on Real Clinical Data: A Case Study",
-      "jahr": "2026",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:YFjsv_pBGBYC",
-      "titel": "Survival prediction of TAVI patients using end-to-end deep image regression on whole-body CT",
-      "jahr": "2026",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:maZDTaKrznsC",
-      "titel": "What Patients Say About Reimbursable Digital Therapeutics in Germany: A Large-Scale App Store Review Analysis Using a Large Language Model",
-      "jahr": "2025",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:M3NEmzRMIkIC",
-      "titel": "Automated survival prediction based on body composition analysis of Pre-TAVI-Procedural CT scans",
-      "jahr": "2025",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:r0BpntZqJG4C",
-      "titel": "Assessing Patient Health Dynamics by Comparative CT Analysis: An Automatic Approach to Organ and Body Feature Evaluation",
-      "jahr": "2024",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:TQgYirikUcIC",
+      "id": "Z05rTXoAAAAJ:2osOgNQ5qMEC",
       "titel": "Die Wissensmanagementplattform für Versorgung und Forschung am Universitätsklinikum Schleswig-Holstein–Ein Praxisbeispiel",
       "jahr": "2024",
       "zitationen": 0,
       "cites_id": null
     },
     {
-      "id": "5TMNA1oAAAAJ:-f6ydRqryjwC",
-      "titel": "Provenance Core Data Set: A Minimal Information Model for Data Provenance in Biomedical Research",
-      "jahr": "2023",
+      "id": "Z05rTXoAAAAJ:W7OEmFMy1HYC",
+      "titel": "Der Einsatz von Virtual Reality in der stationären Therapie chronischer Rückenschmerz und Bewegungsapparaterzpatienten",
+      "jahr": "2018",
       "zitationen": 0,
       "cites_id": null
     },
     {
-      "id": "5TMNA1oAAAAJ:ZeXyd9-uunAC",
-      "titel": "Support of Young Talent in the GMDS",
-      "jahr": "2023",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:M3ejUd6NZC8C",
-      "titel": "Proposal of Semantic Annotation for German Metadata Using Bidirectional Recurrent Neural Networks",
-      "jahr": "2022",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:mVmsd5A6BfQC",
-      "titel": "Standardisierte Metadatenintegration für die Sekundärnutzung klinischer Daten",
-      "jahr": "2022",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:L8Ckcad2t8MC",
-      "titel": "Konzeption und Implementierung einer Geräteschnittstelle des TECAN EVO Aliquotierroboter im Biobankkontext",
-      "jahr": "2021",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:dhFuZR0502QC",
-      "titel": "The Automatic Evaluation of Metadata in Healthcare",
-      "jahr": "2021",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:LkGwnXOMwfcC",
-      "titel": "Potential Secondary Use of Medical Data in Monocentric In-House Clinical Trials",
-      "jahr": "2019",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:hC7cP41nSMkC",
-      "titel": "Entwicklung eines Tools zum Konvertieren von HL7 FHIR Questionnaires in das MOLGENIS EMX Format",
-      "jahr": "2017",
-      "zitationen": 0,
-      "cites_id": null
-    },
-    {
-      "id": "5TMNA1oAAAAJ:IWHjjKOFINEC",
-      "titel": "Increasing Standardization of Biobank Data through HL7 FHIR Mapping",
-      "jahr": "2017",
+      "id": "Z05rTXoAAAAJ:zYLM7Y9cAGgC",
+      "titel": "Virtual Reality in der Schmerztherapie–Status quo und Perspektiven",
+      "jahr": null,
       "zitationen": 0,
       "cites_id": null
     }
