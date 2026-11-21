@@ -1,145 +1,868 @@
 {
-  "aktualisiert": "2026-11-21T10:06:26Z",
+  "aktualisiert": "2026-11-21T14:18:55Z",
   "profil": {
-    "name": "Benjamin Kinast",
-    "affiliation": "Research Associate, University Hospital Schleswig-Holstein",
-    "zitationen": 125,
-    "zitationen_5j": 117,
-    "h_index": 5,
-    "i10_index": 4,
+    "name": "Matthew J Page",
+    "affiliation": "School of Public Health and Preventive Medicine, Monash University",
+    "zitationen": 373037,
+    "zitationen_5j": 349719,
+    "h_index": 92,
+    "i10_index": 217,
     "pro_jahr": {
-      "2018": 1,
-      "2019": 2,
-      "2020": 4,
-      "2021": 5,
-      "2022": 13,
-      "2023": 11,
-      "2024": 30,
-      "2025": 28,
-      "2026": 29
+      "2016": 1227,
+      "2017": 2087,
+      "2018": 3229,
+      "2019": 4762,
+      "2020": 8245,
+      "2021": 15999,
+      "2022": 32381,
+      "2023": 45213,
+      "2024": 60145,
+      "2025": 84806,
+      "2026": 108881
     }
   },
   "h_countdown": {
-    "naechster": 6,
-    "fehlend": 2
+    "naechster": 93,
+    "fehlend": 1
   },
   "publikationen": [
     {
-      "id": "Z05rTXoAAAAJ:d1gkVwhDpl0C",
-      "titel": "Telemonitoring of real-world health data in cardiology: a systematic review",
+      "id": "YNUamsYAAAAJ:tuHXwOkdijsC",
+      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
       "jahr": "2021",
-      "zitationen": 40,
-      "cites_id": "5069632005784473128"
+      "zitationen": 195409,
+      "cites_id": "15727065504675327747"
     },
     {
-      "id": "Z05rTXoAAAAJ:u5HHmVD_uO8C",
-      "titel": "Functional requirements for medical data integration into knowledge management environments: requirements elicitation approach based on systematic literature analysis",
-      "jahr": "2023",
-      "zitationen": 35,
-      "cites_id": "31747998217104567"
+      "id": "YNUamsYAAAAJ:OU6Ihb5iCvQC",
+      "titel": "RoB 2: a revised tool for assessing risk of bias in randomised trials",
+      "jahr": "2019",
+      "zitationen": 40587,
+      "cites_id": "6745803066368996883,2317065933090729727"
     },
     {
-      "id": "Z05rTXoAAAAJ:u-x6o8ySG0sC",
-      "titel": "\" Dinner is ready!\" Virtual Reality Assisted Training for Chronic Pain Rehabilitation",
-      "jahr": "2017",
-      "zitationen": 17,
-      "cites_id": "4264491197947917013"
+      "id": "YNUamsYAAAAJ:geHnlv5EZngC",
+      "titel": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement",
+      "jahr": "2015",
+      "zitationen": 27785,
+      "cites_id": "17703042528107474191,9311875780471840,7943097671939597726"
     },
     {
-      "id": "Z05rTXoAAAAJ:qjMakFHDy7sC",
-      "titel": "Medical data engineering–theory and practice",
+      "id": "YNUamsYAAAAJ:b1wdh0AR-JQC",
+      "titel": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews",
       "jahr": "2021",
-      "zitationen": 15,
-      "cites_id": "7190718447115828511"
+      "zitationen": 17045,
+      "cites_id": "5690463728863156963"
     },
     {
-      "id": "Z05rTXoAAAAJ:Y0pCki6q_DkC",
-      "titel": "Large-scale standardized image integration for secondary use research projects",
-      "jahr": "2024",
-      "zitationen": 6,
-      "cites_id": "7742224286949654710"
+      "id": "YNUamsYAAAAJ:sSrBHYA8nusC",
+      "titel": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation",
+      "jahr": "2015",
+      "zitationen": 15850,
+      "cites_id": "12815720499468935333"
     },
     {
-      "id": "Z05rTXoAAAAJ:UebtZRa9Y70C",
-      "titel": "The ‘Advancing cardiovascular risk identification with structured clinical documentation and biosignal derived phenotypes synthesis’ project: conceptual design, project …",
-      "jahr": "2025",
-      "zitationen": 4,
-      "cites_id": "14671592087249503107"
+      "id": "YNUamsYAAAAJ:XiSMed-E-HIC",
+      "titel": "Updated guidance for trusted systematic reviews: a new edition of the Cochrane Handbook for Systematic Reviews of Interventions",
+      "jahr": "2019",
+      "zitationen": 6894,
+      "cites_id": "3718534597767837960"
     },
     {
-      "id": "Z05rTXoAAAAJ:UeHWp8X0CEIC",
-      "titel": "Challenges and lessons learned in mapping HL7 v2 data to openEHR: insights from UKSH medical data integration center",
-      "jahr": "2024",
-      "zitationen": 3,
-      "cites_id": "10098728268661759585"
+      "id": "YNUamsYAAAAJ:epqYDVWIO7EC",
+      "titel": "PRISMA2020: An R package and Shiny app for producing PRISMA 2020-compliant flow diagrams, with interactivity for optimised digital transparency and Open …",
+      "jahr": "2022",
+      "zitationen": 6151,
+      "cites_id": "6797611052934917198"
     },
     {
-      "id": "Z05rTXoAAAAJ:9yKSN-GCB0IC",
-      "titel": "Extracting LOINC codes from a laboratory information system’s index: addressing semantic interoperability with web scraping",
-      "jahr": "2025",
-      "zitationen": 2,
-      "cites_id": "5423158887254211623"
+      "id": "YNUamsYAAAAJ:PR6Y55bgFSsC",
+      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews",
+      "jahr": "2021",
+      "zitationen": 5899,
+      "cites_id": "8077882857217203497"
     },
     {
-      "id": "Z05rTXoAAAAJ:ufrVoPGSRksC",
-      "titel": "A Data-Centric Approach for Health Care and Research in a Health Knowledge Management Platform: Implementation and Requirement-Based Evaluation Study",
-      "jahr": "2026",
-      "zitationen": 1,
-      "cites_id": "7123541304496811788"
+      "id": "YNUamsYAAAAJ:P7Ujq4OLJYoC",
+      "titel": "& Moher, D.(2021). The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+      "jahr": "2021",
+      "zitationen": 5333,
+      "cites_id": "1330299720383577910,3666202426207734400,10445972481363247532,4037248056392633329,4015515542120469083,6013073029393982711,5946791055383014823,5816201406756526325,9038770924994843814,9504952845505764018,15152660073909931943"
     },
     {
-      "id": "Z05rTXoAAAAJ:Tyk-4Ss8FVUC",
-      "titel": "Implementation of a Patient Consent Management at a German Medical Data Integration Center",
-      "jahr": "2025",
-      "zitationen": 1,
-      "cites_id": "10586426759088829635"
+      "id": "YNUamsYAAAAJ:TIZ-Mc8IlK0C",
+      "titel": "Declaración PRISMA 2020: una guía actualizada para la publicación de revisiones sistemáticas",
+      "jahr": "2021",
+      "zitationen": 5171,
+      "cites_id": "10232133199030025595,11421451860880031229"
     },
     {
-      "id": "Z05rTXoAAAAJ:eQOLeE2rZwMC",
-      "titel": "Implementation of an atrioventricular valve intervention registry: comparative study of REDCap vs. CDR-based openEHR registry",
-      "jahr": "2024",
-      "zitationen": 1,
-      "cites_id": "16956276650398708235"
+      "id": "YNUamsYAAAAJ:K3LRdlH-MEoC",
+      "titel": "Assessing risk of bias in a randomized trial",
+      "jahr": "2019",
+      "zitationen": 4144,
+      "cites_id": "11706334947502566373,11198088696226515691,8454812573214221379,4524565614850230781,16265245498865620161,11437740394558893825,8519019762677539271"
     },
     {
-      "id": "Z05rTXoAAAAJ:hqOjcs7Dif8C",
-      "titel": "What Users Say About Reimbursable Digital Therapeutics in Germany: Large-Scale App Store Review Analysis Using a Large Language Model",
-      "jahr": "2026",
-      "zitationen": 0,
-      "cites_id": null
+      "id": "YNUamsYAAAAJ:_B80troHkn4C",
+      "titel": "Updating guidance for reporting systematic reviews: development of the PRISMA 2020 statement",
+      "jahr": "2021",
+      "zitationen": 3979,
+      "cites_id": "15367804918615098770"
     },
     {
-      "id": "Z05rTXoAAAAJ:Se3iqnhoufwC",
-      "titel": "The Anatomy of a Failed DiGA: Taxonomic Insights from Withdrawn Reimbursable Digital Therapeutics",
-      "jahr": "2026",
-      "zitationen": 0,
-      "cites_id": null
+      "id": "YNUamsYAAAAJ:M05iB0D1s5AC",
+      "titel": "ROBIS: a new tool to assess risk of bias in systematic reviews was developed",
+      "jahr": "2016",
+      "zitationen": 2813,
+      "cites_id": "16189922986406788839"
     },
     {
-      "id": "Z05rTXoAAAAJ:_FxGoFyzp5QC",
-      "titel": "ePA für alle–alles geklärt? Ergebnisse eines interdisziplinären Panels auf der GMDS-Jahrestagung 2025",
-      "jahr": "2026",
-      "zitationen": 0,
-      "cites_id": null
+      "id": "YNUamsYAAAAJ:URolC5Kub84C",
+      "titel": "RoB 2: a revised tool for assessing risk of bias in randomised trials. BMJ 366: l4898",
+      "jahr": "2019",
+      "zitationen": 1746,
+      "cites_id": "17966842809896872844"
     },
     {
-      "id": "Z05rTXoAAAAJ:2osOgNQ5qMEC",
-      "titel": "Die Wissensmanagementplattform für Versorgung und Forschung am Universitätsklinikum Schleswig-Holstein–Ein Praxisbeispiel",
-      "jahr": "2024",
-      "zitationen": 0,
-      "cites_id": null
+      "id": "YNUamsYAAAAJ:ZHo1McVdvXMC",
+      "titel": "A revised tool for assessing risk of bias in randomized trials",
+      "jahr": "2016",
+      "zitationen": 1523,
+      "cites_id": "2029469634662747117"
     },
     {
-      "id": "Z05rTXoAAAAJ:W7OEmFMy1HYC",
-      "titel": "Der Einsatz von Virtual Reality in der stationären Therapie chronischer Rückenschmerz und Bewegungsapparaterzpatienten",
-      "jahr": "2018",
-      "zitationen": 0,
-      "cites_id": null
+      "id": "YNUamsYAAAAJ:tz746QTLzJkC",
+      "titel": "The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. BMJ, 372, n71. Documento en línea",
+      "jahr": "2021",
+      "zitationen": 1411,
+      "cites_id": "5956344626895185154,12435455706196210017,3115340049700163654,9944314773744862820"
     },
     {
-      "id": "Z05rTXoAAAAJ:zYLM7Y9cAGgC",
-      "titel": "Virtual Reality in der Schmerztherapie–Status quo und Perspektiven",
+      "id": "YNUamsYAAAAJ:WbkHhVStYXYC",
+      "titel": "Assessing risk of bias due to missing results in a synthesis",
+      "jahr": "2019",
+      "zitationen": 1241,
+      "cites_id": "9238658644473447579,18320461742126717540,8700440450768778898"
+    },
+    {
+      "id": "YNUamsYAAAAJ:aIdbFUkbNIkC",
+      "titel": "& Moher, D.(2021). The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. BMJ, 372, n71",
       "jahr": null,
+      "zitationen": 1156,
+      "cites_id": "12477873933138165315"
+    },
+    {
+      "id": "YNUamsYAAAAJ:6ZxmRoH8BuwC",
+      "titel": "A declaração PRISMA 2020: diretriz atualizada para relatar revisões sistemáticas",
+      "jahr": "2023",
+      "zitationen": 1088,
+      "cites_id": "8291070616290827547"
+    },
+    {
+      "id": "YNUamsYAAAAJ:2P1L_qKh6hAC",
+      "titel": "Evaluations of the uptake and impact of the Preferred Reporting Items for Systematic reviews and Meta-Analyses (PRISMA) Statement and extensions: a scoping review",
+      "jahr": "2017",
+      "zitationen": 980,
+      "cites_id": "14167972484157836478"
+    },
+    {
+      "id": "YNUamsYAAAAJ:ULOm3_A8WrAC",
+      "titel": "Pre‐operative education for hip or knee replacement",
+      "jahr": "2004",
+      "zitationen": 957,
+      "cites_id": "2237744910274074486"
+    },
+    {
+      "id": "YNUamsYAAAAJ:j8SEvjWlNXcC",
+      "titel": "Preferred reporting items for systematic reviews and meta‐analyses in ecology and evolutionary biology: a PRISMA extension",
+      "jahr": "2021",
+      "zitationen": 946,
+      "cites_id": "4658083086918633220"
+    },
+    {
+      "id": "YNUamsYAAAAJ:mB3voiENLucC",
+      "titel": "Epidemiology and reporting characteristics of systematic reviews of biomedical research: a cross-sectional study",
+      "jahr": "2016",
+      "zitationen": 857,
+      "cites_id": "17970001541452369583"
+    },
+    {
+      "id": "YNUamsYAAAAJ:u9iWguZQMMsC",
+      "titel": "Considering bias and conflicts of interest among the included studies",
+      "jahr": "2019",
+      "zitationen": 780,
+      "cites_id": "2284935392186438243,6248824717987146475,5367881550731499178,16388629141687971839,11302995877334937558"
+    },
+    {
+      "id": "YNUamsYAAAAJ:tOudhMTPpwUC",
+      "titel": "Cochrane review: Continuous subcutaneous insulin infusion (CSII) versus multiple insulin injections for type 1 diabetes mellitus",
+      "jahr": "2010",
+      "zitationen": 714,
+      "cites_id": "17879118493967829125"
+    },
+    {
+      "id": "YNUamsYAAAAJ:FsLZdJ3BAzkC",
+      "titel": "Cochrane handbook for systematic reviews of interventions",
+      "jahr": "2011",
+      "zitationen": 598,
+      "cites_id": "4935963107802092298"
+    },
+    {
+      "id": "YNUamsYAAAAJ:ns9cj8rnVeAC",
+      "titel": "The pharmacological and non-pharmacological treatment of attention deficit hyperactivity disorder in children and adolescents: a systematic review with network meta-analyses of …",
+      "jahr": "2017",
+      "zitationen": 597,
+      "cites_id": "8402708524622156032"
+    },
+    {
+      "id": "YNUamsYAAAAJ:p__nRnzSRKYC",
+      "titel": "Implementing the 27 PRISMA 2020 Statement items for systematic reviews in the sport and exercise medicine, musculoskeletal rehabilitation and sports science fields: the PERSiST …",
+      "jahr": "2022",
+      "zitationen": 585,
+      "cites_id": "5517973410078336492"
+    },
+    {
+      "id": "YNUamsYAAAAJ:g5m5HwL7SMYC",
+      "titel": "Registration of systematic reviews in PROSPERO: 30,000 records and counting",
+      "jahr": "2018",
+      "zitationen": 582,
+      "cites_id": "2312717572707229317"
+    },
+    {
+      "id": "YNUamsYAAAAJ:ILKRHgRFtOwC",
+      "titel": "PRISMA 2020 and PRISMA-S: common questions on tracking records and the flow diagram",
+      "jahr": "2022",
+      "zitationen": 493,
+      "cites_id": "17311368852784202590"
+    },
+    {
+      "id": "YNUamsYAAAAJ:eq2jaN3J8jMC",
+      "titel": "Revised Cochrane risk-of-bias tool for randomized trials (RoB 2)",
+      "jahr": "2019",
+      "zitationen": 477,
+      "cites_id": "2815989720964666233"
+    },
+    {
+      "id": "YNUamsYAAAAJ:rCNdntzdTkkC",
+      "titel": "A declaração PRISMA 2020: uma diretriz atualizada para relatórios revisões sistemáticas",
+      "jahr": "2021",
+      "zitationen": 439,
+      "cites_id": "2956998389326356082"
+    },
+    {
+      "id": "YNUamsYAAAAJ:AYInfyleIOsC",
+      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. Syst Rev. 2021; 10: 89",
+      "jahr": "2021",
+      "zitationen": 433,
+      "cites_id": "5384054248985572694"
+    },
+    {
+      "id": "YNUamsYAAAAJ:_kc_bZDykSQC",
+      "titel": "Splinting for carpal tunnel syndrome",
+      "jahr": "2012",
+      "zitationen": 415,
+      "cites_id": "7260091671432079872,14116869828606862789"
+    },
+    {
+      "id": "YNUamsYAAAAJ:J_g5lzvAfSwC",
+      "titel": "Stop this waste of people, animals and money",
+      "jahr": "2017",
+      "zitationen": 401,
+      "cites_id": "18277770808795343525"
+    },
+    {
+      "id": "YNUamsYAAAAJ:M3ejUd6NZC8C",
+      "titel": "Manual therapy and exercise for adhesive capsulitis (frozen shoulder)",
+      "jahr": "2014",
+      "zitationen": 394,
+      "cites_id": "4224189780301030053"
+    },
+    {
+      "id": "YNUamsYAAAAJ:CHSYGLWDkRkC",
+      "titel": "Safety and efficacy of testosterone for women: a systematic review and meta-analysis of randomised controlled trial data",
+      "jahr": "2019",
+      "zitationen": 386,
+      "cites_id": "727136677962191253"
+    },
+    {
+      "id": "YNUamsYAAAAJ:EaFouW7jFu4C",
+      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ 372, n71 (2021)",
+      "jahr": "2022",
+      "zitationen": 385,
+      "cites_id": "2813355123434113940"
+    },
+    {
+      "id": "YNUamsYAAAAJ:4X0JR2_MtJMC",
+      "titel": "RoB 2: A revised tool for assessing risk of bias in randomised trials. BMJ, 366, Article l4898",
+      "jahr": "2019",
+      "zitationen": 376,
+      "cites_id": "13709373195366711007,12664312984089450574"
+    },
+    {
+      "id": "YNUamsYAAAAJ:4Yq6kJLCcecC",
+      "titel": "Boutron.(2021)",
+      "jahr": null,
+      "zitationen": 375,
+      "cites_id": "603206062951670119,8857508307948564584"
+    },
+    {
+      "id": "YNUamsYAAAAJ:-yGd096yOn8C",
+      "titel": "& Alonso-Fernández, S.(2021). Declaración PRISMA 2020: una guía actualizada para la publicación de revisiones sistemáticas",
+      "jahr": null,
+      "zitationen": 375,
+      "cites_id": "8165844507561716350"
+    },
+    {
+      "id": "YNUamsYAAAAJ:aqlVkmm33-oC",
+      "titel": "Bias due to selective inclusion and reporting of outcomes and analyses in systematic reviews of randomised trials of healthcare interventions",
+      "jahr": "2014",
+      "zitationen": 357,
+      "cites_id": "16496080964725698470"
+    },
+    {
+      "id": "YNUamsYAAAAJ:vbGhcppDl1QC",
+      "titel": "Introduction to PRISMA 2020 and implications for research synthesis methodologists",
+      "jahr": "2022",
+      "zitationen": 356,
+      "cites_id": "3026073662615334151"
+    },
+    {
+      "id": "YNUamsYAAAAJ:yD5IFk8b50cC",
+      "titel": "Dealing with effect size multiplicity in systematic reviews and meta‐analyses",
+      "jahr": "2018",
+      "zitationen": 346,
+      "cites_id": "1901146431596837117"
+    },
+    {
+      "id": "YNUamsYAAAAJ:5awf1xo2G04C",
+      "titel": "Investigating and dealing with publication bias and other reporting biases in meta‐analyses of health research: A review",
+      "jahr": "2021",
+      "zitationen": 343,
+      "cites_id": "11491403985992931309"
+    },
+    {
+      "id": "YNUamsYAAAAJ:r0BpntZqJG4C",
+      "titel": "Empirical evidence of study design biases in randomized trials: systematic review of meta-epidemiological studies",
+      "jahr": "2016",
+      "zitationen": 343,
+      "cites_id": "5844909740274665189"
+    },
+    {
+      "id": "YNUamsYAAAAJ:j3f4tGmQtD8C",
+      "titel": "Manual therapy and exercise for rotator cuff disease",
+      "jahr": "1996",
+      "zitationen": 338,
+      "cites_id": "6864244459052817287"
+    },
+    {
+      "id": "YNUamsYAAAAJ:HoB7MX3m0LUC",
+      "titel": "Tools for assessing risk of reporting biases in studies and syntheses of studies: a systematic review",
+      "jahr": "2018",
+      "zitationen": 337,
+      "cites_id": "15022880653168336263"
+    },
+    {
+      "id": "YNUamsYAAAAJ:9DLIHnF0jcYC",
+      "titel": "Early childhood epilepsies: epidemiology, classification, aetiology, and socio-economic determinants",
+      "jahr": "2021",
+      "zitationen": 336,
+      "cites_id": "478776641124851923"
+    },
+    {
+      "id": "YNUamsYAAAAJ:yqoGN6RLRZoC",
+      "titel": "The problems with systematic reviews: a living systematic review",
+      "jahr": "2023",
+      "zitationen": 282,
+      "cites_id": "4106461066022096314"
+    },
+    {
+      "id": "YNUamsYAAAAJ:TaaCk18tZOkC",
+      "titel": "Cochrane handbook for systematic reviews of interventions version 6.4",
+      "jahr": "2023",
+      "zitationen": 267,
+      "cites_id": "9445061473657457891"
+    },
+    {
+      "id": "YNUamsYAAAAJ:vRqMK49ujn8C",
+      "titel": "Mapping of reporting guidance for systematic reviews and meta-analyses generated a comprehensive item bank for future reporting guidelines",
+      "jahr": "2020",
+      "zitationen": 264,
+      "cites_id": "4350963703101780117"
+    },
+    {
+      "id": "YNUamsYAAAAJ:YOwf2qJgpHMC",
+      "titel": "Exercise and mobilisation interventions for carpal tunnel syndrome",
+      "jahr": "1996",
+      "zitationen": 262,
+      "cites_id": "346244768923718286"
+    },
+    {
+      "id": "YNUamsYAAAAJ:bFI3QPDXJZMC",
+      "titel": "Effect of breakfast on weight and energy intake: systematic review and meta-analysis of randomised controlled trials",
+      "jahr": "2019",
+      "zitationen": 258,
+      "cites_id": "1596074097696081426"
+    },
+    {
+      "id": "YNUamsYAAAAJ:Hck25ST_3aIC",
+      "titel": "Chapter 13: Assessing risk of bias due to missing evidence in a meta-analysis [last updated August 2024]",
+      "jahr": "2024",
+      "zitationen": 235,
+      "cites_id": "8944266367820994373"
+    },
+    {
+      "id": "YNUamsYAAAAJ:4JMBOYKVnBMC",
+      "titel": "Electrotherapy modalities for rotator cuff disease",
+      "jahr": "2016",
+      "zitationen": 228,
+      "cites_id": "7491388225618007797"
+    },
+    {
+      "id": "YNUamsYAAAAJ:4TOpqqG69KYC",
+      "titel": "Therapeutic ultrasound for carpal tunnel syndrome",
+      "jahr": "2013",
+      "zitationen": 228,
+      "cites_id": "2647331135770859471"
+    },
+    {
+      "id": "YNUamsYAAAAJ:dAp6zn-oMfAC",
+      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ [Internet]. 2021 Mar 29 [cited 2023 Apr 30]; n71–1",
+      "jahr": null,
+      "zitationen": 228,
+      "cites_id": "17933509062984935139"
+    },
+    {
+      "id": "YNUamsYAAAAJ:i2xiXl-TujoC",
+      "titel": "Mortality in persons with autism spectrum disorder or attention-deficit/hyperactivity disorder: a systematic review and meta-analysis",
+      "jahr": "2022",
+      "zitationen": 217,
+      "cites_id": "18320521935539332190"
+    },
+    {
+      "id": "YNUamsYAAAAJ:qxL8FJ1GzNcC",
+      "titel": "Electrotherapy modalities for adhesive capsulitis (frozen shoulder)",
+      "jahr": "1996",
+      "zitationen": 217,
+      "cites_id": "14279451338417160927"
+    },
+    {
+      "id": "YNUamsYAAAAJ:nVrZBo8bIpAC",
+      "titel": "Ítems de referencia para publicar Protocolos de Revisiones Sistemáticas y Metaanálisis: Declaración PRISMA-P 2015",
+      "jahr": "2016",
+      "zitationen": 201,
+      "cites_id": "487594508229455808,6407198889310388583"
+    },
+    {
+      "id": "YNUamsYAAAAJ:WHdLCjDvYFkC",
+      "titel": "ROB-ME: a tool for assessing risk of bias due to missing evidence in systematic reviews with meta-analysis",
+      "jahr": "2023",
+      "zitationen": 179,
+      "cites_id": "9496248617341944599"
+    },
+    {
+      "id": "YNUamsYAAAAJ:hNSvKAmkeYkC",
+      "titel": "Early-onset autoimmunity associated with SOCS1 haploinsufficiency",
+      "jahr": "2020",
+      "zitationen": 177,
+      "cites_id": "6624391445067014757"
+    },
+    {
+      "id": "YNUamsYAAAAJ:Ade32sEp0pkC",
+      "titel": "RoB 2: A revised tool for assessing risk of bias in randomised trials., 2019, 366, p. l4898",
+      "jahr": "2024",
+      "zitationen": 175,
+      "cites_id": "1018075559332688407"
+    },
+    {
+      "id": "YNUamsYAAAAJ:rOcdG6UcVlcC",
+      "titel": "Cochrane Handbook for Systematic Reviews of Interventions version 6.4 (updated August 2023)[Internet].[cited 2024 Apr 25]",
+      "jahr": null,
+      "zitationen": 165,
+      "cites_id": "7753807117392701153"
+    },
+    {
+      "id": "YNUamsYAAAAJ:lYAcb2jw7qUC",
+      "titel": "Available from https://www. cochrane. org/handbook",
+      "jahr": "2023",
+      "zitationen": 161,
+      "cites_id": "7659474289279162497"
+    },
+    {
+      "id": "YNUamsYAAAAJ:rbm3iO8VlycC",
+      "titel": "Update to the PRISMA guidelines for network meta-analyses and scoping reviews and development of guidelines for rapid reviews: a scoping review protocol",
+      "jahr": "2025",
+      "zitationen": 160,
+      "cites_id": "13073671967080497644"
+    },
+    {
+      "id": "YNUamsYAAAAJ:3fE2CSJIrl8C",
+      "titel": "Evaluation of a theory-informed implementation intervention for the management of acute low back pain in general medical practice: the IMPLEMENT cluster randomised trial",
+      "jahr": "2013",
+      "zitationen": 152,
+      "cites_id": "5237410712244701832"
+    },
+    {
+      "id": "YNUamsYAAAAJ:x21FZCSn4ZoC",
+      "titel": "Cochrane handbook for systematic reviews of interventions version 6.2 (updated February 2021)",
+      "jahr": "2021",
+      "zitationen": 146,
+      "cites_id": "489348441811654599"
+    },
+    {
+      "id": "YNUamsYAAAAJ:lSLTfruPkqcC",
+      "titel": "Same family, different species: methodological conduct and quality varies according to purpose for five types of knowledge synthesis",
+      "jahr": "2018",
+      "zitationen": 143,
+      "cites_id": "3813396505221816768"
+    },
+    {
+      "id": "YNUamsYAAAAJ:mVmsd5A6BfQC",
+      "titel": "Alcohol use and substance use disorders in Gulf War, Afghanistan, and Iraq War veterans compared with nondeployed military personnel",
+      "jahr": "2015",
+      "zitationen": 141,
+      "cites_id": "10791103334086007681"
+    },
+    {
+      "id": "YNUamsYAAAAJ:qUcmZB5y_30C",
+      "titel": "Rehabilitation following carpal tunnel release",
+      "jahr": "2013",
+      "zitationen": 140,
+      "cites_id": "12473806193929070592"
+    },
+    {
+      "id": "YNUamsYAAAAJ:2vr6o8x5NLkC",
+      "titel": "The PRISMA 2020 statement. BMJ, 372, n71",
+      "jahr": "2021",
+      "zitationen": 139,
+      "cites_id": "3877370858227249099"
+    },
+    {
+      "id": "YNUamsYAAAAJ:hMsQuOkrut0C",
+      "titel": "ROB-MEN: a tool to assess risk of bias due to missing evidence in network meta-analysis",
+      "jahr": "2021",
+      "zitationen": 137,
+      "cites_id": "9562099692493317140"
+    },
+    {
+      "id": "YNUamsYAAAAJ:rTD5ala9j4wC",
+      "titel": "Extension of the PRISMA 2020 statement for living systematic reviews (PRISMA-LSR): checklist and explanation",
+      "jahr": "2024",
+      "zitationen": 136,
+      "cites_id": "9749298739866465109"
+    },
+    {
+      "id": "YNUamsYAAAAJ:ymY9cBF3mdcC",
+      "titel": "Towards realizing the vision of precision medicine: AI based prediction of clinical drug response",
+      "jahr": "2021",
+      "zitationen": 135,
+      "cites_id": "12553666060544685585"
+    },
+    {
+      "id": "YNUamsYAAAAJ:b0M2c_1WBrUC",
+      "titel": "Effect of alcohol consumption on food energy intake: a systematic review and meta-analysis",
+      "jahr": "2019",
+      "zitationen": 131,
+      "cites_id": "8831511847616922410"
+    },
+    {
+      "id": "YNUamsYAAAAJ:eGYfIraVYiQC",
+      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews. Syst Rev. 2021; 10: 39",
+      "jahr": "2021",
+      "zitationen": 129,
+      "cites_id": "6661080568464499541"
+    },
+    {
+      "id": "YNUamsYAAAAJ:natZJ_-F0IUC",
+      "titel": "Cochrane Handbook for Systematic Reviews of Interventions. Version 6.3. Cochrane; 2024",
+      "jahr": "2024",
+      "zitationen": 125,
+      "cites_id": "286725987149928404,12839053579233802855,1670703355556021719"
+    },
+    {
+      "id": "YNUamsYAAAAJ:86PQX7AUzd4C",
+      "titel": "Searching clinical trials registers: guide for systematic reviewers",
+      "jahr": "2022",
+      "zitationen": 120,
+      "cites_id": "17830721550853286154"
+    },
+    {
+      "id": "YNUamsYAAAAJ:8dzOF9BpDQoC",
+      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews. Syst Rev. 2021; 10 (1): 39",
+      "jahr": "2022",
+      "zitationen": 115,
+      "cites_id": "16398287886706663798"
+    },
+    {
+      "id": "YNUamsYAAAAJ:RYcK_YlVTxYC",
+      "titel": "Reproducible research practices are underused in systematic reviews of biomedical interventions",
+      "jahr": "2018",
+      "zitationen": 115,
+      "cites_id": "185178873214218090"
+    },
+    {
+      "id": "YNUamsYAAAAJ:CaZNVDsoPx4C",
+      "titel": "Prevalence and predictors of data and code sharing in the medical and health sciences: systematic review with meta-analysis of individual participant data",
+      "jahr": "2023",
+      "zitationen": 113,
+      "cites_id": "9500512644811201863"
+    },
+    {
+      "id": "YNUamsYAAAAJ:U0iAMwwPxtsC",
+      "titel": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews [Internet]",
+      "jahr": "2020",
+      "zitationen": 110,
+      "cites_id": "5957273066437839313"
+    },
+    {
+      "id": "YNUamsYAAAAJ:9ZlFYXVOiuMC",
+      "titel": "The pharmacological and non-pharmacological treatment of attention deficit hyperactivity disorder in children and adolescents: protocol for a systematic review and network meta …",
+      "jahr": "2015",
+      "zitationen": 110,
+      "cites_id": "18007367256627989072"
+    },
+    {
+      "id": "YNUamsYAAAAJ:8AbLer7MMksC",
+      "titel": "Long-term effects of alcohol consumption on cognitive function: a systematic review and dose-response analysis of evidence published between 2007 and 2018",
+      "jahr": "2020",
+      "zitationen": 108,
+      "cites_id": "1161249065242675621"
+    },
+    {
+      "id": "YNUamsYAAAAJ:DkZNVXde3BIC",
+      "titel": "Biomedical researchers’ perspectives on the reproducibility of research",
+      "jahr": "2024",
+      "zitationen": 107,
+      "cites_id": "16429952939365721260"
+    },
+    {
+      "id": "YNUamsYAAAAJ:EUQCXRtRnyEC",
+      "titel": "Patients’ experience of shoulder disorders: a systematic review of qualitative studies for the OMERACT Shoulder Core Domain Set",
+      "jahr": "2019",
+      "zitationen": 105,
+      "cites_id": "4544768965190596172"
+    },
+    {
+      "id": "YNUamsYAAAAJ:LjlpjdlvIbIC",
+      "titel": "Risk of bias 2 in Cochrane reviews: a phased approach for the introduction of new methodology",
+      "jahr": "2020",
+      "zitationen": 103,
+      "cites_id": "6612317539377512251"
+    },
+    {
+      "id": "YNUamsYAAAAJ:SnGPuo6Feq8C",
+      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ [Internet]. 2021 Mar 29; 372: n71",
+      "jahr": null,
+      "zitationen": 98,
+      "cites_id": "18234785232726417659,1474795881602073553"
+    },
+    {
+      "id": "YNUamsYAAAAJ:jSAVyFp_754C",
+      "titel": "The PRISMA 2009 checklist",
+      "jahr": "2021",
+      "zitationen": 94,
+      "cites_id": "10780733802289548018,14727844151460332135,17547819452010548480,2858318427816352477,6770918252640626063,3128243654627099665"
+    },
+    {
+      "id": "YNUamsYAAAAJ:qjMakFHDy7sC",
+      "titel": "Ergonomic positioning or equipment for treating carpal tunnel syndrome",
+      "jahr": "2012",
+      "zitationen": 94,
+      "cites_id": "5291095370684333279"
+    },
+    {
+      "id": "YNUamsYAAAAJ:YPNY0knpFBYC",
+      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews. Systematic reviews, 10 (1), 1-19",
+      "jahr": "2021",
+      "zitationen": 92,
+      "cites_id": "17414046756499556992"
+    },
+    {
+      "id": "YNUamsYAAAAJ:ghEM2AJqZyQC",
+      "titel": "RoB 2: A revised Cochrane risk-of-bias tool for randomized trials",
+      "jahr": "2019",
+      "zitationen": 92,
+      "cites_id": "11646385547614823252"
+    },
+    {
+      "id": "YNUamsYAAAAJ:7H_jS4BsgvYC",
+      "titel": "Cochrane Handbook for Systematic Reviews of Interventions Version 6.0. 2019. Cochrane",
+      "jahr": "2019",
+      "zitationen": 91,
+      "cites_id": "7797054890395425639"
+    },
+    {
+      "id": "YNUamsYAAAAJ:In6cVmBjs0IC",
+      "titel": "S.... Whiting, P.(2021). The prisma, 2020 statement: An updated guideline for reporting systematic reviews",
+      "jahr": null,
+      "zitationen": 91,
+      "cites_id": "12778266583748760841"
+    },
+    {
+      "id": "YNUamsYAAAAJ:hkOj_22Ku90C",
+      "titel": "The REPRISE project: protocol for an evaluation of REProducibility and Replicability In Syntheses of Evidence",
+      "jahr": "2021",
+      "zitationen": 90,
+      "cites_id": "12402525334351060972"
+    },
+    {
+      "id": "YNUamsYAAAAJ:LkGwnXOMwfcC",
+      "titel": "Many scenarios exist for selective inclusion and reporting of results in randomized trials and systematic reviews",
+      "jahr": "2013",
+      "zitationen": 89,
+      "cites_id": "15274134789856432958"
+    },
+    {
+      "id": "YNUamsYAAAAJ:xtRiw3GOFMkC",
+      "titel": "Few studies exist examining methods for selecting studies, abstracting data, and appraising quality in a systematic review",
+      "jahr": "2019",
+      "zitationen": 88,
+      "cites_id": "13092391163652249922"
+    },
+    {
+      "id": "YNUamsYAAAAJ:bEWYMUwI8FkC",
+      "titel": "Mass production of systematic reviews and meta‐analyses: an exercise in mega‐silliness?",
+      "jahr": "2016",
+      "zitationen": 85,
+      "cites_id": "17029211492915196620"
+    },
+    {
+      "id": "YNUamsYAAAAJ:KWzIFqRkAKkC",
+      "titel": "Evaluation of tools used to assess adherence to PRISMA 2020 reveals inconsistent methods and poor tool implementability: part I of a systematic review",
+      "jahr": "2026",
+      "zitationen": 11,
+      "cites_id": "16130528523431406548"
+    },
+    {
+      "id": "YNUamsYAAAAJ:A8cqit5AE6sC",
+      "titel": "Evaluation of the replicability of systematic reviews with meta-analyses of the effects of health interventions",
+      "jahr": "2026",
+      "zitationen": 11,
+      "cites_id": "16274273190454514651"
+    },
+    {
+      "id": "YNUamsYAAAAJ:G1UMdFYMoxkC",
+      "titel": "Reproducibility of meta-analytic results in systematic reviews of interventions: meta-research study",
+      "jahr": "2025",
+      "zitationen": 10,
+      "cites_id": "8416400377211763199"
+    },
+    {
+      "id": "YNUamsYAAAAJ:hvmnpdAuIbkC",
+      "titel": "MATES: A tool for appraising the completeness with which a meta-analysis has been reported",
+      "jahr": "2025",
+      "zitationen": 5,
+      "cites_id": "5979919075897087334"
+    },
+    {
+      "id": "YNUamsYAAAAJ:c1e4I3QdEKYC",
+      "titel": "Intracranial Dotter angioplasty using Tenzing (Tenzingplasty) for acute ischemic stroke with underlying intracranial atherosclerotic disease",
+      "jahr": "2026",
+      "zitationen": 4,
+      "cites_id": "2897333764630673559"
+    },
+    {
+      "id": "YNUamsYAAAAJ:hQUaER0FWQ4C",
+      "titel": "Reporting Completeness of Systematic Reviews of Nutrition or Diet-Related Randomised Controlled Trials: A Meta-Research on Adherence to PRISMA Items",
+      "jahr": "2026",
+      "zitationen": 4,
+      "cites_id": "7806290896951233221"
+    },
+    {
+      "id": "YNUamsYAAAAJ:bVQMTfhMCi4C",
+      "titel": "An automated approach to improve clinical trial registration and to identify outcome changes on ClinicalTrials. gov",
+      "jahr": "2026",
+      "zitationen": 2,
+      "cites_id": "15962275373827517041"
+    },
+    {
+      "id": "YNUamsYAAAAJ:m4fbC6XIj1kC",
+      "titel": "Artificial intelligence tools for automating assessments of reporting guideline adherence: a protocol for a systematic review",
+      "jahr": "2026",
+      "zitationen": 2,
+      "cites_id": "961820994415694285"
+    },
+    {
+      "id": "YNUamsYAAAAJ:sJPMR1oEGYQC",
+      "titel": "Guidance for defining outcomes in clinical trials",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "4566167478027274051"
+    },
+    {
+      "id": "YNUamsYAAAAJ:H7nrzBkawXsC",
+      "titel": "PRISMA-trAIce: A Name Without Endorsement",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "11022908663448539340"
+    },
+    {
+      "id": "YNUamsYAAAAJ:nPT8s1NX_-sC",
+      "titel": "Discrepancies in reporting of study design and analysis methods between protocols and reports of interrupted time series (ITS) studies: a methodological study",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "3413712448724761321"
+    },
+    {
+      "id": "YNUamsYAAAAJ:R-LXmdHK_14C",
+      "titel": "An investigation of discrepancies in outcome reporting and selective reporting bias in interrupted time series studies of health interventions: a methodological study",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "13727118454132044069"
+    },
+    {
+      "id": "YNUamsYAAAAJ:sfnaS5RM6jYC",
+      "titel": "Evaluation of automated assessments of systematic review adherence to the PRISMA 2020 statement: study protocol",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "18136750342396502102"
+    },
+    {
+      "id": "YNUamsYAAAAJ:KTwcwpFFj4wC",
+      "titel": "Artificial Intelligence tools for Risk of Bias assessment in systematic reviews (AI4RoB): a protocol for a living systematic review",
+      "jahr": "2025",
+      "zitationen": 1,
+      "cites_id": "16506958782024985084"
+    },
+    {
+      "id": "YNUamsYAAAAJ:qE4H1tSSYIIC",
+      "titel": "Time-lag reporting bias in interrupted time series studies: a methodological study",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:ifOnle78iJkC",
+      "titel": "Developing the PRISMA reporting guideline extension for rapid reviews: a scoping review to identify potential reporting items",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:aEW5N-EHWIMC",
+      "titel": "PRISMA 2020: strengthening transparency and usefulness of systematic reviews",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:g8uWPOAv7ggC",
+      "titel": "Artificial intelligence tools for automating assessment s of reporting guideline adherence: a protocol for a systemati c",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:QsKbpXNoaWkC",
+      "titel": "Development of a tool to assess the risk of bias in statistical simulation studies: study protocol",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:t-hv7AR41mYC",
+      "titel": "Author adherence and experiences with PRISMA-P 2015: a cross-sectional study",
+      "jahr": "2026",
       "zitationen": 0,
       "cites_id": null
     }
