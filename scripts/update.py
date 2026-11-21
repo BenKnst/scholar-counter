@@ -148,6 +148,14 @@ def _int(v, default=0):
         return default
 
 
+def _cites_id(cb: dict):
+    """ID fuer die 'Zitiert von'-Suche: direkt oder aus dem Link (…cites=123…)."""
+    if cb.get("cites_id"):
+        return str(cb["cites_id"])
+    m = re.search(r"cites=([0-9,]+)", cb.get("link") or cb.get("serpapi_link") or "")
+    return m.group(1) if m else None
+
+
 def parse_serpapi(data: dict) -> dict:
     """Wandelt eine SerpApi-Antwort (engine=google_scholar_author) in unser Profilformat um."""
     author = data.get("author", {})
@@ -170,6 +178,7 @@ def parse_serpapi(data: dict) -> dict:
             "titel": a.get("title") or "",
             "jahr": a.get("year") or None,
             "zitationen": _int((a.get("cited_by") or {}).get("value"), 0),
+            "cites_id": _cites_id(a.get("cited_by") or {}),
         })
     graph = data.get("cited_by", {}).get("graph", [])
     return {
@@ -184,32 +193,86 @@ def parse_serpapi(data: dict) -> dict:
     }
 
 
-def fetch_serpapi(scholar_id: str, api_key: str, known_ids: set) -> dict:
-    """Scholar-Profil ueber SerpApi (kostenlos: 250 Anfragen/Monat). Meist 1 Anfrage pro Lauf."""
+# Uhrzeiten (UTC) der geplanten Laeufe, muss zum cron in update.yml passen ("17 6-21/3 * * *")
+RUN_HOURS_UTC = [6, 9, 12, 15, 18, 21]
+SAVER_HOURS_UTC = [6, 15]   # im Sparmodus nur diese Laeufe (7 und 16 Uhr Winterzeit)
+EXTRA_RESERVE = 5           # Extras (Titel, Neu-Check) nur, wenn so viele Anfragen uebrig bleiben
+
+
+def serpapi_budget(api_key: str):
+    """Restkontingent laut SerpApi-Account-API (kostet keine Anfrage). None, wenn unbekannt."""
+    import requests
+    try:
+        r = requests.get("https://serpapi.com/account.json", params={"api_key": api_key}, timeout=30)
+        d = r.json()
+        left = d.get("plan_searches_left", d.get("total_searches_left"))
+        return None if left is None else int(left)
+    except Exception as e:
+        print(f"Hinweis: Kontingent nicht abrufbar ({e}), mache normal weiter")
+        return None
+
+
+def runs_left_in_month(now: dt.datetime) -> int:
+    """Wie viele geplante Laeufe es von jetzt (inklusive) bis Monatsende noch gibt."""
+    count, day = 0, now.date()
+    while day.month == now.month:
+        for h in RUN_HOURS_UTC:
+            slot = dt.datetime(day.year, day.month, day.day, h, 0, tzinfo=dt.timezone.utc)
+            if slot >= now.replace(minute=0, second=0, microsecond=0):
+                count += 1
+        day += dt.timedelta(days=1)
+    return count
+
+
+def budget_plan(left, now: dt.datetime) -> dict:
+    """Entscheidet anhand des Restkontingents, ob und wie dieser Lauf abfragt."""
+    if left is None:
+        return {"run": True, "extras": True, "grund": "Kontingent unbekannt"}
+    runs = runs_left_in_month(now)
+    if left < 1:
+        return {"run": False, "extras": False, "grund": f"Kontingent aufgebraucht ({left} übrig)"}
+    if left < runs:   # reicht nicht mehr fuer jeden Lauf -> nur noch 2x taeglich
+        on = now.hour in SAVER_HOURS_UTC
+        return {"run": on, "extras": False,
+                "grund": f"Sparmodus: {left} Anfragen für {runs} Läufe übrig"}
+    return {"run": True, "extras": left >= runs + EXTRA_RESERVE,
+            "grund": f"{left} Anfragen für {runs} Läufe übrig"}
+
+
+def fetch_serpapi(scholar_id: str, api_key: str, known_ids: set,
+                  extras: bool = True, check_newest: bool = False) -> dict:
+    """Scholar-Profil ueber SerpApi (kostenlos: 250 Anfragen/Monat).
+
+    Grundsaetzlich genau 1 Anfrage: die 100 meistzitierten Paper samt Gesamtzahlen.
+    Hat das Profil mehr als 100 Paper, kommen neue (meist noch unzitierte) Paper in dieser
+    Liste nicht vor. Dann fragt check_newest einmal taeglich zusaetzlich die 20 neuesten ab.
+    """
     import requests
 
     url = "https://serpapi.com/search.json"
     base = {"engine": "google_scholar_author", "author_id": scholar_id,
             "hl": "en", "num": 100, "api_key": api_key}
-    first, articles, start = None, [], 0
-    while True:
-        r = requests.get(url, params={**base, "start": start}, timeout=60)
-        data = r.json()
-        if r.status_code != 200 or data.get("error"):
-            if first is None:
-                raise RuntimeError(f"SerpApi: {data.get('error') or r.status_code}")
-            break   # Folgeseite fehlgeschlagen: mit dem bisherigen weitermachen
-        if first is None:
-            first = data
-        page = data.get("articles", [])
-        articles += page
-        if len(page) < 100 or start >= 900:   # mehr als 100 Paper -> weitere Seiten
-            break
-        start += 100
+    r = requests.get(url, params=base, timeout=60)
+    first = r.json()
+    if r.status_code != 200 or first.get("error"):
+        raise RuntimeError(f"SerpApi: {first.get('error') or r.status_code}")
+    articles = list(first.get("articles", []))
+    full_page = len(articles) >= 100
+    newest_checked = False
+    if full_page and check_newest and extras:
+        try:
+            r2 = requests.get(url, params={**base, "num": 20, "sort": "pubdate"}, timeout=60)
+            seen = {a.get("citation_id") for a in articles}
+            articles += [a for a in r2.json().get("articles", []) if a.get("citation_id") not in seen]
+            newest_checked = True
+        except Exception as e:
+            print(f"Hinweis: neueste Paper nicht abrufbar ({e})")
     prof = parse_serpapi({**first, "articles": articles})
+    prof["_mehr_als_100"] = full_page
+    prof["_neueste_geprueft"] = newest_checked
 
     # Gekuerzte Titel neuer Paper nachladen (1 Anfrage je neuem Paper, kommt selten vor)
-    if known_ids:
+    if known_ids and extras:
         for p in prof["publikationen"]:
             if p["id"] not in known_ids and p["titel"].endswith("…"):
                 try:
@@ -222,6 +285,73 @@ def fetch_serpapi(scholar_id: str, api_key: str, known_ids: set) -> dict:
                 except Exception as e:
                     print(f"Hinweis: voller Titel nicht abrufbar ({e})")
     return prof
+
+
+def fetch_pub_date(api_key: str, citation_id: str):
+    """Erscheinungsdatum eines Papers von seiner Scholar-Detailseite (1 Anfrage).
+    Rueckgabe "JJJJ-MM-TT", "JJJJ-MM", "JJJJ" oder None."""
+    import requests
+    r = requests.get("https://serpapi.com/search.json", timeout=60, params={
+        "engine": "google_scholar_author", "view_op": "view_citation",
+        "citation_id": citation_id, "hl": "en", "api_key": api_key})
+    c = (r.json() or {}).get("citation") or {}
+    raw = c.get("publication_date") or next((v for k, v in c.items() if "date" in k and isinstance(v, str)), "")
+    parts = [x for x in re.split(r"[/.-]", str(raw).strip()) if x.isdigit()]
+    if not parts or len(parts[0]) != 4:
+        return None
+    return "-".join([parts[0]] + [x.zfill(2) for x in parts[1:3]])
+
+
+def _first_author_year(summary: str) -> tuple:
+    """'M Müller, A Smith - Journal, 2026 - Verlag' -> ('Müller et al.', '2026')"""
+    summary = clean_title(summary or "", 300)
+    authors = summary.split(" - ")[0]
+    names = [a.strip() for a in authors.split(",") if a.strip() and "..." not in a]
+    who = names[0].split()[-1] if names else ""
+    if len(names) > 1 or "..." in authors:
+        who += " et al."
+    years = re.findall(r"\b(19\d\d|20\d\d)\b", summary)
+    return who.strip(), (years[-1] if years else "")
+
+
+def fetch_citing_scholar(api_key: str, cites_id: str, seen: set, n: int = 10) -> list:
+    """Paper, die ein bestimmtes Paper zitieren, direkt aus Scholar (1 Anfrage).
+    Neueste zuerst (scisbd), nur noch nicht gemeldete."""
+    import requests
+    r = requests.get("https://serpapi.com/search.json", timeout=60, params={
+        "engine": "google_scholar", "cites": cites_id, "scisbd": 2, "num": n,
+        "hl": "en", "api_key": api_key})
+    out = []
+    for res in (r.json() or {}).get("organic_results", []):
+        rid = res.get("result_id")
+        if not rid or rid in seen:
+            continue
+        who, year = _first_author_year((res.get("publication_info") or {}).get("summary", ""))
+        out.append({"id": rid, "titel": res.get("title") or "", "wer": who, "jahr": year})
+    return out
+
+
+def cited_by_text(citing: dict, own_title: str, extra: int) -> str:
+    """Variante C: 'Cited by Müller et al. 2026: "Zitierendes…" -> "Eigenes…"'"""
+    head = "Cited by " + " ".join(x for x in (citing.get("wer"), citing.get("jahr")) if x)
+    txt = f'{head}: "{clean_title(citing["titel"], 60)}" -> "{clean_title(own_title, 50)}"'
+    if extra > 0:
+        txt += f" (+{extra} more)"
+    return txt
+
+
+def papers_last_12_months(pubs: dict, pubdates: dict, now: dt.datetime) -> int:
+    """Paper der letzten 12 Monate. Genaues Datum, wo bekannt; sonst nur das laufende Jahr."""
+    cutoff = (now - dt.timedelta(days=365)).date().isoformat()
+    count = 0
+    for pid, p in pubs.items():
+        d = pubdates.get(pid)
+        if d and len(d) >= 7:                      # Monat bekannt
+            if (d if len(d) == 10 else d + "-28") >= cutoff:
+                count += 1
+        elif str(p.get("jahr") or "") == str(now.year):
+            count += 1                              # nur Jahr bekannt: laufendes Jahr zaehlt
+    return count
 
 
 def fetch_openalex_citing(orcid: str, n: int = 25) -> list:
@@ -262,7 +392,41 @@ def fetch_openalex_citing(orcid: str, n: int = 25) -> list:
 
 # ---------------------------------------------------------------- Kernlogik
 
-def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime) -> tuple:
+def monthly_gains(daily: dict, now: dt.datetime, keep: int = 12) -> tuple:
+    """Zitationszuwachs je Kalendermonat aus den gespeicherten Tageswerten.
+    Scholar selbst liefert nur Jahreswerte; diese Monatsreihe waechst deshalb erst ab Start
+    der Aufzeichnung. Rueckgabe: (erster Monat "JJJJ-MM" oder None, [Zuwaechse])."""
+    if not daily:
+        return None, []
+    by_month = {}
+    for day, total in sorted(daily.items()):
+        by_month.setdefault(day[:7], []).append(total)
+    months = sorted(by_month)
+    gains, prev_end = [], None
+    for m in months:
+        vals = by_month[m]
+        start = prev_end if prev_end is not None else vals[0]
+        gains.append(max(0, vals[-1] - start))
+        prev_end = vals[-1]
+    months, gains = months[-keep:], gains[-keep:]
+    return months[0], gains
+
+
+def merged_pubs_preview(old_pubs: dict, pubs: dict) -> dict:
+    merged = dict(old_pubs)
+    merged.update({pid: {"titel": p["titel"], "zitationen": p["zitationen"], "jahr": p.get("jahr")}
+                   for pid, p in pubs.items()})
+    return merged
+
+
+def papers_per_year(pubs: dict, now: dt.datetime) -> dict:
+    """Anzahl Paper im laufenden und im Vorjahr (Scholar kennt nur das Jahr, keinen Monat)."""
+    years = [str(p.get("jahr") or "") for p in pubs.values()]
+    return {"this_year": years.count(str(now.year)), "prev_year": years.count(str(now.year - 1))}
+
+
+def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime,
+           citing_by_pub: dict = None, pubdates: dict = None) -> tuple:
     """Vergleicht neues Profil mit altem Zustand. Gibt (state, clock, full) zurueck."""
     first_run = not state.get("pubs")
     old_pubs = state.get("pubs", {})
@@ -283,27 +447,39 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime) -
     h = prof.get("h_index") if prof.get("h_index") is not None else h_index(cites_list)
 
     if not first_run:
-        # 1) neue Publikationen
+        # 1) neue Publikationen (+ grosse Party)
         for pid, p in pubs.items():
             if pid not in old_pubs:
-                add_event("neu", "Neue Publikation: " + clean_title(p["titel"]),
+                add_event("neu", "New paper: " + clean_title(p["titel"]),
                           cfg.get("new_publication_hours", 24))
+                add_event("feier", "New paper!", cfg.get("celebration_hours", 48), key=f"n{pid}")
         # 2) neue Zitationen je Paper (nur Zuwachs, Rueckgaenge ignorieren)
         for pid, p in pubs.items():
             old = old_pubs.get(pid)
             if old and p["zitationen"] > old["zitationen"]:
                 d = p["zitationen"] - old["zitationen"]
-                add_event("zitiert", f"+{d} für: " + clean_title(p["titel"]),
-                          cfg.get("new_citation_hours", 48))
+                cb = (citing_by_pub or {}).get(pid)
+                if cb:
+                    add_event("zitiert_in", cited_by_text(cb, p["titel"], d - 1),
+                              cfg.get("new_citation_hours", 48))
+                else:
+                    add_event("zitiert", f"+{d} citation{'s' if d > 1 else ''}: " + clean_title(p["titel"]),
+                              cfg.get("new_citation_hours", 48))
+        # 2b) kleine Party fuer jeden Lauf mit neuen Zitationen
+        inc = total - state.get("zitationen", total)
+        if inc > 0:
+            add_event("party", f"+{inc} citation{'s' if inc > 1 else ''}!",
+                      cfg.get("celebration_hours", 48), key=f"z{iso(now)}")
+
         # 3) h-Index gestiegen
         old_h = state.get("h_index")
         if old_h is not None and h > old_h:
-            add_event("feier", f"h-Index {h}!", cfg.get("celebration_hours", 48), key=f"h{h}")
+            add_event("feier", f"h-index {h}!", cfg.get("celebration_hours", 48), key=f"h{h}")
         # 4) Meilensteine bei den Gesamtzitationen
         old_total = state.get("zitationen", total)
         for m in cfg.get("citation_milestones", []):
             if old_total < m <= total:
-                add_event("feier", f"{m} Zitationen!", cfg.get("celebration_hours", 48), key=f"c{m}")
+                add_event("feier", f"{m:,} citations!", cfg.get("celebration_hours", 48), key=f"c{m}")
 
     # 5) zitierende Arbeiten aus OpenAlex
     seen_citing = set(state.get("openalex_seen", []))
@@ -311,7 +487,7 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime) -
         if seen_citing:  # beim ersten OpenAlex-Lauf nur merken, nicht melden
             for w in citing:
                 if w["id"] not in seen_citing:
-                    add_event("zitiert_in", "Zitiert in: " + clean_title(w["titel"]),
+                    add_event("zitiert_in", "Cited in: " + clean_title(w["titel"]),
                               cfg.get("new_citation_hours", 48))
         seen_citing |= {w["id"] for w in citing}
 
@@ -334,19 +510,25 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime) -
         until = cfg.get("message_until") or ""
         if not until or until >= today:
             ticker.append({"t": clean_title(msg, 200), "c": "msg"})
-    for e in sorted((e for e in active if e["typ"] != "feier"),
+    for e in sorted((e for e in active if e["typ"] not in ("feier", "party")),
                     key=lambda e: e["zeit"], reverse=True):
         if len(ticker) >= TICKER_MAX:
             break
         ticker.append({"t": e["text"], "c": e["typ"]})
 
+    # Party: das neueste Ereignis; bei gleichem Zeitpunkt gewinnt die grosse Party
     celebrate = None
-    feiern = sorted((e for e in active if e["typ"] == "feier"), key=lambda e: e["zeit"])
+    feiern = sorted((e for e in active if e["typ"] in ("feier", "party")),
+                    key=lambda e: (e["zeit"], e["typ"] == "feier"))
     if feiern:
-        celebrate = {"id": feiern[-1]["key"], "t": feiern[-1]["text"]}
+        e = feiern[-1]
+        celebrate = {"id": e["key"], "t": e["text"], "lvl": "big" if e["typ"] == "feier" else "small"}
 
     years = sorted(prof.get("pro_jahr", {}).items())[-16:]
     h_next, h_need = h_countdown(cites_list)
+
+    months_from, months = monthly_gains(daily, now)
+    papers = papers_per_year(merged_pubs_preview(old_pubs, pubs), now)
 
     clock = {
         "v": 1,
@@ -361,6 +543,12 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime) -
         "y0": int(years[0][0]) if years else None,
         "years": [v for _, v in years],
         "ticker": ticker,
+        "m0": months_from,          # erster Monat der Monatsbalken, z. B. "2026-11"
+        "months": months,           # Zitationszuwachs je Monat (aus eigenen Tageswerten)
+        "py": papers["this_year"],  # Paper im laufenden Jahr
+        "py_prev": papers["prev_year"],
+        "p12": papers_last_12_months(merged_pubs_preview(old_pubs, pubs), pubdates or {}, now),
+        "y_now": now.year,
     }
     if celebrate:
         clock["celebrate"] = celebrate
@@ -375,8 +563,14 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime) -
         "ereignisse": sorted(events, key=lambda e: e["zeit"], reverse=True),
     }
 
+    # Bekannte Paper behalten, auch wenn sie in diesem Lauf nicht abgefragt wurden
+    # (bei mehr als 100 Papern kommen nur die 100 meistzitierten mit).
+    merged_pubs = dict(old_pubs)
+    merged_pubs.update({pid: {"titel": p["titel"], "zitationen": p["zitationen"], "jahr": p.get("jahr")}
+                        for pid, p in pubs.items()})
     new_state = {
-        "pubs": {pid: {"titel": p["titel"], "zitationen": p["zitationen"]} for pid, p in pubs.items()},
+        "scholar_id": cfg.get("scholar_id"),
+        "pubs": merged_pubs,
         "zitationen": total,
         "h_index": h,
         "taeglich": daily,
@@ -391,6 +585,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fixture", help="Profil aus JSON-Datei statt Scholar (Test)")
     ap.add_argument("--serpapi-fixture", help="gespeicherte SerpApi-Antwort statt Abruf (Test)")
+    ap.add_argument("--citing-by-fixture", help="'Cited by'-Treffer je Paper-ID aus Datei (Test)")
     ap.add_argument("--citing-fixture", help="OpenAlex-Ergebnis aus JSON-Datei (Test)")
     ap.add_argument("--now", help="Zeitpunkt vorgeben, z. B. 2026-11-18T05:00:00Z (Test)")
     args = ap.parse_args()
@@ -399,22 +594,49 @@ def main():
     state = load_json(STATE, {})
     now = parse_iso(args.now) if args.now else dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
 
+    # Wurde in config.json ein anderes Profil eingetragen? Dann altes Gedaechtnis verwerfen,
+    # sonst gaelten alle Paper des neuen Profils als "neu". Paper-IDs beginnen mit der Scholar-ID.
+    sid = cfg.get("scholar_id", "")
+    old_ids = list(state.get("pubs", {}))
+    if old_ids and (state.get("scholar_id", sid) != sid
+                    or not any(i.startswith(sid + ":") for i in old_ids)):
+        print(f"Neues Scholar-Profil ({sid}): Ausgangsstand wird neu angelegt.")
+        state = {}
+
     # --- Scholar
+    serpapi_key = os.environ.get("SERPAPI_KEY", "").strip()
+    plan = {"run": True, "extras": True}
     try:
         known = set(state.get("pubs", {}))
-        serpapi_key = os.environ.get("SERPAPI_KEY", "").strip()
         if args.fixture:
             prof = load_json(Path(args.fixture), None)
         elif args.serpapi_fixture:
             prof = parse_serpapi(load_json(Path(args.serpapi_fixture), {}))
         elif serpapi_key:
-            print("Quelle: SerpApi")
-            prof = fetch_serpapi(cfg["scholar_id"], serpapi_key, known)
+            plan = budget_plan(serpapi_budget(serpapi_key), now)
+            print(f"Quelle: SerpApi ({plan['grund']})")
+            if not plan["run"]:
+                print("Lauf ausgelassen, um das Monatskontingent zu schonen. Anzeige bleibt unverändert.")
+                save_json(ROOT / "data" / "status.json",
+                          {"ok": True, "ausgelassen": plan["grund"], "zeit": iso(now)})
+                sys.exit(0)
+            check_newest = state.get("neueste_geprueft") != now.date().isoformat()
+            prof = fetch_serpapi(sid, serpapi_key, known,
+                                 extras=plan["extras"], check_newest=check_newest)
+            if prof.get("_mehr_als_100"):
+                print("Hinweis: Profil hat mehr als 100 Paper, abgefragt werden die 100 meistzitierten"
+                      + (" + die 20 neuesten" if prof.get("_neueste_geprueft") else ""))
         else:
             print("Quelle: Google Scholar direkt (scholarly)")
             prof = fetch_scholar(cfg["scholar_id"], known)
         if not prof or not prof.get("publikationen"):
             raise RuntimeError("leeres Profil erhalten")
+        # Plausibilitaetspruefung: Ein starker Einbruch ist fast immer ein Abruffehler.
+        old_total = state.get("zitationen")
+        new_total = prof.get("zitationen") or 0
+        if old_total and (new_total == 0 or new_total < old_total * 0.7):
+            raise RuntimeError(f"unplausible Zahlen: {new_total} statt bisher {old_total} "
+                               "Zitationen, alte Anzeige bleibt stehen")
     except Exception as e:
         print(f"FEHLER beim Scholar-Abruf: {type(e).__name__}: {e}")
         # Alte Anzeige behalten, nur als veraltet markieren
@@ -436,7 +658,47 @@ def main():
     except Exception as e:
         print(f"Hinweis: OpenAlex nicht erreichbar ({e}), mache ohne weiter")
 
-    state, clock, full = update(cfg, state, prof, citing, now)
+    # --- Extras ueber SerpApi (nur mit genug Kontingent-Reserve)
+    pubdates = dict(state.get("pubdates", {}))
+    seen_cb = set(state.get("scholar_citing_seen", []))
+    citing_by_pub = {}
+    if args.citing_by_fixture:
+        citing_by_pub = load_json(Path(args.citing_by_fixture), {})
+    if serpapi_key and plan["extras"] and not args.fixture and not args.serpapi_fixture:
+        # a) Erscheinungsdaten fuer Paper aus diesem und letztem Jahr (einmalig, max. 5 pro Lauf)
+        todo = [p for p in prof["publikationen"]
+                if p.get("id") and p["id"] not in pubdates
+                and str(p.get("jahr") or "") in (str(now.year), str(now.year - 1))][:5]
+        for p in todo:
+            try:
+                pubdates[p["id"]] = fetch_pub_date(serpapi_key, p["id"]) or str(p.get("jahr") or "")
+            except Exception as e:
+                print(f"Hinweis: Datum fuer {p['id']} nicht abrufbar ({e})")
+        # b) Wer hat zitiert? Nur fuer Paper mit neuen Zitationen, max. 3 pro Lauf
+        old_pubs = state.get("pubs", {})
+        gestiegen = sorted(
+            (p for p in prof["publikationen"]
+             if p.get("id") in old_pubs and p.get("cites_id")
+             and p["zitationen"] > old_pubs[p["id"]].get("zitationen", 0)),
+            key=lambda p: p["zitationen"] - old_pubs[p["id"]].get("zitationen", 0), reverse=True)[:3]
+        for p in gestiegen:
+            try:
+                found = fetch_citing_scholar(serpapi_key, p["cites_id"], seen_cb)
+                if found:
+                    citing_by_pub[p["id"]] = found[0]
+                    seen_cb |= {f["id"] for f in found}
+            except Exception as e:
+                print(f"Hinweis: zitierende Paper nicht abrufbar ({e})")
+        # Beim allerersten Lauf eines Profils nichts melden, nur merken
+        if not state.get("pubs"):
+            citing_by_pub = {}
+
+    newest_flag = state.get("neueste_geprueft")
+    state, clock, full = update(cfg, state, prof, citing, now,
+                                citing_by_pub=citing_by_pub, pubdates=pubdates)
+    state["pubdates"] = pubdates
+    state["scholar_citing_seen"] = sorted(seen_cb)[-1000:]
+    state["neueste_geprueft"] = now.date().isoformat() if prof.get("_neueste_geprueft") else newest_flag
     save_json(STATE, state)
     save_json(CLOCK, clock, compact=True)
     save_json(FULL, full)

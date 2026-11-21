@@ -10,21 +10,21 @@ sie sich alle 30 Minuten selbst. Ein Server im Heimnetz ist nicht nötig, die Uh
 
 | Seite | Inhalt |
 |---|---|
-| Zitationen | Buch-Symbol, Gesamtzahl, grün der Zuwachs seit gestern |
-| h-Index | „h-Index 5 – noch 2 bis h6“ |
-| Verlauf | Balkendiagramm Zitationen pro Jahr |
-| Neuigkeiten | Laufschrift: neue Publikation (24 h), „+2 für: …“ (48 h), „Zitiert in: …“ (48 h, nur mit ORCID), eigene Nachricht |
-| Feier | einmalige Benachrichtigung mit Ton bei neuem h-Index oder Meilenstein (100, 150, 200 … Zitationen) |
+| Zitationen | weißer Grund, Doktorhut (oder zufälliges Icon aus der Einstellung „Icons“), Zahl in Schwarz, Zuwachs seit gestern in Grün. Große Zahlen werden gekürzt (123k, 1.2M), passt der Zuwachs nicht daneben, erscheint er im Wechsel |
+| h-index | „h-index 5 · 2 more to h6“ |
+| Paper | „7 papers in the last 12 months“ (genaues Datum von der Scholar-Detailseite, sonst Kalenderjahr) |
+| Verlauf | Balken: Zitationen pro Monat (ab 3 aufgezeichneten Monaten), vorher pro Jahr |
+| Neuigkeiten | Laufschrift: „New paper: …“ (24 h), „Cited by Müller et al. 2026: "…" -> "…"“ bzw. „+2 citations: …“ (48 h), eigene Nachricht |
+| Party | klein bei neuen Zitationen („+3 citations!“), groß bei neuem Paper, h-Index oder Meilenstein. Bleibt stehen, bis die mittlere Taste gedrückt wird. 22–7 Uhr ohne Ton |
 
-Ein roter Punkt oben rechts heißt: Der letzte Scholar-Abruf ist fehlgeschlagen, die Zahlen sind
-vom Vortag oder älter.
+Ein roter Punkt oben rechts heißt: Die Daten sind veraltet (letzter Abruf fehlgeschlagen oder älter als 2 Tage).
 
 ## Dateien
 
 ```
 config.json                     Einstellungen (Scholar-ID, ORCID, Zeiten, Meilensteine, Nachricht)
 scripts/update.py               Abruf und Vergleich, schreibt docs/ und data/
-.github/workflows/update.yml    tägliche Action (04:17 UTC) + manueller Start
+.github/workflows/update.yml    Action 6x täglich (7-22 Uhr Winterzeit) + manueller Start
 docs/clock.json                 kleine Datei für die Uhr (wird erzeugt)
 docs/full.json                  alle Daten zum Nachschauen (wird erzeugt)
 data/state.json                 Gedächtnis zwischen den Läufen (wird erzeugt)
@@ -87,6 +87,14 @@ zurückholen.
 - In öffentlichen Repositories deaktiviert GitHub geplante Workflows nach 60 Tagen ohne Aktivität.
   Die Action committet zwar täglich, falls sie trotzdem einmal stehen bleibt:
   Actions → „Scholar aktualisieren“ → „Enable workflow“.
+- SerpApi-Kontingent: Vor jedem Lauf fragt das Skript kostenlos den Kontostand ab. Reicht er nicht
+  mehr für alle Läufe bis Monatsende, läuft es nur noch um 7 und 16 Uhr (Sparmodus). Extras wie
+  Titel-Nachladen gibt es nur bei genug Reserve. Bei mehr als 100 Papern werden die 100
+  meistzitierten abgefragt, dazu einmal täglich die 20 neuesten.
+- Wird in `config.json` eine andere Scholar-ID eingetragen, legt das Skript den Ausgangsstand
+  automatisch neu an (keine falschen „New paper“-Meldungen).
+- SerpApi-Extras (nur bei genug Reserve): einmalig die Erscheinungsdaten der Paper aus diesem und dem
+  letzten Jahr (max. 5 pro Lauf), und bei neuen Zitationen „wer hat zitiert“ (max. 3 Paper pro Lauf).
 - Scholar kürzt lange Titel im Profil. Für neue Publikationen lädt die Action den vollen Titel nach.
 - Scholar-Zahlen können sinken, wenn Google Einträge zusammenführt. Gemeldet werden nur Zuwächse.
 - „Zitiert in“ kommt aus OpenAlex, nicht aus Scholar. Die Titel passen deshalb nicht immer genau zu den

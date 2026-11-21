@@ -1,20 +1,24 @@
 # @name Scholar
 # @description Google-Scholar-Zitationen, h-Index und Neuigkeiten
-# @config url text "Adresse der clock.json" default="https://benknst.github.io/scholar-counter/clock.json"
-# @config sound bool "Ton bei Meilensteinen" default=true
+# @config url text "Adresse der clock.json" default="https://gist.githubusercontent.com/BenKnst/442b1a85615c2f88cb485fd3803e39f0/raw/clock.json"
+# @config sound bool "Ton bei Party (nicht 22-7 Uhr)" default=true
+# @config party_icon text "Party-Icon (Name, optional)" default="" help="Z. B. ein Konfetti-Icon aus dem AWTRIX Hub"
+# @config icons text "Icons (Namen, mit Komma getrennt)" default="" help="Werden zufällig vor der Zitationszahl gezeigt. Leer = Doktorhut."
 #
 # ENTWURF fuer AWTRIX NG (Ulanzi TC001, 8 x 32 Pixel).
-# Holt alle 30 Minuten die clock.json von GitHub Pages und zeigt nacheinander:
-#   1. Buch-Symbol + Gesamtzitationen (+ Zuwachs seit gestern)
-#   2. Laufschrift: h-Index und wie viele Zitationen bis zum naechsten fehlen
-#   3. Balkendiagramm: Zitationen pro Jahr
-#   4. Laufschrift: Neuigkeiten (neue Publikation, neue Zitationen, Nachricht)
-# Bei einem neuen h-Index oder Meilenstein kommt einmalig eine Benachrichtigung mit Ton.
+# Holt alle 30 Minuten die clock.json aus dem Gist und zeigt nacheinander:
+#   1. Weisser Grund: Icon (zufaellig aus der Liste, sonst Doktorhut) + Zitationen in Schwarz (+ Zuwachs)
+#   2. Laufschrift: h-index und wie viele Zitationen bis zum naechsten fehlen
+#   3. Laufschrift: Paper im laufenden Jahr (und im Vorjahr)
+#   4. Balken: Zitationen pro Monat (sobald 3 Monate aufgezeichnet sind), sonst pro Jahr
+#   5. Laufschrift: Neuigkeiten (neue Publikation, neue Zitationen, Nachricht)
+# Party: kleine bei neuen Zitationen, grosse bei neuem Paper, h-Index oder Meilenstein.
+# Sie bleibt stehen, bis jemand die mittlere Taste drueckt. Nachts (22-7 Uhr) ohne Ton.
 
 import json
 
 class Scholar
-  var d, ticks, busy, pages, page, page_start
+  var d, ticks, busy, pages, page, page_start, cur_icon
 
   static GOLD  = 0xFFC800
   static WHITE = 0xFFFFFF
@@ -23,11 +27,25 @@ class Scholar
   static PINK  = 0xFF66CC
   static GREY  = 0x808080
   static RED   = 0xFF0000
+  static HAT_W = 0xFFFFFF      # Hintergrund (weiss)
+  static HAT_G = 0x808080      # Hutflaeche (grau)
+  static HAT_O = 0xFF7A00      # Quaste (orange)
+  static BLACK = 0x000000      # Schrift auf weissem Grund (Pixel aus)
+  static DARKGREEN = 0x00A000  # Zuwachs auf weissem Grund
   static STATIC_MS = 5000      # Anzeigedauer der festen Seiten
   static SCROLL_MAX_MS = 40000 # Laufschrift spaetestens nach 40 s weiter
+  static STALE_S = 172800      # Daten aelter als 2 Tage -> roter Punkt
 
-  # offenes Buch, 7 x 5 Pixel
-  static BOOK = [".WW.WW.", "W..W..W", "W..W..W", "W..W..W", "WWWWWWW"]
+  # Doktorhut, 8 x 8 Pixel (eigener Entwurf). Zeichen: W = weiss, K = Kontur (aus),
+  # G = Hutflaeche, Y = Gold, O = Quaste
+  static HAT = ["WWWKKWWW",
+                "WWKGGKWW",
+                "WKGGGGKW",
+                "KGGGGYKW",
+                "WKKGGKOW",
+                "WWKGGKOW",
+                "WWWKKOYW",
+                "WWWWWOOW"]
 
   def init()
     self.d = nil
@@ -36,6 +54,7 @@ class Scholar
     self.pages = []
     self.page = 0
     self.page_start = 0
+    self.cur_icon = nil
   end
 
   # ------------------------------------------------------------ Daten holen
@@ -45,7 +64,7 @@ class Scholar
       return
     end
     self.ticks = 1800   # ca. alle 30 Minuten (loop laeuft etwa 1x pro Sekunde)
-    var url = store.get("url", "https://benknst.github.io/scholar-counter/clock.json")
+    var url = store.get("url", "https://gist.githubusercontent.com/BenKnst/442b1a85615c2f88cb485fd3803e39f0/raw/clock.json")
     self.busy = true
     var id = http.get(url, / body, status -> self.on_body(body, status), {"timeout": 20})
     if id == nil
@@ -84,14 +103,31 @@ class Scholar
     var p = []
     p.push({"kind": "cites"})
     var need = self.get("h_need", nil)
-    var txt = "h-Index " + str(self.get("h", "?"))
+    var txt = "h-index " + str(self.get("h", "?"))
     if need != nil
-      txt += "  -  noch " + str(need) + " bis h" + str(self.get("h_next", "?"))
+      txt += "  ·  " + str(need) + " more to h" + str(self.get("h_next", "?"))
     end
     p.push({"kind": "scroll", "text": txt, "color": self.GOLD})
+    var p12 = self.get("p12", nil)
+    var py = self.get("py", nil)
+    if p12 != nil
+      p.push({"kind": "scroll", "color": self.GREEN,
+              "text": str(p12) + (p12 == 1 ? " paper" : " papers") + " in the last 12 months"})
+    elif py != nil
+      var yn = self.get("y_now", 0)
+      var pt = str(py) + (py == 1 ? " paper in " : " papers in ") + str(yn)
+      var pp = self.get("py_prev", nil)
+      if pp != nil
+        pt += "  ·  " + str(pp) + " in " + str(yn - 1)
+      end
+      p.push({"kind": "scroll", "text": pt, "color": self.GREEN})
+    end
+    var months = self.get("months", [])
     var years = self.get("years", [])
-    if isinstance(years, list) && years.size() > 1
-      p.push({"kind": "chart"})
+    if isinstance(months, list) && months.size() >= 3
+      p.push({"kind": "chart", "values": months})
+    elif isinstance(years, list) && years.size() > 1
+      p.push({"kind": "chart", "values": years})
     end
     var ticker = self.get("ticker", [])
     if isinstance(ticker, list)
@@ -128,9 +164,21 @@ class Scholar
       return
     end
     store.set("feier", cid)
-    var spec = {"text": c.find("t"), "textColor": self.GOLD, "wakeup": true}
-    if store.get("sound", true)
-      spec["sound"] = {"rtttl": "tusch:d=16,o=6,b=180:c,e,g,4c7"}
+    var big = c.find("lvl") == "big"
+    # bleibt stehen, bis die mittlere Taste gedrueckt wird
+    var spec = {"text": c.find("t"), "textColor": "#FFC800", "hold": true, "wakeup": true}
+    var pi = store.get("party_icon", "")
+    if pi != nil && pi != ""
+      spec["icon"] = pi
+    end
+    var h = hour()
+    var quiet = h >= 0 && (h >= 22 || h < 7)   # -1 = Uhrzeit noch unbekannt -> Ton erlaubt
+    if store.get("sound", true) && !quiet
+      if big
+        spec["sound"] = {"rtttl": "fanfare:d=8,o=6,b=180:c,e,g,4c7,p,g,2c7"}
+      else
+        spec["sound"] = {"rtttl": "yay:d=16,o=6,b=200:c,e,g,8c7"}
+      end
     end
     notify(spec)
   end
@@ -143,6 +191,32 @@ class Scholar
   def on_show()
     self.page = 0
     self.page_start = now_ms()
+    self.pick_icon()
+  end
+
+  # Waehlt bei jedem Erscheinen zufaellig ein Icon aus der Einstellung "icons"
+  def pick_icon()
+    self.cur_icon = nil
+    var raw = store.get("icons", "")
+    if raw == nil || raw == ""
+      return
+    end
+    import string
+    var names = []
+    for part: string.split(raw, ",")
+      var n = ""
+      for i: 0 .. size(part) - 1
+        if part[i] != " "
+          n += part[i]
+        end
+      end
+      if n != ""
+        names.push(n)
+      end
+    end
+    if names.size() > 0
+      self.cur_icon = names[now_ms() % names.size()]
+    end
   end
 
   def duration()
@@ -172,13 +246,58 @@ class Scholar
     self.page_start = now_ms()
   end
 
+  # Veraltet, wenn der letzte Abruf bei GitHub fehlschlug oder die Daten aelter als 2 Tage sind
+  # (z. B. weil die Uhr kein Internet hat oder die Action nicht mehr laeuft).
+  def is_stale()
+    if self.get("ok", true) == false
+      return true
+    end
+    var upd = self.get("upd", 0)
+    var ms = epoch_ms()
+    if upd > 0 && ms > 0
+      var age_s = int(ms / 1000) - upd
+      return age_s > self.STALE_S
+    end
+    return false
+  end
+
+  # Zahl so kuerzen, dass sie in maxw Pixel passt: 1234 bleibt, 123456 -> 123k, 1234567 -> 1.2M
+  def fmt_count(n, maxw)
+    var s = str(n)
+    if !isinstance(n, int) || text_width(s) <= maxw
+      return s
+    end
+    import string
+    if n >= 1000000
+      s = string.format("%.1fM", n / 1000000.0)
+      if text_width(s) > maxw
+        s = str(n / 1000000) + "M"
+      end
+    else
+      s = string.format("%.1fk", n / 1000.0)
+      if text_width(s) > maxw
+        s = str(n / 1000) + "k"
+      end
+    end
+    return s
+  end
+
   # ------------------------------------------------------------ Zeichnen
-  def draw_book(x0, color)
-    var y = 1
-    for row: self.BOOK
+  def draw_hat(x0)
+    var y = 0
+    for row: self.HAT
       for x: 0 .. size(row) - 1
-        if row[x] == "W"
-          pixel(x0 + x, y, color)
+        var ch = row[x]
+        if ch == "W"
+          pixel(x0 + x, y, self.HAT_W)
+        elif ch == "K"
+          pixel(x0 + x, y, self.BLACK)
+        elif ch == "G"
+          pixel(x0 + x, y, self.HAT_G)
+        elif ch == "Y"
+          pixel(x0 + x, y, self.GOLD)
+        elif ch == "O"
+          pixel(x0 + x, y, self.HAT_O)
         end
       end
       y += 1
@@ -196,16 +315,26 @@ class Scholar
     var k = p["kind"]
 
     if k == "cites"
-      self.draw_book(0, self.GOLD)
-      var x = 9 + text(9, 6, str(self.get("cites", "?")), self.WHITE)
-      var delta = self.get("delta", 0)
-      if delta > 0
-        var s = "+" + str(delta)
-        if x + 1 + text_width(s) <= width()
-          text(x + 1, 6, s, self.GREEN)
-        end
+      clear(self.HAT_W)   # ganzes Display weiss hinterlegt
+      if self.cur_icon == nil || icon(self.cur_icon, 0, 0) == false
+        self.draw_hat(0)
       end
-      if self.get("ok", true) == false
+      var x0 = 9                          # Textbeginn rechts vom Hut
+      var num = self.fmt_count(self.get("cites", 0), width() - x0)
+      var delta = self.get("delta", 0)
+      var ds = delta > 0 ? "+" + str(delta) : ""
+      var both_fit = ds == "" || x0 + text_width(num) + 1 + text_width(ds) <= width()
+      if both_fit
+        var x = x0 + text(x0, 6, num, self.BLACK)
+        if ds != ""
+          text(x + 1, 6, ds, self.DARKGREEN)
+        end
+      elif elapsed < self.STATIC_MS / 2
+        text(x0, 6, num, self.BLACK)          # erst die Zahl ...
+      else
+        text(x0, 6, ds, self.DARKGREEN)       # ... dann der Zuwachs
+      end
+      if self.is_stale()
         pixel(width() - 1, 0, self.RED)   # roter Punkt: Daten sind veraltet
       end
       if elapsed > self.STATIC_MS
@@ -213,7 +342,7 @@ class Scholar
       end
 
     elif k == "chart"
-      bar_chart(self.get("years", []), self.BLUE, true)
+      bar_chart(p["values"], self.BLUE, true)
       if elapsed > self.STATIC_MS
         self.next_page()
       end

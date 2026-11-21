@@ -1,13 +1,6 @@
-# scholarly selbst wird mit --no-deps installiert (siehe Workflow/README),
-# hier stehen die Pakete, die es zur Laufzeit wirklich braucht.
-requests
-bibtexparser<2
-beautifulsoup4
-arrow
-deprecated
-fake-useragent
-free-proxy
-httpx
-python-dotenv
-selenium
-typing-extensions
+# Für die GitHub Action reicht requests (SerpApi, Gist, OpenAlex).
+requests==2.32.5
+
+# Nur für den direkten Scholar-Abruf vom eigenen Rechner (ohne SerpApi) zusätzlich:
+#   pip install --no-deps scholarly
+#   pip install "bibtexparser<2" beautifulsoup4 arrow deprecated fake-useragent free-proxy httpx python-dotenv selenium typing-extensions
