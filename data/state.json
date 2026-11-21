@@ -1,471 +1,381 @@
 {
-  "scholar_id": "Cr10S-gAAAAJ",
+  "scholar_id": "5TMNA1oAAAAJ",
   "pubs": {
-    "Cr10S-gAAAAJ:KlAtU1dfN6UC": {
-      "titel": "Barriers and Facilitators to the Implementation of eHealth Services: Systematic Literature Analysis",
-      "zitationen": 496,
-      "jahr": "2019"
+    "5TMNA1oAAAAJ:4TOpqqG69KYC": {
+      "titel": "Understanding the Nature of Metadata: Systematic Review",
+      "zitationen": 156,
+      "jahr": "2022"
     },
-    "Cr10S-gAAAAJ:Y0pCki6q_DkC": {
-      "titel": "HiGHmed–an open platform approach to enhance care and research across institutional boundaries",
-      "zitationen": 209,
-      "jahr": "2018"
+    "5TMNA1oAAAAJ:9ZlFYXVOiuMC": {
+      "titel": "MIMIC-IV on FHIR: converting a decade of in-patient data into an exchangeable, interoperable format",
+      "zitationen": 69,
+      "jahr": "2023"
     },
-    "Cr10S-gAAAAJ:d1gkVwhDpl0C": {
-      "titel": "Evaluation of data completeness in the electronic health record for the purpose of patient recruitment into clinical trials: a retrospective analysis of element presence",
-      "zitationen": 150,
-      "jahr": "2013"
-    },
-    "Cr10S-gAAAAJ:ufrVoPGSRksC": {
-      "titel": "Comparison of electronic health record system functionalities to support the patient recruitment process in clinical trials",
-      "zitationen": 57,
-      "jahr": "2014"
-    },
-    "Cr10S-gAAAAJ:qjMakFHDy7sC": {
-      "titel": "Design and multicentric implementation of a generic software architecture for patient recruitment systems re-using existing HIS tools and routine patient data",
-      "zitationen": 50,
-      "jahr": "2014"
-    },
-    "Cr10S-gAAAAJ:iH-uZ7U-co4C": {
-      "titel": "Die Datenintegrationszentren–Von der Konzeption in der Medizininformatik-Initiative zur lokalen Umsetzung in einem Netzwerk Universitätsmedizin",
-      "zitationen": 48,
+    "5TMNA1oAAAAJ:RHpTSmoSYBkC": {
+      "titel": "LLM-AIx: An open source pipeline for Information Extraction from unstructured medical text based on privacy preserving Large Language Models",
+      "zitationen": 60,
       "jahr": "2024"
     },
-    "Cr10S-gAAAAJ:YOwf2qJgpHMC": {
-      "titel": "Towards a comprehensive and interoperable representation of consent-based data usage permissions in the German medical informatics initiative",
-      "zitationen": 47,
-      "jahr": "2020"
+    "5TMNA1oAAAAJ:Tyk-4Ss8FVUC": {
+      "titel": "Metadata repository for improved data sharing and reuse based on HL7 FHIR",
+      "zitationen": 55,
+      "jahr": "2016"
     },
-    "Cr10S-gAAAAJ:Zph67rFs4hoC": {
-      "titel": "Your data is gold–Data donation for better healthcare?",
-      "zitationen": 45,
-      "jahr": "2019"
-    },
-    "Cr10S-gAAAAJ:4TOpqqG69KYC": {
-      "titel": "Telemonitoring of Real-World Health Data in Cardiology: A Systematic Review",
-      "zitationen": 40,
-      "jahr": "2021"
-    },
-    "Cr10S-gAAAAJ:mB3voiENLucC": {
+    "5TMNA1oAAAAJ:QIV2ME_5wuYC": {
       "titel": "Functional Requirements for Medical Data Integration into Knowledge Management Environments: Requirements Elicitation Approach Based on Systematic Literature Analysis",
       "zitationen": 35,
       "jahr": "2023"
     },
-    "Cr10S-gAAAAJ:ZeXyd9-uunAC": {
-      "titel": "ETL processes for integrating healthcare data–Tools and architecture patterns",
-      "zitationen": 33,
-      "jahr": "2022"
+    "5TMNA1oAAAAJ:ULOm3_A8WrAC": {
+      "titel": "Hands on the Medical Informatics Initiative Core Data Set—Lessons Learned from Converting the MIMIC-IV",
+      "zitationen": 35,
+      "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:O3NaXMp0MMsC": {
-      "titel": "Consumer perspectives on the national electronic health record and barriers to its adoption in Germany: does health policy require a change in communication?",
-      "zitationen": 23,
+    "5TMNA1oAAAAJ:d1gkVwhDpl0C": {
+      "titel": "Connecting the clinical IT infrastructure to a service-oriented architecture of medical devices",
+      "zitationen": 35,
+      "jahr": "2018"
+    },
+    "5TMNA1oAAAAJ:isC4tDSrTZIC": {
+      "titel": "A software pipeline for medical information extraction with large language models, open source and suitable for oncology",
+      "zitationen": 32,
       "jahr": "2025"
     },
-    "Cr10S-gAAAAJ:9yKSN-GCB0IC": {
-      "titel": "Die Rolle von Integrating the Healtcare Enterprise (IHE) in der Telemedizin",
-      "zitationen": 23,
-      "jahr": "2015"
+    "5TMNA1oAAAAJ:W7OEmFMy1HYC": {
+      "titel": "QL 4 MDR: A GraphQL query language for ISO 11179-based metadata repositories",
+      "zitationen": 25,
+      "jahr": "2019"
     },
-    "Cr10S-gAAAAJ:hqOjcs7Dif8C": {
-      "titel": "The patient portal of the personal cross-enterprise electronic health record (PEHR) in the Rhine-Neckar-Region",
-      "zitationen": 19,
+    "5TMNA1oAAAAJ:u5HHmVD_uO8C": {
+      "titel": "Linked data applications through ontology based data access in clinical research",
+      "zitationen": 24,
+      "jahr": "2017"
+    },
+    "5TMNA1oAAAAJ:9yKSN-GCB0IC": {
+      "titel": "Point-of-care medical devices and systems interoperability: A mapping of ICE and FHIR",
+      "zitationen": 22,
       "jahr": "2016"
     },
-    "Cr10S-gAAAAJ:u-x6o8ySG0sC": {
-      "titel": "Requirements for a patient recruitment system",
-      "zitationen": 18,
-      "jahr": "2015"
+    "5TMNA1oAAAAJ:qjMakFHDy7sC": {
+      "titel": "Semantic interoperability in the OR. NET project on networking of medical devices and information systems—A requirements analysis",
+      "zitationen": 17,
+      "jahr": "2014"
     },
-    "Cr10S-gAAAAJ:mVmsd5A6BfQC": {
-      "titel": "Medical data engineering–theory and practice",
+    "5TMNA1oAAAAJ:R3hNpaxXUhUC": {
+      "titel": "The sample locator: A federated search tool for biosamples and associated data in Europe using HL7 FHIR",
+      "zitationen": 16,
+      "jahr": "2024"
+    },
+    "5TMNA1oAAAAJ:Zph67rFs4hoC": {
+      "titel": "Medical Data Engineering–Theory and Practice",
       "zitationen": 15,
       "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:zYLM7Y9cAGgC": {
-      "titel": "First experiences in implementing a software-based support for patient recruitment at Heidelberg university hospital",
-      "zitationen": 14,
-      "jahr": "2012"
+    "5TMNA1oAAAAJ:kNdYIx-mwKoC": {
+      "titel": "APERITIF–Automatic Patient Recruiting for Clinical Trials Based on HL7 FHIR",
+      "zitationen": 13,
+      "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:roLk4NBRz8UC": {
-      "titel": "Health information research platform (HIReP)–an architecture pattern",
-      "zitationen": 12,
-      "jahr": "2014"
-    },
-    "Cr10S-gAAAAJ:r0BpntZqJG4C": {
-      "titel": "Integrating an AI platform into clinical IT: BPMN processes for clinical AI model development",
+    "5TMNA1oAAAAJ:YOwf2qJgpHMC": {
+      "titel": "Providing ART-DECOR ValueSets via FHIR Terminology Servers–A Technical Report",
       "zitationen": 11,
-      "jahr": "2025"
+      "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:TFP_iSt0sucC": {
-      "titel": "Instance-level medical image classification for text-based retrieval in a medical data integration center",
-      "zitationen": 11,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:3fE2CSJIrl8C": {
-      "titel": "Provenance Solutions for Medical Research in Heterogeneous IT-Infrastructure: An Implementation Roadmap.",
+    "5TMNA1oAAAAJ:roLk4NBRz8UC": {
+      "titel": "One Step Away from Technology but One Step Towards Domain Experts—MDRBridge: A Template-Based ISO 11179-Compliant Metadata Processing Pipeline",
       "zitationen": 11,
       "jahr": "2019"
     },
-    "Cr10S-gAAAAJ:Se3iqnhoufwC": {
-      "titel": "Implementing Modular Research Consents Using IHE Advanced Patient Privacy Consents.",
+    "5TMNA1oAAAAJ:zYLM7Y9cAGgC": {
+      "titel": "Reporting device observations for semantic interoperability of surgical devices and clinical information systems",
       "zitationen": 11,
+      "jahr": "2015"
+    },
+    "5TMNA1oAAAAJ:mB3voiENLucC": {
+      "titel": "On the Way to Close the Loop in Information Logistics: Data from the Patient—Value for the Patient: Findings from the Clinical Information Systems Perspective for 2017",
+      "zitationen": 10,
       "jahr": "2018"
     },
-    "Cr10S-gAAAAJ:NMxIlDl6LWMC": {
+    "5TMNA1oAAAAJ:Y0pCki6q_DkC": {
+      "titel": "Using graph tools on metadata repositories",
+      "zitationen": 9,
+      "jahr": "2018"
+    },
+    "5TMNA1oAAAAJ:IjCSPb-OGe4C": {
+      "titel": "Practical extension of provenance to healthcare data based on the W3C PROV standard",
+      "zitationen": 9,
+      "jahr": "2018"
+    },
+    "5TMNA1oAAAAJ:4DMP91E08xMC": {
+      "titel": "Improving findability of digital assets in research data repositories using the W3C DCAT vocabulary",
+      "zitationen": 8,
+      "jahr": "2022"
+    },
+    "5TMNA1oAAAAJ:JV2RwH3_ST0C": {
+      "titel": "MIMIC-IV clinical database demo on FHIR (version 2.0)",
+      "zitationen": 8,
+      "jahr": "2022"
+    },
+    "5TMNA1oAAAAJ:3fE2CSJIrl8C": {
+      "titel": "Mapping of medical device data from ISO/IEEE 11073-10207 to HL7 FHIR",
+      "zitationen": 8,
+      "jahr": "2021"
+    },
+    "5TMNA1oAAAAJ:hFOr9nPyWt4C": {
+      "titel": "MDRCupid: a configurable metadata matching toolbox",
+      "zitationen": 8,
+      "jahr": "2019"
+    },
+    "5TMNA1oAAAAJ:2osOgNQ5qMEC": {
+      "titel": "IEEE 11073 SDC and HL7 FHIR–Emerging Standards for Interoperability of Medical Systems",
+      "zitationen": 8,
+      "jahr": "2018"
+    },
+    "5TMNA1oAAAAJ:j3f4tGmQtD8C": {
+      "titel": "A Generic Transformation Approach for Complex Laboratory Data Using the Fast Healthcare Interoperability Resources Mapping Language: Method Development and Implementation",
+      "zitationen": 7,
+      "jahr": "2024"
+    },
+    "5TMNA1oAAAAJ:KlAtU1dfN6UC": {
+      "titel": "Desiderata for a Synthetic Clinical Data Generator",
+      "zitationen": 7,
+      "jahr": "2021"
+    },
+    "5TMNA1oAAAAJ:hqOjcs7Dif8C": {
+      "titel": "A Smart Mapping Editor for Standardised Data Transformation",
+      "zitationen": 7,
+      "jahr": "2020"
+    },
+    "5TMNA1oAAAAJ:_Qo2XoVZTnwC": {
       "titel": "Advancing Healthcare Research Through Live-Data Integration: Implementing IEEE 11073 and FHIR in Clinical Environment",
       "zitationen": 6,
       "jahr": "2024"
     },
-    "Cr10S-gAAAAJ:_Qo2XoVZTnwC": {
+    "5TMNA1oAAAAJ:HDshCWvjkbEC": {
       "titel": "Large-Scale Standardized Image Integration for Secondary Use Research Projects.",
       "zitationen": 6,
       "jahr": "2024"
     },
-    "Cr10S-gAAAAJ:UeHWp8X0CEIC": {
-      "titel": "An architecture for the integration of clinical data from a PEHR in a regional research platform",
+    "5TMNA1oAAAAJ:0EnyYjriUFMC": {
+      "titel": "Analysis of ISO/TS 21526 Towards the Extension of a Standardized Query API",
       "zitationen": 6,
-      "jahr": "2016"
+      "jahr": "2020"
     },
-    "Cr10S-gAAAAJ:e5wmG9Sq2KIC": {
-      "titel": "An Image Retrieval Pipeline in a Medical Data Integration Center.",
+    "5TMNA1oAAAAJ:UeHWp8X0CEIC": {
+      "titel": "A Method to use Metadata in legacy Web Applications: The Samply. MDR. Injector",
+      "zitationen": 6,
+      "jahr": "2018"
+    },
+    "5TMNA1oAAAAJ:UebtZRa9Y70C": {
+      "titel": "Analysis of Annotated Data Models for Improving Data Quality",
+      "zitationen": 6,
+      "jahr": "2017"
+    },
+    "5TMNA1oAAAAJ:qxL8FJ1GzNcC": {
+      "titel": "TerminoDiff-Detecting Semantic Differences in HL7 FHIR CodeSystems",
       "zitationen": 5,
-      "jahr": "2024"
+      "jahr": "2022"
     },
-    "Cr10S-gAAAAJ:W7OEmFMy1HYC": {
-      "titel": "Evaluating technologies for a patient portal.",
+    "5TMNA1oAAAAJ:aqlVkmm33-oC": {
+      "titel": "TermiCron–Bridging the Gap Between FHIR Terminology Servers and Metadata Repositories",
       "zitationen": 5,
-      "jahr": "2014"
+      "jahr": "2022"
     },
-    "Cr10S-gAAAAJ:hFOr9nPyWt4C": {
-      "titel": "Modelling the Hospital Information System of the Karolinska University Hospital in Stockholm",
+    "5TMNA1oAAAAJ:YsMSGLbcyi4C": {
+      "titel": "Compatibility between metadata standards: import pipeline of cdisc odm to the samply. mdr",
       "zitationen": 5,
-      "jahr": "2010"
+      "jahr": "2018"
     },
-    "Cr10S-gAAAAJ:J_g5lzvAfSwC": {
-      "titel": "The ‘Advancing Cardiovascular Risk Identification with Structured Clinical Documentation and Biosignal Derived Phenotypes Synthesis’ project: conceptual design, project …",
+    "5TMNA1oAAAAJ:k_IJM867U9cC": {
+      "titel": "MIMIC-IV Clinical Database Demo on FHIR",
       "zitationen": 4,
       "jahr": "2025"
     },
-    "Cr10S-gAAAAJ:YFjsv_pBGBYC": {
-      "titel": "Quality Assessment Framework of Clinical Routine Data for Secondary Use",
-      "zitationen": 4,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:blknAaTinKkC": {
-      "titel": "Leveraging Clinical Data Treasures: Integration of an AI Platform into Clinical IT",
-      "zitationen": 4,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:R3hNpaxXUhUC": {
-      "titel": "Structured Data Retrieval and Analysis of HL7 v2 Messages with Elasticsearch.",
-      "zitationen": 4,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:M3ejUd6NZC8C": {
-      "titel": "Überblick über ethische und soziale Herausforderungen im Kontext der klinischen Nutzung von KI-Systemen= Overview of ethical and social challenges in the context of clinical …",
+    "5TMNA1oAAAAJ:8k81kl-MbHgC": {
+      "titel": "openEHR Mapper–A Tool to Fuse Clinical and Genomic Data Using the openEHR Standard",
       "zitationen": 4,
       "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:0EnyYjriUFMC": {
-      "titel": "Patient Portal Integration–A Native IHE Connector Implementation for PEHR",
+    "5TMNA1oAAAAJ:_FxGoFyzp5QC": {
+      "titel": "Towards a Federation of Metadata Repositories: Addressing Technical Interoperability.",
       "zitationen": 4,
-      "jahr": "2016"
+      "jahr": "2019"
     },
-    "Cr10S-gAAAAJ:LkGwnXOMwfcC": {
-      "titel": "Implementing the Patient Portal of the PEHR in the Metropolitan Region Rhine-Neckar–Experiences with Liferay",
-      "zitationen": 4,
-      "jahr": "2016"
-    },
-    "Cr10S-gAAAAJ:SeFeTyx0c_EC": {
-      "titel": "A Data-Centric Approach for Health Care and Research in a Health Knowledge Management Platform: Implementation and Requirement-Based Evaluation Study",
-      "zitationen": 3,
-      "jahr": "2026"
-    },
-    "Cr10S-gAAAAJ:35N4QoGY0k4C": {
-      "titel": "Time for Clarity in Exploring the Evidence and Key Concepts of Human-Centered Design in Digital Health Care: Protocol for a Scoping Review",
-      "zitationen": 3,
-      "jahr": "2025"
-    },
-    "Cr10S-gAAAAJ:M3NEmzRMIkIC": {
-      "titel": "Challenges and Lessons Learned in Mapping HL7 v2 Data to openEHR: Insights from UKSH Medical Data Integration Center",
-      "zitationen": 3,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:4JMBOYKVnBMC": {
-      "titel": "Datenintegrationszentren (DIZ) für eine bessere Vernetzung von Krankenversorgung und Forschung: Organisation trifft auf Technik und Recht",
-      "zitationen": 3,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:L8Ckcad2t8MC": {
-      "titel": "Strategies and Recommendation for Data Loading of FHIR-Based Data Marts with Focus on GDPR Compliance.",
+    "5TMNA1oAAAAJ:Wp0gIr-vW9MC": {
+      "titel": "Strategies and Recommendation for Data Loading of FHIR-Based Data Marts with Focus on GDPR Compliance",
       "zitationen": 3,
       "jahr": "2022"
     },
-    "Cr10S-gAAAAJ:eQOLeE2rZwMC": {
-      "titel": "Implementing PEHR: Design and integration of a consent creator service",
+    "5TMNA1oAAAAJ:MXK_kJrjxJIC": {
+      "titel": "Fit for Purpose: Analyzing the German Archiving and Exchange Interface for Medical Practice Management Systems",
       "zitationen": 3,
-      "jahr": "2016"
+      "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:2osOgNQ5qMEC": {
-      "titel": "Report on the HEC 2016 Workshop: Opportunities and Challenges of Consumer-centric eHealth Services–An Interdisciplinary Workshop",
+    "5TMNA1oAAAAJ:WF5omc3nYNoC": {
+      "titel": "Scientific Challenge in eHealth: MAPPATHON, a Metadata Mapping Challenge.",
       "zitationen": 3,
-      "jahr": "2016"
+      "jahr": "2019"
     },
-    "Cr10S-gAAAAJ:lSLTfruPkqcC": {
+    "5TMNA1oAAAAJ:_kc_bZDykSQC": {
+      "titel": "Konvertierung von MIMIC-III-Daten zu FHIR",
+      "zitationen": 3,
+      "jahr": "2018"
+    },
+    "5TMNA1oAAAAJ:bEWYMUwI8FkC": {
       "titel": "From Text to Knowledge: An End-To-End Extraction Pipeline for Clinical Information",
       "zitationen": 2,
       "jahr": "2025"
     },
-    "Cr10S-gAAAAJ:RGFaLdJalmkC": {
+    "5TMNA1oAAAAJ:iH-uZ7U-co4C": {
       "titel": "Extracting LOINC Codes from a Laboratory Information System's Index: Addressing Semantic Interoperability with Web Scraping",
       "zitationen": 2,
       "jahr": "2025"
     },
-    "Cr10S-gAAAAJ:BqipwSGYUEgC": {
-      "titel": "Development, Involvement and Use of an Overarching In-House Registry for Clinical Trials",
-      "zitationen": 2,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:TQgYirikUcIC": {
-      "titel": "Interdisciplinary Teams in Health Informatics: Using FHIR Standards to Share Computable Knowledge.",
+    "5TMNA1oAAAAJ:blknAaTinKkC": {
+      "titel": "Provenance Core Data Set",
       "zitationen": 2,
       "jahr": "2023"
     },
-    "Cr10S-gAAAAJ:qxL8FJ1GzNcC": {
-      "titel": "One Conference, Three Proceedings–Which Papers Should I Submit and How? A Publication Strategy for Young Scientists Regarding the GMDS Annual Conference and Beyond",
-      "zitationen": 2,
-      "jahr": "2021"
-    },
-    "Cr10S-gAAAAJ:MXK_kJrjxJIC": {
-      "titel": "Technical Report des GMDS-Workshops: Professionelle Nutzung der von Bürgern nicht-professionell erhobenen Daten? Ein interdisziplinärer CAFÉ-Dialog",
-      "zitationen": 2,
-      "jahr": "2018"
-    },
-    "Cr10S-gAAAAJ:RYcK_YlVTxYC": {
-      "titel": "Big data und e-health",
+    "5TMNA1oAAAAJ:qUcmZB5y_30C": {
+      "titel": "Mapping clinical care and research data to HL7 FHIR to improve sharing and reuse",
       "zitationen": 2,
       "jahr": "2017"
     },
-    "Cr10S-gAAAAJ:vV6vV6tmYwMC": {
+    "5TMNA1oAAAAJ:hMod-77fHWUC": {
+      "titel": "A Data-Centric Approach for Health Care and Research in a Health Knowledge Management Platform: Implementation and Requirement-Based Evaluation Study",
+      "zitationen": 1,
+      "jahr": "2026"
+    },
+    "5TMNA1oAAAAJ:TFP_iSt0sucC": {
       "titel": "Implementation of a Patient Consent Management at a German Medical Data Integration Center",
       "zitationen": 1,
       "jahr": "2025"
     },
-    "Cr10S-gAAAAJ:NaGl4SEjCO4C": {
-      "titel": "Mind the Gap: Design Thinking and Human Centered Design for eHealth Applications-Insights from Vulnerable Populations in a Scoping Review",
-      "zitationen": 1,
-      "jahr": "2025"
-    },
-    "Cr10S-gAAAAJ:hMod-77fHWUC": {
-      "titel": "Implementation of an Atrioventricular Valve Intervention Registry: Comparative Study of REDCap vs. CDR-Based openEHR Registry",
-      "zitationen": 1,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:JV2RwH3_ST0C": {
-      "titel": "Integration of Oncological Data into openEHR: A Path Towards Improved Cancer Care and Research",
-      "zitationen": 1,
-      "jahr": "2024"
-    },
-    "Cr10S-gAAAAJ:7PzlFSSx8tAC": {
-      "titel": "Information Technology's Role in Global Healthcare Systems",
-      "zitationen": 1,
-      "jahr": "2022"
-    },
-    "Cr10S-gAAAAJ:aqlVkmm33-oC": {
-      "titel": "Applicability of Different Electronic Record Types for Use in Patient Recruitment Support Systems: Comparative Analysis",
-      "zitationen": 1,
-      "jahr": "2021"
-    },
-    "Cr10S-gAAAAJ:4OULZ7Gr8RgC": {
-      "titel": "German Medical Data Sciences 2021: Digital Medicine: Recognize–Understand–Heal: Proceedings of the Joint Conference of the 66th Annual Meeting of the German Association of …",
-      "zitationen": 1,
-      "jahr": "2021"
-    },
-    "Cr10S-gAAAAJ:kNdYIx-mwKoC": {
-      "titel": "Mapping Medication Metadata from the ABDA Data Model to an OpenEHR Medication Archetype: A Qualitative Analysis.",
+    "5TMNA1oAAAAJ:u-x6o8ySG0sC": {
+      "titel": "Automatic Evaluation of Metadata Quality in ISO 11179-3 Conformant Healthcare Metadata Repositories",
       "zitationen": 1,
       "jahr": "2019"
     },
-    "Cr10S-gAAAAJ:u5HHmVD_uO8C": {
-      "titel": "Towards a Holistic Biomedical Information Platform for Primary and Secondary Use Settings",
-      "zitationen": 1,
-      "jahr": "2016"
-    },
-    "Cr10S-gAAAAJ:YsMSGLbcyi4C": {
-      "titel": "First Experiences Implementing an IHE-based Open Source Patient Portal",
+    "5TMNA1oAAAAJ:7PzlFSSx8tAC": {
+      "titel": "A gateway for reporting medical device observations to clinical information systems",
       "zitationen": 1,
       "jahr": "2015"
     },
-    "Cr10S-gAAAAJ:IjCSPb-OGe4C": {
-      "titel": "Applicability of different types of Patient Records for Patient Recruitment Systems",
-      "zitationen": 1,
-      "jahr": "2015"
-    },
-    "Cr10S-gAAAAJ:UebtZRa9Y70C": {
-      "titel": "A Generic Software Architecture for Patient Recruitment Systems Using Hospital Information System Tools",
-      "zitationen": 1,
-      "jahr": "2012"
-    },
-    "Cr10S-gAAAAJ:dfsIfKJdRG4C": {
+    "5TMNA1oAAAAJ:GnPB-g6toBAC": {
       "titel": "What Users Say About Reimbursable Digital Therapeutics in Germany: Large-Scale App Store Review Analysis Using a Large Language Model",
       "zitationen": 0,
       "jahr": "2026"
     },
-    "Cr10S-gAAAAJ:zA6iFVUQeVQC": {
+    "5TMNA1oAAAAJ:BqipwSGYUEgC": {
+      "titel": "Comparison of Metadata Catalog Schemas for Cross-Border Health Dataset Discovery",
+      "zitationen": 0,
+      "jahr": "2026"
+    },
+    "5TMNA1oAAAAJ:NMxIlDl6LWMC": {
       "titel": "GlobalMedQA: A Standardized Multilingual Dataset for Assessing Medical Knowledge in LLMs",
       "zitationen": 0,
       "jahr": "2026"
     },
-    "Cr10S-gAAAAJ:rO6llkc54NcC": {
-      "titel": "Timely, AQL-Driven Clinical Cohort Identification in openEHR Infrastructures",
-      "zitationen": 0,
-      "jahr": "2026"
-    },
-    "Cr10S-gAAAAJ:3s1wT3WcHBgC": {
-      "titel": "Patient Rights to Correct Errors in the Electronic Health Record: Comparison of Legislation in Sweden, UK, and Germany",
-      "zitationen": 0,
-      "jahr": "2026"
-    },
-    "Cr10S-gAAAAJ:ZHo1McVdvXMC": {
-      "titel": "ePA für alle–alles geklärt? Ergebnisse eines interdisziplinären Panels auf der GMDS-Jahrestagung 2025",
-      "zitationen": 0,
-      "jahr": "2026"
-    },
-    "Cr10S-gAAAAJ:u_35RYKgDlwC": {
-      "titel": "Setting up a DataSHIELD Hub for the German Medical Informatics Initiative: Challenges and Lessons Learned.",
-      "zitationen": 0,
-      "jahr": "2026"
-    },
-    "Cr10S-gAAAAJ:maZDTaKrznsC": {
+    "5TMNA1oAAAAJ:e5wmG9Sq2KIC": {
       "titel": "Full-scale indexing and semantic annotation of CT imaging: boosting FAIRness",
       "zitationen": 0,
       "jahr": "2026"
     },
-    "Cr10S-gAAAAJ:2P1L_qKh6hAC": {
-      "titel": "Wie wird die Datenspende zum Erfolgsmodell? Workshopbericht zu effektiven Kommunikations-und Vermittlungsstrategien für Bürger: innen und Patient: innen",
+    "5TMNA1oAAAAJ:ns9cj8rnVeAC": {
+      "titel": "A multi-method radiomics pipeline for survival analysis: robust feature identification in computed tomography data",
       "zitationen": 0,
       "jahr": "2026"
     },
-    "Cr10S-gAAAAJ:fPk4N6BV_jEC": {
-      "titel": "The Anatomy of a Failed DiGA: Taxonomic Insights from Withdrawn Reimbursable Digital Therapeutics",
+    "5TMNA1oAAAAJ:O3NaXMp0MMsC": {
+      "titel": "Evaluating Medical Report Generation on Real Clinical Data: A Case Study",
       "zitationen": 0,
       "jahr": "2026"
     },
-    "Cr10S-gAAAAJ:pqnbT2bcN3wC": {
-      "titel": "Bowel urgency across inflammatory bowel disease phenotypes: A large real-world analysis reveals high symptom burden in ileal Crohn's disease",
+    "5TMNA1oAAAAJ:YFjsv_pBGBYC": {
+      "titel": "Survival prediction of TAVI patients using end-to-end deep image regression on whole-body CT",
       "zitationen": 0,
       "jahr": "2026"
     },
-    "Cr10S-gAAAAJ:70eg2SAEIzsC": {
+    "5TMNA1oAAAAJ:maZDTaKrznsC": {
       "titel": "What Patients Say About Reimbursable Digital Therapeutics in Germany: A Large-Scale App Store Review Analysis Using a Large Language Model",
       "zitationen": 0,
       "jahr": "2025"
     },
-    "Cr10S-gAAAAJ:j3f4tGmQtD8C": {
-      "titel": "Die Wissensmanagementplattform für Versorgung und Forschung am Universitätsklinikum Schleswig-Holstein–Ein Praxisbeispiel",
+    "5TMNA1oAAAAJ:M3NEmzRMIkIC": {
+      "titel": "Automated survival prediction based on body composition analysis of Pre-TAVI-Procedural CT scans",
       "zitationen": 0,
-      "jahr": "2024"
+      "jahr": "2025"
     },
-    "Cr10S-gAAAAJ:GnPB-g6toBAC": {
+    "5TMNA1oAAAAJ:r0BpntZqJG4C": {
       "titel": "Assessing Patient Health Dynamics by Comparative CT Analysis: An Automatic Approach to Organ and Body Feature Evaluation",
       "zitationen": 0,
       "jahr": "2024"
     },
-    "Cr10S-gAAAAJ:-f6ydRqryjwC": {
-      "titel": "German Medical Data Sciences 2022-Future Medicine: More Precise, More Integrative, More Sustainable!: Proceedings of the Joint Conference of the 67th Annual Meeting of the …",
+    "5TMNA1oAAAAJ:TQgYirikUcIC": {
+      "titel": "Die Wissensmanagementplattform für Versorgung und Forschung am Universitätsklinikum Schleswig-Holstein–Ein Praxisbeispiel",
+      "zitationen": 0,
+      "jahr": "2024"
+    },
+    "5TMNA1oAAAAJ:-f6ydRqryjwC": {
+      "titel": "Provenance Core Data Set: A Minimal Information Model for Data Provenance in Biomedical Research",
+      "zitationen": 0,
+      "jahr": "2023"
+    },
+    "5TMNA1oAAAAJ:ZeXyd9-uunAC": {
+      "titel": "Support of Young Talent in the GMDS",
+      "zitationen": 0,
+      "jahr": "2023"
+    },
+    "5TMNA1oAAAAJ:M3ejUd6NZC8C": {
+      "titel": "Proposal of Semantic Annotation for German Metadata Using Bidirectional Recurrent Neural Networks",
       "zitationen": 0,
       "jahr": "2022"
     },
-    "Cr10S-gAAAAJ:qUcmZB5y_30C": {
-      "titel": "Requirements Analysis for Core Medical Research IT Infrastructure Components: A Systematic Literature Analysis",
+    "5TMNA1oAAAAJ:mVmsd5A6BfQC": {
+      "titel": "Standardisierte Metadatenintegration für die Sekundärnutzung klinischer Daten",
       "zitationen": 0,
       "jahr": "2022"
     },
-    "Cr10S-gAAAAJ:IWHjjKOFINEC": {
-      "titel": "Telemonitoring of real-world health data in cardiology: a systematic review",
-      "zitationen": 0,
-      "jahr": "2022"
-    },
-    "Cr10S-gAAAAJ:dhFuZR0502QC": {
-      "titel": "Health Data Management, Wissensgenerierung und Datenkompetenzpotenziale",
-      "zitationen": 0,
-      "jahr": "2022"
-    },
-    "Cr10S-gAAAAJ:isC4tDSrTZIC": {
-      "titel": "ePA-Survey 2021: Bekanntheit, Bedarfe und Nutzung der elektronischen Patientenakte unter Versicherten in Deutschland",
-      "zitationen": 0,
-      "jahr": "2022"
-    },
-    "Cr10S-gAAAAJ:9ZlFYXVOiuMC": {
-      "titel": "HiGHmed Medical Data Integration Centers and their Different Architecture Designs (Workshop)",
+    "5TMNA1oAAAAJ:L8Ckcad2t8MC": {
+      "titel": "Konzeption und Implementierung einer Geräteschnittstelle des TECAN EVO Aliquotierroboter im Biobankkontext",
       "zitationen": 0,
       "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:Wp0gIr-vW9MC": {
-      "titel": "Ebook: German Medical Data Sciences 2021: Digital Medicine: Recognize–Understand–Heal",
+    "5TMNA1oAAAAJ:dhFuZR0502QC": {
+      "titel": "The Automatic Evaluation of Metadata in Healthcare",
       "zitationen": 0,
       "jahr": "2021"
     },
-    "Cr10S-gAAAAJ:4DMP91E08xMC": {
-      "titel": "Digitale Medizin. Erkennen, Verstehen, Heilen–66. Jahrestagung der Deutschen Gesellschaft für Medizinische Informatik, Biometrie und Epidemiologie (GMDS) eV und 12 …",
-      "zitationen": 0,
-      "jahr": "2021"
-    },
-    "Cr10S-gAAAAJ:k_IJM867U9cC": {
-      "titel": "Mapping HL7v2 ORU and BAR Messages to openEHR Archetypes",
-      "zitationen": 0,
-      "jahr": "2021"
-    },
-    "Cr10S-gAAAAJ:ULOm3_A8WrAC": {
-      "titel": "Workshop Report – Erst zum Arzt oder gleich die App?!",
+    "5TMNA1oAAAAJ:LkGwnXOMwfcC": {
+      "titel": "Potential Secondary Use of Medical Data in Monocentric In-House Clinical Trials",
       "zitationen": 0,
       "jahr": "2019"
     },
-    "Cr10S-gAAAAJ:5nxA0vEk-isC": {
-      "titel": "Erratum zu: Die Rolle von Integrating the Healthcare Enterprise (IHE) in der Telemedizin",
+    "5TMNA1oAAAAJ:hC7cP41nSMkC": {
+      "titel": "Entwicklung eines Tools zum Konvertieren von HL7 FHIR Questionnaires in das MOLGENIS EMX Format",
       "zitationen": 0,
-      "jahr": "2016"
+      "jahr": "2017"
     },
-    "Cr10S-gAAAAJ:hC7cP41nSMkC": {
-      "titel": "Einrichtungsübergreifendes Patientenrekrutierungssystem–Konzeption und Systemarchitektur",
+    "5TMNA1oAAAAJ:IWHjjKOFINEC": {
+      "titel": "Increasing Standardization of Biobank Data through HL7 FHIR Mapping",
       "zitationen": 0,
-      "jahr": "2016"
-    },
-    "Cr10S-gAAAAJ:_FxGoFyzp5QC": {
-      "titel": "Opportunities and Challenges of Consumer-centric eHealth Services: An Interdisciplinary Workshop",
-      "zitationen": 0,
-      "jahr": "2016"
-    },
-    "Cr10S-gAAAAJ:WF5omc3nYNoC": {
-      "titel": "A model for data integration into a regional research platform.",
-      "zitationen": 0,
-      "jahr": "2014"
-    },
-    "Cr10S-gAAAAJ:8k81kl-MbHgC": {
-      "titel": "Multizentrische Implementierung und Evaluation elektronisch unterstützter Patientenrekrutierung für Klinische Studien",
-      "zitationen": 0,
-      "jahr": "2012"
-    },
-    "Cr10S-gAAAAJ:Tyk-4Ss8FVUC": {
-      "titel": "Multizentrische Analyse von Routinedaten im Hinblick auf Ein-/Ausschlusskriterien klinischer Studien",
-      "zitationen": 0,
-      "jahr": "2011"
+      "jahr": "2017"
     }
   },
-  "zitationen": 1486,
-  "h_index": 15,
+  "zitationen": 812,
+  "h_index": 14,
   "taeglich": {
-    "2026-11-21": 1486
+    "2026-11-21": 812
   },
   "events": [],
   "openalex_seen": [],
-  "letzter_erfolg": "2026-11-21T14:46:57Z",
+  "letzter_erfolg": "2026-11-21T15:19:11Z",
   "pubdates": {
-    "Cr10S-gAAAAJ:O3NaXMp0MMsC": "2025-01-07",
-    "Cr10S-gAAAAJ:r0BpntZqJG4C": "2025-07-02",
-    "Cr10S-gAAAAJ:J_g5lzvAfSwC": "2025-09",
-    "Cr10S-gAAAAJ:SeFeTyx0c_EC": "2026-04-30",
-    "Cr10S-gAAAAJ:35N4QoGY0k4C": "2025-10-20"
+    "5TMNA1oAAAAJ:isC4tDSrTZIC": "2025-09-17",
+    "5TMNA1oAAAAJ:k_IJM867U9cC": "2025",
+    "5TMNA1oAAAAJ:bEWYMUwI8FkC": "2025-08-07",
+    "5TMNA1oAAAAJ:iH-uZ7U-co4C": "2025-04-24",
+    "5TMNA1oAAAAJ:hMod-77fHWUC": "2026-04-30"
   },
   "scholar_citing_seen": [],
   "neueste_geprueft": null
