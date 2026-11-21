@@ -95,6 +95,16 @@ def h_index(cites: list) -> int:
     return sum(1 for i, c in enumerate(s) if c >= i + 1)
 
 
+def h_progress(cites: list) -> int:
+    """Fortschritt zum naechsten h-Index in Prozent: Anteil der benoetigten Zitationen
+    (die h+1 staerksten Paper brauchen je h+1), die schon erreicht sind."""
+    s = sorted(cites, reverse=True)
+    target = h_index(s) + 1
+    top = s[:target] + [0] * max(0, target - len(s))
+    have = sum(min(c, target) for c in top)
+    return int(100 * have / (target * target))
+
+
 def h_countdown(cites: list) -> tuple:
     """(naechster h-Index, fehlende Zitationen)"""
     s = sorted(cites, reverse=True)
@@ -540,6 +550,7 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime,
         "i10": prof.get("i10_index"),
         "h_next": h_next,
         "h_need": h_need,
+        "h_prog": h_progress(cites_list),
         "y0": int(years[0][0]) if years else None,
         "years": [v for _, v in years],
         "ticker": ticker,

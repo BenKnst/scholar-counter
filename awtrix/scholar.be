@@ -3,11 +3,13 @@
 # @config url text "Adresse der clock.json" default="https://gist.githubusercontent.com/BenKnst/442b1a85615c2f88cb485fd3803e39f0/raw/clock.json"
 # @config sound bool "Ton bei Party (nicht 22-7 Uhr)" default=true
 # @config party_icon text "Party-Icon (Name, optional)" default="" help="Z. B. ein Konfetti-Icon aus dem AWTRIX Hub"
-# @config icons text "Icons (Namen, mit Komma getrennt)" default="" help="Werden zufällig vor der Zitationszahl gezeigt. Leer = Doktorhut."
+# @config icons text "Icons (Namen, mit Komma getrennt)" default="" help="Werden zufällig vor der Zitationszahl gezeigt. Leer = goldene Anführungszeichen."
+# @config intro bool "Kurz CITATIONS einblenden" default=true
 #
 # ENTWURF fuer AWTRIX NG (Ulanzi TC001, 8 x 32 Pixel).
 # Holt alle 30 Minuten die clock.json aus dem Gist und zeigt nacheinander:
-#   1. Weisser Grund: Icon (zufaellig aus der Liste, sonst Doktorhut) + Zitationen in Schwarz (+ Zuwachs)
+#   1. Kurz "CITATIONS" als Laufschrift, dann goldene Anfuehrungszeichen + Zitationen in Weiss
+#      (+ Zuwachs in Gruen), unterste Zeile: Fortschritt bis zum naechsten h-Index
 #   2. Laufschrift: h-index und wie viele Zitationen bis zum naechsten fehlen
 #   3. Laufschrift: Paper im laufenden Jahr (und im Vorjahr)
 #   4. Balken: Zitationen pro Monat (sobald 3 Monate aufgezeichnet sind), sonst pro Jahr
@@ -18,7 +20,7 @@
 import json
 
 class Scholar
-  var d, ticks, busy, pages, page, page_start, cur_icon
+  var d, ticks, busy, pages, page, page_start, cur_icon, intro_done
 
   static GOLD  = 0xFFC800
   static WHITE = 0xFFFFFF
@@ -27,25 +29,14 @@ class Scholar
   static PINK  = 0xFF66CC
   static GREY  = 0x808080
   static RED   = 0xFF0000
-  static HAT_W = 0xFFFFFF      # Hintergrund (weiss)
-  static HAT_G = 0x808080      # Hutflaeche (grau)
-  static HAT_O = 0xFF7A00      # Quaste (orange)
-  static BLACK = 0x000000      # Schrift auf weissem Grund (Pixel aus)
-  static DARKGREEN = 0x00A000  # Zuwachs auf weissem Grund
+  static BAR_OFF = 0x303030    # Fortschrittsbalken: noch nicht erreicht
+  static INTRO_MAX_MS = 5000   # "CITATIONS" spaetestens nach 5 s fertig
   static STATIC_MS = 5000      # Anzeigedauer der festen Seiten
   static SCROLL_MAX_MS = 40000 # Laufschrift spaetestens nach 40 s weiter
   static STALE_S = 172800      # Daten aelter als 2 Tage -> roter Punkt
 
-  # Doktorhut, 8 x 8 Pixel (eigener Entwurf). Zeichen: W = weiss, K = Kontur (aus),
-  # G = Hutflaeche, Y = Gold, O = Quaste
-  static HAT = ["WWWKKWWW",
-                "WWKGGKWW",
-                "WKGGGGKW",
-                "KGGGGYKW",
-                "WKKGGKOW",
-                "WWKGGKOW",
-                "WWWKKOYW",
-                "WWWWWOOW"]
+  # Goldene Anfuehrungszeichen, 5 x 3 Pixel (Zeilen 1-3)
+  static QUOTE = [[0,1],[1,1],[3,1],[4,1],[0,2],[1,2],[3,2],[4,2],[1,3],[4,3]]
 
   def init()
     self.d = nil
@@ -55,6 +46,7 @@ class Scholar
     self.page = 0
     self.page_start = 0
     self.cur_icon = nil
+    self.intro_done = false
   end
 
   # ------------------------------------------------------------ Daten holen
@@ -191,6 +183,7 @@ class Scholar
   def on_show()
     self.page = 0
     self.page_start = now_ms()
+    self.intro_done = !store.get("intro", true)
     self.pick_icon()
   end
 
@@ -231,6 +224,8 @@ class Scholar
           var t = (w + width()) * 1000 / 21 + 1000
           ms += t < self.SCROLL_MAX_MS ? t : self.SCROLL_MAX_MS
         end
+      elif p["kind"] == "cites" && store.get("intro", true)
+        ms += self.STATIC_MS + 4000      # plus Laufschrift "CITATIONS"
       else
         ms += self.STATIC_MS
       end
@@ -242,6 +237,7 @@ class Scholar
     self.page += 1
     if self.page >= self.pages.size()
       self.page = 0
+      self.intro_done = !store.get("intro", true)
     end
     self.page_start = now_ms()
   end
@@ -283,24 +279,21 @@ class Scholar
   end
 
   # ------------------------------------------------------------ Zeichnen
-  def draw_hat(x0)
-    var y = 0
-    for row: self.HAT
-      for x: 0 .. size(row) - 1
-        var ch = row[x]
-        if ch == "W"
-          pixel(x0 + x, y, self.HAT_W)
-        elif ch == "K"
-          pixel(x0 + x, y, self.BLACK)
-        elif ch == "G"
-          pixel(x0 + x, y, self.HAT_G)
-        elif ch == "Y"
-          pixel(x0 + x, y, self.GOLD)
-        elif ch == "O"
-          pixel(x0 + x, y, self.HAT_O)
-        end
-      end
-      y += 1
+  def draw_quote(x0)
+    for q: self.QUOTE
+      pixel(x0 + q[0], q[1], self.GOLD)
+    end
+  end
+
+  # Unterste Zeile: Fortschritt bis zum naechsten h-Index (Prozentwert aus der clock.json)
+  def draw_progress()
+    var prog = self.get("h_prog", nil)
+    if prog == nil
+      return
+    end
+    var n = int(prog * width() / 100)
+    for x: 0 .. width() - 1
+      pixel(x, 7, x < n ? self.GOLD : self.BAR_OFF)
     end
   end
 
@@ -314,26 +307,38 @@ class Scholar
     var elapsed = now_ms() - self.page_start
     var k = p["kind"]
 
-    if k == "cites"
-      clear(self.HAT_W)   # ganzes Display weiss hinterlegt
-      if self.cur_icon == nil || icon(self.cur_icon, 0, 0) == false
-        self.draw_hat(0)
+    if k == "cites" && !self.intro_done
+      # Variante C1: erst kurz "CITATIONS" als Laufschrift
+      var runs = scroll_text(0, 6, width(), "CITATIONS", self.GOLD,
+                             {"mode": "wrap", "entry": "offscreen", "speed": 100})
+      if runs >= 1 || elapsed > self.INTRO_MAX_MS
+        self.intro_done = true
+        self.page_start = now_ms()
       end
-      var x0 = 9                          # Textbeginn rechts vom Hut
+
+    elif k == "cites"
+      # Variante A: Anfuehrungszeichen (oder Icon aus der Liste) + Zahl + Fortschritt
+      var x0 = 7                          # Textbeginn rechts von den Anfuehrungszeichen
+      if self.cur_icon == nil || icon(self.cur_icon, 0, 0) == false
+        self.draw_quote(0)
+      else
+        x0 = 9                            # rechts vom 8 Pixel breiten Icon
+      end
       var num = self.fmt_count(self.get("cites", 0), width() - x0)
       var delta = self.get("delta", 0)
       var ds = delta > 0 ? "+" + str(delta) : ""
       var both_fit = ds == "" || x0 + text_width(num) + 1 + text_width(ds) <= width()
       if both_fit
-        var x = x0 + text(x0, 6, num, self.BLACK)
+        var x = x0 + text(x0, 6, num, self.WHITE)
         if ds != ""
-          text(x + 1, 6, ds, self.DARKGREEN)
+          text(x + 1, 6, ds, self.GREEN)
         end
       elif elapsed < self.STATIC_MS / 2
-        text(x0, 6, num, self.BLACK)          # erst die Zahl ...
+        text(x0, 6, num, self.WHITE)          # erst die Zahl ...
       else
-        text(x0, 6, ds, self.DARKGREEN)       # ... dann der Zuwachs
+        text(x0, 6, ds, self.GREEN)           # ... dann der Zuwachs
       end
+      self.draw_progress()
       if self.is_stale()
         pixel(width() - 1, 0, self.RED)   # roter Punkt: Daten sind veraltet
       end
