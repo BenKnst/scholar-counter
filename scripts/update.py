@@ -544,6 +544,7 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime,
         "v": 1,
         "upd": int(now.timestamp()),
         "ok": True,
+        "name": prof.get("name"),   # Name aus dem Scholar-Profil, laeuft vor "CITATIONS"
         "cites": total,
         "delta": max(0, delta),
         "h": h,

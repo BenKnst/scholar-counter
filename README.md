@@ -8,14 +8,18 @@ sie sich alle 30 Minuten selbst. Ein Server im Heimnetz ist nicht nötig, die Uh
 
 ## Was die Uhr anzeigt
 
-| Seite | Inhalt |
+Jede Seite ist eine eigene App. Dazwischen steht jeweils 30 s die Uhrzeit
+(Reihenfolge und Nachtschaltung: App „Nachtmodus“).
+
+| App (Skript) | Inhalt |
 |---|---|
-| Zitationen | weißer Grund, Doktorhut (oder zufälliges Icon aus der Einstellung „Icons“), Zahl in Schwarz, Zuwachs seit gestern in Grün. Große Zahlen werden gekürzt (123k, 1.2M), passt der Zuwachs nicht daneben, erscheint er im Wechsel |
-| h-index | „h-index 5 · 2 more to h6“ |
-| Paper | „7 papers in the last 12 months“ (genaues Datum von der Scholar-Detailseite, sonst Kalenderjahr) |
-| Verlauf | Balken: Zitationen pro Monat (ab 3 aufgezeichneten Monaten), vorher pro Jahr |
-| Neuigkeiten | Laufschrift: „New paper: …“ (24 h), „Cited by Müller et al. 2026: "…" -> "…"“ bzw. „+2 citations: …“ (48 h), eigene Nachricht |
-| Party | klein bei neuen Zitationen („+3 citations!“), groß bei neuem Paper, h-Index oder Meilenstein. Bleibt stehen, bis die mittlere Taste gedrückt wird. 22–7 Uhr ohne Ton |
+| Scholar (`scholar.be`) | holt die Daten für alle Scholar-Apps. Zeigt: zufällige Animation → Name als Laufschrift → „CITATIONS“ → goldene Anführungszeichen, Zitationen in Weiß, Zuwachs in Grün, unterste Zeile Fortschritt bis zum nächsten h-Index |
+| Scholar-hIndex (`scholar_hindex.be`) | „h-index 5 · 2 more to h6“ |
+| Scholar-Paper (`scholar_paper.be`) | „7 papers in the last 12 months“ |
+| Scholar-Chart (`scholar_chart.be`) | Erklärung als Laufschrift, dann Balken: Zitationen pro Monat (ab 3 aufgezeichneten Monaten), vorher pro Jahr |
+| Scholar-News (`scholar_news.be`) | nur wenn es etwas gibt: „New paper: …“ (24 h), „Cited by …“ (48 h), eigene Nachricht |
+| Nachtmodus (`nachtmodus.be`) | zeigt nichts. 22–7 Uhr nur Uhrzeit, morgens wieder alle Apps |
+| Party | klein bei neuen Zitationen, groß bei neuem Paper, h-Index oder Meilenstein. Bleibt stehen, bis die mittlere Taste gedrückt wird. Nachts wartet sie bis 7 Uhr |
 
 Ein roter Punkt oben rechts heißt: Die Daten sind veraltet (letzter Abruf fehlgeschlagen oder älter als 2 Tage).
 
@@ -28,7 +32,7 @@ scripts/update.py               Abruf und Vergleich, schreibt docs/ und data/
 docs/clock.json                 kleine Datei für die Uhr (wird erzeugt)
 docs/full.json                  alle Daten zum Nachschauen (wird erzeugt)
 data/state.json                 Gedächtnis zwischen den Läufen (wird erzeugt)
-awtrix/scholar.be               Skript für die Uhr (Berry, AWTRIX NG)
+awtrix/*.be                     Skripte für die Uhr (Berry, AWTRIX NG), siehe oben
 tests/fixtures/                 Testdaten für Läufe ohne Internet
 ```
 
@@ -48,9 +52,10 @@ tests/fixtures/                 Testdaten für Läufe ohne Internet
    Nach ein bis zwei Minuten sollte es diese Datei geben:
    `https://benknst.github.io/scholar-counter/clock.json`
    Der erste Lauf legt nur den Ausgangsstand fest. Neuigkeiten gibt es ab dem zweiten Lauf.
-5. **Uhr:** In der Weboberfläche von AWTRIX NG den Inhalt von `awtrix/scholar.be` in den
-   Skript-Editor einfügen und speichern. Die Adresse der `clock.json` lässt sich dort in den
-   App-Einstellungen ändern.
+5. **Uhr:** In der Weboberfläche von AWTRIX NG je ein Skript pro Datei in `awtrix/` anlegen,
+   Namen genau so: `Scholar`, `Scholar-hIndex`, `Scholar-Paper`, `Scholar-Chart`,
+   `Scholar-News`, `Nachtmodus`. Display → „Time per app“ = 30000 ms (Uhrzeit 30 s; die
+   Scholar-Apps bestimmen ihre Dauer selbst). Die Reihenfolge stellt der Nachtmodus ein.
 
 ## Einstellungen (`config.json`)
 
