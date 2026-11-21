@@ -1,730 +1,663 @@
 {
-  "aktualisiert": "2026-11-21T14:44:28Z",
+  "aktualisiert": "2026-11-21T14:46:57Z",
   "profil": {
-    "name": "Matthew J Page",
-    "affiliation": "School of Public Health and Preventive Medicine, Monash University",
-    "zitationen": 373037,
-    "zitationen_5j": 349719,
-    "h_index": 92,
-    "i10_index": 217,
+    "name": "Björn Schreiweis",
+    "affiliation": "Institute for Medical Informatics and Artificial Intelligence, Kiel University and UKSH",
+    "zitationen": 1486,
+    "zitationen_5j": 1135,
+    "h_index": 15,
+    "i10_index": 22,
     "pro_jahr": {
-      "2016": 1227,
-      "2017": 2087,
-      "2018": 3229,
-      "2019": 4762,
-      "2020": 8245,
-      "2021": 15999,
-      "2022": 32381,
-      "2023": 45213,
-      "2024": 60145,
-      "2025": 84806,
-      "2026": 108881
+      "2013": 5,
+      "2014": 25,
+      "2015": 37,
+      "2016": 34,
+      "2017": 19,
+      "2018": 47,
+      "2019": 58,
+      "2020": 84,
+      "2021": 144,
+      "2022": 143,
+      "2023": 182,
+      "2024": 239,
+      "2025": 217,
+      "2026": 204
     }
   },
   "h_countdown": {
-    "naechster": 93,
+    "naechster": 16,
     "fehlend": 1
   },
   "publikationen": [
     {
-      "id": "YNUamsYAAAAJ:tuHXwOkdijsC",
-      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
-      "jahr": "2021",
-      "zitationen": 195409,
-      "cites_id": "15727065504675327747"
-    },
-    {
-      "id": "YNUamsYAAAAJ:OU6Ihb5iCvQC",
-      "titel": "RoB 2: a revised tool for assessing risk of bias in randomised trials",
+      "id": "Cr10S-gAAAAJ:KlAtU1dfN6UC",
+      "titel": "Barriers and Facilitators to the Implementation of eHealth Services: Systematic Literature Analysis",
       "jahr": "2019",
-      "zitationen": 40587,
-      "cites_id": "6745803066368996883,2317065933090729727"
+      "zitationen": 496,
+      "cites_id": "18279546656706087010"
     },
     {
-      "id": "YNUamsYAAAAJ:geHnlv5EZngC",
-      "titel": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement",
-      "jahr": "2015",
-      "zitationen": 27785,
-      "cites_id": "17703042528107474191,9311875780471840,7943097671939597726"
-    },
-    {
-      "id": "YNUamsYAAAAJ:b1wdh0AR-JQC",
-      "titel": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews",
-      "jahr": "2021",
-      "zitationen": 17045,
-      "cites_id": "5690463728863156963"
-    },
-    {
-      "id": "YNUamsYAAAAJ:sSrBHYA8nusC",
-      "titel": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation",
-      "jahr": "2015",
-      "zitationen": 15850,
-      "cites_id": "12815720499468935333"
-    },
-    {
-      "id": "YNUamsYAAAAJ:XiSMed-E-HIC",
-      "titel": "Updated guidance for trusted systematic reviews: a new edition of the Cochrane Handbook for Systematic Reviews of Interventions",
-      "jahr": "2019",
-      "zitationen": 6894,
-      "cites_id": "3718534597767837960"
-    },
-    {
-      "id": "YNUamsYAAAAJ:epqYDVWIO7EC",
-      "titel": "PRISMA2020: An R package and Shiny app for producing PRISMA 2020-compliant flow diagrams, with interactivity for optimised digital transparency and Open …",
-      "jahr": "2022",
-      "zitationen": 6151,
-      "cites_id": "6797611052934917198"
-    },
-    {
-      "id": "YNUamsYAAAAJ:PR6Y55bgFSsC",
-      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews",
-      "jahr": "2021",
-      "zitationen": 5899,
-      "cites_id": "8077882857217203497"
-    },
-    {
-      "id": "YNUamsYAAAAJ:P7Ujq4OLJYoC",
-      "titel": "& Moher, D.(2021). The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
-      "jahr": "2021",
-      "zitationen": 5333,
-      "cites_id": "1330299720383577910,3666202426207734400,10445972481363247532,4037248056392633329,4015515542120469083,6013073029393982711,5946791055383014823,5816201406756526325,9038770924994843814,9504952845505764018,15152660073909931943"
-    },
-    {
-      "id": "YNUamsYAAAAJ:TIZ-Mc8IlK0C",
-      "titel": "Declaración PRISMA 2020: una guía actualizada para la publicación de revisiones sistemáticas",
-      "jahr": "2021",
-      "zitationen": 5171,
-      "cites_id": "10232133199030025595,11421451860880031229"
-    },
-    {
-      "id": "YNUamsYAAAAJ:K3LRdlH-MEoC",
-      "titel": "Assessing risk of bias in a randomized trial",
-      "jahr": "2019",
-      "zitationen": 4144,
-      "cites_id": "11706334947502566373,11198088696226515691,8454812573214221379,4524565614850230781,16265245498865620161,11437740394558893825,8519019762677539271"
-    },
-    {
-      "id": "YNUamsYAAAAJ:_B80troHkn4C",
-      "titel": "Updating guidance for reporting systematic reviews: development of the PRISMA 2020 statement",
-      "jahr": "2021",
-      "zitationen": 3979,
-      "cites_id": "15367804918615098770"
-    },
-    {
-      "id": "YNUamsYAAAAJ:M05iB0D1s5AC",
-      "titel": "ROBIS: a new tool to assess risk of bias in systematic reviews was developed",
-      "jahr": "2016",
-      "zitationen": 2813,
-      "cites_id": "16189922986406788839"
-    },
-    {
-      "id": "YNUamsYAAAAJ:URolC5Kub84C",
-      "titel": "RoB 2: a revised tool for assessing risk of bias in randomised trials. BMJ 366: l4898",
-      "jahr": "2019",
-      "zitationen": 1746,
-      "cites_id": "17966842809896872844"
-    },
-    {
-      "id": "YNUamsYAAAAJ:ZHo1McVdvXMC",
-      "titel": "A revised tool for assessing risk of bias in randomized trials",
-      "jahr": "2016",
-      "zitationen": 1523,
-      "cites_id": "2029469634662747117"
-    },
-    {
-      "id": "YNUamsYAAAAJ:tz746QTLzJkC",
-      "titel": "The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. BMJ, 372, n71. Documento en línea",
-      "jahr": "2021",
-      "zitationen": 1411,
-      "cites_id": "5956344626895185154,12435455706196210017,3115340049700163654,9944314773744862820"
-    },
-    {
-      "id": "YNUamsYAAAAJ:WbkHhVStYXYC",
-      "titel": "Assessing risk of bias due to missing results in a synthesis",
-      "jahr": "2019",
-      "zitationen": 1241,
-      "cites_id": "9238658644473447579,18320461742126717540,8700440450768778898"
-    },
-    {
-      "id": "YNUamsYAAAAJ:aIdbFUkbNIkC",
-      "titel": "& Moher, D.(2021). The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. BMJ, 372, n71",
-      "jahr": null,
-      "zitationen": 1156,
-      "cites_id": "12477873933138165315"
-    },
-    {
-      "id": "YNUamsYAAAAJ:6ZxmRoH8BuwC",
-      "titel": "A declaração PRISMA 2020: diretriz atualizada para relatar revisões sistemáticas",
-      "jahr": "2023",
-      "zitationen": 1088,
-      "cites_id": "8291070616290827547"
-    },
-    {
-      "id": "YNUamsYAAAAJ:2P1L_qKh6hAC",
-      "titel": "Evaluations of the uptake and impact of the Preferred Reporting Items for Systematic reviews and Meta-Analyses (PRISMA) Statement and extensions: a scoping review",
-      "jahr": "2017",
-      "zitationen": 980,
-      "cites_id": "14167972484157836478"
-    },
-    {
-      "id": "YNUamsYAAAAJ:ULOm3_A8WrAC",
-      "titel": "Pre‐operative education for hip or knee replacement",
-      "jahr": "2004",
-      "zitationen": 957,
-      "cites_id": "2237744910274074486"
-    },
-    {
-      "id": "YNUamsYAAAAJ:j8SEvjWlNXcC",
-      "titel": "Preferred reporting items for systematic reviews and meta‐analyses in ecology and evolutionary biology: a PRISMA extension",
-      "jahr": "2021",
-      "zitationen": 946,
-      "cites_id": "4658083086918633220"
-    },
-    {
-      "id": "YNUamsYAAAAJ:mB3voiENLucC",
-      "titel": "Epidemiology and reporting characteristics of systematic reviews of biomedical research: a cross-sectional study",
-      "jahr": "2016",
-      "zitationen": 857,
-      "cites_id": "17970001541452369583"
-    },
-    {
-      "id": "YNUamsYAAAAJ:u9iWguZQMMsC",
-      "titel": "Considering bias and conflicts of interest among the included studies",
-      "jahr": "2019",
-      "zitationen": 780,
-      "cites_id": "2284935392186438243,6248824717987146475,5367881550731499178,16388629141687971839,11302995877334937558"
-    },
-    {
-      "id": "YNUamsYAAAAJ:tOudhMTPpwUC",
-      "titel": "Cochrane review: Continuous subcutaneous insulin infusion (CSII) versus multiple insulin injections for type 1 diabetes mellitus",
-      "jahr": "2010",
-      "zitationen": 714,
-      "cites_id": "17879118493967829125"
-    },
-    {
-      "id": "YNUamsYAAAAJ:FsLZdJ3BAzkC",
-      "titel": "Cochrane handbook for systematic reviews of interventions",
-      "jahr": "2011",
-      "zitationen": 598,
-      "cites_id": "4935963107802092298"
-    },
-    {
-      "id": "YNUamsYAAAAJ:ns9cj8rnVeAC",
-      "titel": "The pharmacological and non-pharmacological treatment of attention deficit hyperactivity disorder in children and adolescents: a systematic review with network meta-analyses of …",
-      "jahr": "2017",
-      "zitationen": 597,
-      "cites_id": "8402708524622156032"
-    },
-    {
-      "id": "YNUamsYAAAAJ:p__nRnzSRKYC",
-      "titel": "Implementing the 27 PRISMA 2020 Statement items for systematic reviews in the sport and exercise medicine, musculoskeletal rehabilitation and sports science fields: the PERSiST …",
-      "jahr": "2022",
-      "zitationen": 585,
-      "cites_id": "5517973410078336492"
-    },
-    {
-      "id": "YNUamsYAAAAJ:g5m5HwL7SMYC",
-      "titel": "Registration of systematic reviews in PROSPERO: 30,000 records and counting",
+      "id": "Cr10S-gAAAAJ:Y0pCki6q_DkC",
+      "titel": "HiGHmed–an open platform approach to enhance care and research across institutional boundaries",
       "jahr": "2018",
-      "zitationen": 582,
-      "cites_id": "2312717572707229317"
+      "zitationen": 209,
+      "cites_id": "7071177082218669073"
     },
     {
-      "id": "YNUamsYAAAAJ:ILKRHgRFtOwC",
-      "titel": "PRISMA 2020 and PRISMA-S: common questions on tracking records and the flow diagram",
-      "jahr": "2022",
-      "zitationen": 493,
-      "cites_id": "17311368852784202590"
-    },
-    {
-      "id": "YNUamsYAAAAJ:eq2jaN3J8jMC",
-      "titel": "Revised Cochrane risk-of-bias tool for randomized trials (RoB 2)",
-      "jahr": "2019",
-      "zitationen": 477,
-      "cites_id": "2815989720964666233"
-    },
-    {
-      "id": "YNUamsYAAAAJ:rCNdntzdTkkC",
-      "titel": "A declaração PRISMA 2020: uma diretriz atualizada para relatórios revisões sistemáticas",
-      "jahr": "2021",
-      "zitationen": 439,
-      "cites_id": "2956998389326356082"
-    },
-    {
-      "id": "YNUamsYAAAAJ:AYInfyleIOsC",
-      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. Syst Rev. 2021; 10: 89",
-      "jahr": "2021",
-      "zitationen": 433,
-      "cites_id": "5384054248985572694"
-    },
-    {
-      "id": "YNUamsYAAAAJ:_kc_bZDykSQC",
-      "titel": "Splinting for carpal tunnel syndrome",
-      "jahr": "2012",
-      "zitationen": 415,
-      "cites_id": "7260091671432079872,14116869828606862789"
-    },
-    {
-      "id": "YNUamsYAAAAJ:J_g5lzvAfSwC",
-      "titel": "Stop this waste of people, animals and money",
-      "jahr": "2017",
-      "zitationen": 401,
-      "cites_id": "18277770808795343525"
-    },
-    {
-      "id": "YNUamsYAAAAJ:M3ejUd6NZC8C",
-      "titel": "Manual therapy and exercise for adhesive capsulitis (frozen shoulder)",
-      "jahr": "2014",
-      "zitationen": 394,
-      "cites_id": "4224189780301030053"
-    },
-    {
-      "id": "YNUamsYAAAAJ:CHSYGLWDkRkC",
-      "titel": "Safety and efficacy of testosterone for women: a systematic review and meta-analysis of randomised controlled trial data",
-      "jahr": "2019",
-      "zitationen": 386,
-      "cites_id": "727136677962191253"
-    },
-    {
-      "id": "YNUamsYAAAAJ:EaFouW7jFu4C",
-      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ 372, n71 (2021)",
-      "jahr": "2022",
-      "zitationen": 385,
-      "cites_id": "2813355123434113940"
-    },
-    {
-      "id": "YNUamsYAAAAJ:4X0JR2_MtJMC",
-      "titel": "RoB 2: A revised tool for assessing risk of bias in randomised trials. BMJ, 366, Article l4898",
-      "jahr": "2019",
-      "zitationen": 376,
-      "cites_id": "13709373195366711007,12664312984089450574"
-    },
-    {
-      "id": "YNUamsYAAAAJ:4Yq6kJLCcecC",
-      "titel": "Boutron.(2021)",
-      "jahr": null,
-      "zitationen": 375,
-      "cites_id": "603206062951670119,8857508307948564584"
-    },
-    {
-      "id": "YNUamsYAAAAJ:-yGd096yOn8C",
-      "titel": "& Alonso-Fernández, S.(2021). Declaración PRISMA 2020: una guía actualizada para la publicación de revisiones sistemáticas",
-      "jahr": null,
-      "zitationen": 375,
-      "cites_id": "8165844507561716350"
-    },
-    {
-      "id": "YNUamsYAAAAJ:aqlVkmm33-oC",
-      "titel": "Bias due to selective inclusion and reporting of outcomes and analyses in systematic reviews of randomised trials of healthcare interventions",
-      "jahr": "2014",
-      "zitationen": 357,
-      "cites_id": "16496080964725698470"
-    },
-    {
-      "id": "YNUamsYAAAAJ:vbGhcppDl1QC",
-      "titel": "Introduction to PRISMA 2020 and implications for research synthesis methodologists",
-      "jahr": "2022",
-      "zitationen": 356,
-      "cites_id": "3026073662615334151"
-    },
-    {
-      "id": "YNUamsYAAAAJ:yD5IFk8b50cC",
-      "titel": "Dealing with effect size multiplicity in systematic reviews and meta‐analyses",
-      "jahr": "2018",
-      "zitationen": 346,
-      "cites_id": "1901146431596837117"
-    },
-    {
-      "id": "YNUamsYAAAAJ:5awf1xo2G04C",
-      "titel": "Investigating and dealing with publication bias and other reporting biases in meta‐analyses of health research: A review",
-      "jahr": "2021",
-      "zitationen": 343,
-      "cites_id": "11491403985992931309"
-    },
-    {
-      "id": "YNUamsYAAAAJ:r0BpntZqJG4C",
-      "titel": "Empirical evidence of study design biases in randomized trials: systematic review of meta-epidemiological studies",
-      "jahr": "2016",
-      "zitationen": 343,
-      "cites_id": "5844909740274665189"
-    },
-    {
-      "id": "YNUamsYAAAAJ:j3f4tGmQtD8C",
-      "titel": "Manual therapy and exercise for rotator cuff disease",
-      "jahr": "1996",
-      "zitationen": 338,
-      "cites_id": "6864244459052817287"
-    },
-    {
-      "id": "YNUamsYAAAAJ:HoB7MX3m0LUC",
-      "titel": "Tools for assessing risk of reporting biases in studies and syntheses of studies: a systematic review",
-      "jahr": "2018",
-      "zitationen": 337,
-      "cites_id": "15022880653168336263"
-    },
-    {
-      "id": "YNUamsYAAAAJ:9DLIHnF0jcYC",
-      "titel": "Early childhood epilepsies: epidemiology, classification, aetiology, and socio-economic determinants",
-      "jahr": "2021",
-      "zitationen": 336,
-      "cites_id": "478776641124851923"
-    },
-    {
-      "id": "YNUamsYAAAAJ:yqoGN6RLRZoC",
-      "titel": "The problems with systematic reviews: a living systematic review",
-      "jahr": "2023",
-      "zitationen": 282,
-      "cites_id": "4106461066022096314"
-    },
-    {
-      "id": "YNUamsYAAAAJ:TaaCk18tZOkC",
-      "titel": "Cochrane handbook for systematic reviews of interventions version 6.4",
-      "jahr": "2023",
-      "zitationen": 267,
-      "cites_id": "9445061473657457891"
-    },
-    {
-      "id": "YNUamsYAAAAJ:vRqMK49ujn8C",
-      "titel": "Mapping of reporting guidance for systematic reviews and meta-analyses generated a comprehensive item bank for future reporting guidelines",
-      "jahr": "2020",
-      "zitationen": 264,
-      "cites_id": "4350963703101780117"
-    },
-    {
-      "id": "YNUamsYAAAAJ:YOwf2qJgpHMC",
-      "titel": "Exercise and mobilisation interventions for carpal tunnel syndrome",
-      "jahr": "1996",
-      "zitationen": 262,
-      "cites_id": "346244768923718286"
-    },
-    {
-      "id": "YNUamsYAAAAJ:bFI3QPDXJZMC",
-      "titel": "Effect of breakfast on weight and energy intake: systematic review and meta-analysis of randomised controlled trials",
-      "jahr": "2019",
-      "zitationen": 258,
-      "cites_id": "1596074097696081426"
-    },
-    {
-      "id": "YNUamsYAAAAJ:Hck25ST_3aIC",
-      "titel": "Chapter 13: Assessing risk of bias due to missing evidence in a meta-analysis [last updated August 2024]",
-      "jahr": "2024",
-      "zitationen": 235,
-      "cites_id": "8944266367820994373"
-    },
-    {
-      "id": "YNUamsYAAAAJ:4JMBOYKVnBMC",
-      "titel": "Electrotherapy modalities for rotator cuff disease",
-      "jahr": "2016",
-      "zitationen": 228,
-      "cites_id": "7491388225618007797"
-    },
-    {
-      "id": "YNUamsYAAAAJ:4TOpqqG69KYC",
-      "titel": "Therapeutic ultrasound for carpal tunnel syndrome",
+      "id": "Cr10S-gAAAAJ:d1gkVwhDpl0C",
+      "titel": "Evaluation of data completeness in the electronic health record for the purpose of patient recruitment into clinical trials: a retrospective analysis of element presence",
       "jahr": "2013",
-      "zitationen": 228,
-      "cites_id": "2647331135770859471"
+      "zitationen": 150,
+      "cites_id": "3089633401384277167"
     },
     {
-      "id": "YNUamsYAAAAJ:dAp6zn-oMfAC",
-      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ [Internet]. 2021 Mar 29 [cited 2023 Apr 30]; n71–1",
-      "jahr": null,
-      "zitationen": 228,
-      "cites_id": "17933509062984935139"
+      "id": "Cr10S-gAAAAJ:ufrVoPGSRksC",
+      "titel": "Comparison of electronic health record system functionalities to support the patient recruitment process in clinical trials",
+      "jahr": "2014",
+      "zitationen": 57,
+      "cites_id": "9755644385056431802"
     },
     {
-      "id": "YNUamsYAAAAJ:i2xiXl-TujoC",
-      "titel": "Mortality in persons with autism spectrum disorder or attention-deficit/hyperactivity disorder: a systematic review and meta-analysis",
-      "jahr": "2022",
-      "zitationen": 217,
-      "cites_id": "18320521935539332190"
+      "id": "Cr10S-gAAAAJ:qjMakFHDy7sC",
+      "titel": "Design and multicentric implementation of a generic software architecture for patient recruitment systems re-using existing HIS tools and routine patient data",
+      "jahr": "2014",
+      "zitationen": 50,
+      "cites_id": "4857269442426013407"
     },
     {
-      "id": "YNUamsYAAAAJ:qxL8FJ1GzNcC",
-      "titel": "Electrotherapy modalities for adhesive capsulitis (frozen shoulder)",
-      "jahr": "1996",
-      "zitationen": 217,
-      "cites_id": "14279451338417160927"
-    },
-    {
-      "id": "YNUamsYAAAAJ:nVrZBo8bIpAC",
-      "titel": "Ítems de referencia para publicar Protocolos de Revisiones Sistemáticas y Metaanálisis: Declaración PRISMA-P 2015",
-      "jahr": "2016",
-      "zitationen": 201,
-      "cites_id": "487594508229455808,6407198889310388583"
-    },
-    {
-      "id": "YNUamsYAAAAJ:WHdLCjDvYFkC",
-      "titel": "ROB-ME: a tool for assessing risk of bias due to missing evidence in systematic reviews with meta-analysis",
-      "jahr": "2023",
-      "zitationen": 179,
-      "cites_id": "9496248617341944599"
-    },
-    {
-      "id": "YNUamsYAAAAJ:hNSvKAmkeYkC",
-      "titel": "Early-onset autoimmunity associated with SOCS1 haploinsufficiency",
-      "jahr": "2020",
-      "zitationen": 177,
-      "cites_id": "6624391445067014757"
-    },
-    {
-      "id": "YNUamsYAAAAJ:Ade32sEp0pkC",
-      "titel": "RoB 2: A revised tool for assessing risk of bias in randomised trials., 2019, 366, p. l4898",
+      "id": "Cr10S-gAAAAJ:iH-uZ7U-co4C",
+      "titel": "Die Datenintegrationszentren–Von der Konzeption in der Medizininformatik-Initiative zur lokalen Umsetzung in einem Netzwerk Universitätsmedizin",
       "jahr": "2024",
-      "zitationen": 175,
-      "cites_id": "1018075559332688407"
+      "zitationen": 48,
+      "cites_id": "4705399832057008706,18225468650552957966"
     },
     {
-      "id": "YNUamsYAAAAJ:rOcdG6UcVlcC",
-      "titel": "Cochrane Handbook for Systematic Reviews of Interventions version 6.4 (updated August 2023)[Internet].[cited 2024 Apr 25]",
-      "jahr": null,
-      "zitationen": 165,
-      "cites_id": "7753807117392701153"
+      "id": "Cr10S-gAAAAJ:YOwf2qJgpHMC",
+      "titel": "Towards a comprehensive and interoperable representation of consent-based data usage permissions in the German medical informatics initiative",
+      "jahr": "2020",
+      "zitationen": 47,
+      "cites_id": "3930943922430801306"
     },
     {
-      "id": "YNUamsYAAAAJ:lYAcb2jw7qUC",
-      "titel": "Available from https://www. cochrane. org/handbook",
+      "id": "Cr10S-gAAAAJ:Zph67rFs4hoC",
+      "titel": "Your data is gold–Data donation for better healthcare?",
+      "jahr": "2019",
+      "zitationen": 45,
+      "cites_id": "15091569460816488968"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:4TOpqqG69KYC",
+      "titel": "Telemonitoring of Real-World Health Data in Cardiology: A Systematic Review",
+      "jahr": "2021",
+      "zitationen": 40,
+      "cites_id": "5069632005784473128"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:mB3voiENLucC",
+      "titel": "Functional Requirements for Medical Data Integration into Knowledge Management Environments: Requirements Elicitation Approach Based on Systematic Literature Analysis",
       "jahr": "2023",
-      "zitationen": 161,
-      "cites_id": "7659474289279162497"
+      "zitationen": 35,
+      "cites_id": "31747998217104567"
     },
     {
-      "id": "YNUamsYAAAAJ:rbm3iO8VlycC",
-      "titel": "Update to the PRISMA guidelines for network meta-analyses and scoping reviews and development of guidelines for rapid reviews: a scoping review protocol",
+      "id": "Cr10S-gAAAAJ:ZeXyd9-uunAC",
+      "titel": "ETL processes for integrating healthcare data–Tools and architecture patterns",
+      "jahr": "2022",
+      "zitationen": 33,
+      "cites_id": "4778084682920413377"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:O3NaXMp0MMsC",
+      "titel": "Consumer perspectives on the national electronic health record and barriers to its adoption in Germany: does health policy require a change in communication?",
       "jahr": "2025",
-      "zitationen": 160,
-      "cites_id": "13073671967080497644"
+      "zitationen": 23,
+      "cites_id": "12865951442474828954"
     },
     {
-      "id": "YNUamsYAAAAJ:3fE2CSJIrl8C",
-      "titel": "Evaluation of a theory-informed implementation intervention for the management of acute low back pain in general medical practice: the IMPLEMENT cluster randomised trial",
-      "jahr": "2013",
-      "zitationen": 152,
-      "cites_id": "5237410712244701832"
-    },
-    {
-      "id": "YNUamsYAAAAJ:x21FZCSn4ZoC",
-      "titel": "Cochrane handbook for systematic reviews of interventions version 6.2 (updated February 2021)",
-      "jahr": "2021",
-      "zitationen": 146,
-      "cites_id": "489348441811654599"
-    },
-    {
-      "id": "YNUamsYAAAAJ:lSLTfruPkqcC",
-      "titel": "Same family, different species: methodological conduct and quality varies according to purpose for five types of knowledge synthesis",
-      "jahr": "2018",
-      "zitationen": 143,
-      "cites_id": "3813396505221816768"
-    },
-    {
-      "id": "YNUamsYAAAAJ:mVmsd5A6BfQC",
-      "titel": "Alcohol use and substance use disorders in Gulf War, Afghanistan, and Iraq War veterans compared with nondeployed military personnel",
+      "id": "Cr10S-gAAAAJ:9yKSN-GCB0IC",
+      "titel": "Die Rolle von Integrating the Healtcare Enterprise (IHE) in der Telemedizin",
       "jahr": "2015",
-      "zitationen": 141,
-      "cites_id": "10791103334086007681"
+      "zitationen": 23,
+      "cites_id": "3418496249623289547"
     },
     {
-      "id": "YNUamsYAAAAJ:qUcmZB5y_30C",
-      "titel": "Rehabilitation following carpal tunnel release",
-      "jahr": "2013",
-      "zitationen": 140,
-      "cites_id": "12473806193929070592"
-    },
-    {
-      "id": "YNUamsYAAAAJ:2vr6o8x5NLkC",
-      "titel": "The PRISMA 2020 statement. BMJ, 372, n71",
-      "jahr": "2021",
-      "zitationen": 139,
-      "cites_id": "3877370858227249099"
-    },
-    {
-      "id": "YNUamsYAAAAJ:hMsQuOkrut0C",
-      "titel": "ROB-MEN: a tool to assess risk of bias due to missing evidence in network meta-analysis",
-      "jahr": "2021",
-      "zitationen": 137,
-      "cites_id": "9562099692493317140"
-    },
-    {
-      "id": "YNUamsYAAAAJ:rTD5ala9j4wC",
-      "titel": "Extension of the PRISMA 2020 statement for living systematic reviews (PRISMA-LSR): checklist and explanation",
-      "jahr": "2024",
-      "zitationen": 136,
-      "cites_id": "9749298739866465109"
-    },
-    {
-      "id": "YNUamsYAAAAJ:ymY9cBF3mdcC",
-      "titel": "Towards realizing the vision of precision medicine: AI based prediction of clinical drug response",
-      "jahr": "2021",
-      "zitationen": 135,
-      "cites_id": "12553666060544685585"
-    },
-    {
-      "id": "YNUamsYAAAAJ:b0M2c_1WBrUC",
-      "titel": "Effect of alcohol consumption on food energy intake: a systematic review and meta-analysis",
-      "jahr": "2019",
-      "zitationen": 131,
-      "cites_id": "8831511847616922410"
-    },
-    {
-      "id": "YNUamsYAAAAJ:eGYfIraVYiQC",
-      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews. Syst Rev. 2021; 10: 39",
-      "jahr": "2021",
-      "zitationen": 129,
-      "cites_id": "6661080568464499541"
-    },
-    {
-      "id": "YNUamsYAAAAJ:natZJ_-F0IUC",
-      "titel": "Cochrane Handbook for Systematic Reviews of Interventions. Version 6.3. Cochrane; 2024",
-      "jahr": "2024",
-      "zitationen": 125,
-      "cites_id": "286725987149928404,12839053579233802855,1670703355556021719"
-    },
-    {
-      "id": "YNUamsYAAAAJ:86PQX7AUzd4C",
-      "titel": "Searching clinical trials registers: guide for systematic reviewers",
-      "jahr": "2022",
-      "zitationen": 120,
-      "cites_id": "17830721550853286154"
-    },
-    {
-      "id": "YNUamsYAAAAJ:8dzOF9BpDQoC",
-      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews. Syst Rev. 2021; 10 (1): 39",
-      "jahr": "2022",
-      "zitationen": 115,
-      "cites_id": "16398287886706663798"
-    },
-    {
-      "id": "YNUamsYAAAAJ:RYcK_YlVTxYC",
-      "titel": "Reproducible research practices are underused in systematic reviews of biomedical interventions",
-      "jahr": "2018",
-      "zitationen": 115,
-      "cites_id": "185178873214218090"
-    },
-    {
-      "id": "YNUamsYAAAAJ:CaZNVDsoPx4C",
-      "titel": "Prevalence and predictors of data and code sharing in the medical and health sciences: systematic review with meta-analysis of individual participant data",
-      "jahr": "2023",
-      "zitationen": 113,
-      "cites_id": "9500512644811201863"
-    },
-    {
-      "id": "YNUamsYAAAAJ:U0iAMwwPxtsC",
-      "titel": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews [Internet]",
-      "jahr": "2020",
-      "zitationen": 110,
-      "cites_id": "5957273066437839313"
-    },
-    {
-      "id": "YNUamsYAAAAJ:9ZlFYXVOiuMC",
-      "titel": "The pharmacological and non-pharmacological treatment of attention deficit hyperactivity disorder in children and adolescents: protocol for a systematic review and network meta …",
-      "jahr": "2015",
-      "zitationen": 110,
-      "cites_id": "18007367256627989072"
-    },
-    {
-      "id": "YNUamsYAAAAJ:8AbLer7MMksC",
-      "titel": "Long-term effects of alcohol consumption on cognitive function: a systematic review and dose-response analysis of evidence published between 2007 and 2018",
-      "jahr": "2020",
-      "zitationen": 108,
-      "cites_id": "1161249065242675621"
-    },
-    {
-      "id": "YNUamsYAAAAJ:DkZNVXde3BIC",
-      "titel": "Biomedical researchers’ perspectives on the reproducibility of research",
-      "jahr": "2024",
-      "zitationen": 107,
-      "cites_id": "16429952939365721260"
-    },
-    {
-      "id": "YNUamsYAAAAJ:EUQCXRtRnyEC",
-      "titel": "Patients’ experience of shoulder disorders: a systematic review of qualitative studies for the OMERACT Shoulder Core Domain Set",
-      "jahr": "2019",
-      "zitationen": 105,
-      "cites_id": "4544768965190596172"
-    },
-    {
-      "id": "YNUamsYAAAAJ:LjlpjdlvIbIC",
-      "titel": "Risk of bias 2 in Cochrane reviews: a phased approach for the introduction of new methodology",
-      "jahr": "2020",
-      "zitationen": 103,
-      "cites_id": "6612317539377512251"
-    },
-    {
-      "id": "YNUamsYAAAAJ:SnGPuo6Feq8C",
-      "titel": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ [Internet]. 2021 Mar 29; 372: n71",
-      "jahr": null,
-      "zitationen": 98,
-      "cites_id": "18234785232726417659,1474795881602073553"
-    },
-    {
-      "id": "YNUamsYAAAAJ:jSAVyFp_754C",
-      "titel": "The PRISMA 2009 checklist",
-      "jahr": "2021",
-      "zitationen": 94,
-      "cites_id": "10780733802289548018,14727844151460332135,17547819452010548480,2858318427816352477,6770918252640626063,3128243654627099665"
-    },
-    {
-      "id": "YNUamsYAAAAJ:qjMakFHDy7sC",
-      "titel": "Ergonomic positioning or equipment for treating carpal tunnel syndrome",
-      "jahr": "2012",
-      "zitationen": 94,
-      "cites_id": "5291095370684333279"
-    },
-    {
-      "id": "YNUamsYAAAAJ:YPNY0knpFBYC",
-      "titel": "PRISMA-S: an extension to the PRISMA statement for reporting literature searches in systematic reviews. Systematic reviews, 10 (1), 1-19",
-      "jahr": "2021",
-      "zitationen": 92,
-      "cites_id": "17414046756499556992"
-    },
-    {
-      "id": "YNUamsYAAAAJ:ghEM2AJqZyQC",
-      "titel": "RoB 2: A revised Cochrane risk-of-bias tool for randomized trials",
-      "jahr": "2019",
-      "zitationen": 92,
-      "cites_id": "11646385547614823252"
-    },
-    {
-      "id": "YNUamsYAAAAJ:7H_jS4BsgvYC",
-      "titel": "Cochrane Handbook for Systematic Reviews of Interventions Version 6.0. 2019. Cochrane",
-      "jahr": "2019",
-      "zitationen": 91,
-      "cites_id": "7797054890395425639"
-    },
-    {
-      "id": "YNUamsYAAAAJ:In6cVmBjs0IC",
-      "titel": "S.... Whiting, P.(2021). The prisma, 2020 statement: An updated guideline for reporting systematic reviews",
-      "jahr": null,
-      "zitationen": 91,
-      "cites_id": "12778266583748760841"
-    },
-    {
-      "id": "YNUamsYAAAAJ:hkOj_22Ku90C",
-      "titel": "The REPRISE project: protocol for an evaluation of REProducibility and Replicability In Syntheses of Evidence",
-      "jahr": "2021",
-      "zitationen": 90,
-      "cites_id": "12402525334351060972"
-    },
-    {
-      "id": "YNUamsYAAAAJ:LkGwnXOMwfcC",
-      "titel": "Many scenarios exist for selective inclusion and reporting of results in randomized trials and systematic reviews",
-      "jahr": "2013",
-      "zitationen": 89,
-      "cites_id": "15274134789856432958"
-    },
-    {
-      "id": "YNUamsYAAAAJ:xtRiw3GOFMkC",
-      "titel": "Few studies exist examining methods for selecting studies, abstracting data, and appraising quality in a systematic review",
-      "jahr": "2019",
-      "zitationen": 88,
-      "cites_id": "13092391163652249922"
-    },
-    {
-      "id": "YNUamsYAAAAJ:bEWYMUwI8FkC",
-      "titel": "Mass production of systematic reviews and meta‐analyses: an exercise in mega‐silliness?",
+      "id": "Cr10S-gAAAAJ:hqOjcs7Dif8C",
+      "titel": "The patient portal of the personal cross-enterprise electronic health record (PEHR) in the Rhine-Neckar-Region",
       "jahr": "2016",
-      "zitationen": 85,
-      "cites_id": "17029211492915196620"
+      "zitationen": 19,
+      "cites_id": "14825366341664622596"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:u-x6o8ySG0sC",
+      "titel": "Requirements for a patient recruitment system",
+      "jahr": "2015",
+      "zitationen": 18,
+      "cites_id": "2756641893587130006"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:mVmsd5A6BfQC",
+      "titel": "Medical data engineering–theory and practice",
+      "jahr": "2021",
+      "zitationen": 15,
+      "cites_id": "7190718447115828511"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:zYLM7Y9cAGgC",
+      "titel": "First experiences in implementing a software-based support for patient recruitment at Heidelberg university hospital",
+      "jahr": "2012",
+      "zitationen": 14,
+      "cites_id": "5721582019390446019"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:roLk4NBRz8UC",
+      "titel": "Health information research platform (HIReP)–an architecture pattern",
+      "jahr": "2014",
+      "zitationen": 12,
+      "cites_id": "13280018362992255407"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:r0BpntZqJG4C",
+      "titel": "Integrating an AI platform into clinical IT: BPMN processes for clinical AI model development",
+      "jahr": "2025",
+      "zitationen": 11,
+      "cites_id": "5787953302381239860"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:TFP_iSt0sucC",
+      "titel": "Instance-level medical image classification for text-based retrieval in a medical data integration center",
+      "jahr": "2024",
+      "zitationen": 11,
+      "cites_id": "16738613136682132439"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:3fE2CSJIrl8C",
+      "titel": "Provenance Solutions for Medical Research in Heterogeneous IT-Infrastructure: An Implementation Roadmap.",
+      "jahr": "2019",
+      "zitationen": 11,
+      "cites_id": "1050313878846389596"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:Se3iqnhoufwC",
+      "titel": "Implementing Modular Research Consents Using IHE Advanced Patient Privacy Consents.",
+      "jahr": "2018",
+      "zitationen": 11,
+      "cites_id": "13322208805181758953"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:NMxIlDl6LWMC",
+      "titel": "Advancing Healthcare Research Through Live-Data Integration: Implementing IEEE 11073 and FHIR in Clinical Environment",
+      "jahr": "2024",
+      "zitationen": 6,
+      "cites_id": "17722117696277165845"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:_Qo2XoVZTnwC",
+      "titel": "Large-Scale Standardized Image Integration for Secondary Use Research Projects.",
+      "jahr": "2024",
+      "zitationen": 6,
+      "cites_id": "7742224286949654710"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:UeHWp8X0CEIC",
+      "titel": "An architecture for the integration of clinical data from a PEHR in a regional research platform",
+      "jahr": "2016",
+      "zitationen": 6,
+      "cites_id": "4919512666695849112"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:e5wmG9Sq2KIC",
+      "titel": "An Image Retrieval Pipeline in a Medical Data Integration Center.",
+      "jahr": "2024",
+      "zitationen": 5,
+      "cites_id": "7366856337446958943"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:W7OEmFMy1HYC",
+      "titel": "Evaluating technologies for a patient portal.",
+      "jahr": "2014",
+      "zitationen": 5,
+      "cites_id": "8172925390215141462"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:hFOr9nPyWt4C",
+      "titel": "Modelling the Hospital Information System of the Karolinska University Hospital in Stockholm",
+      "jahr": "2010",
+      "zitationen": 5,
+      "cites_id": "17265114228696525285"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:J_g5lzvAfSwC",
+      "titel": "The ‘Advancing Cardiovascular Risk Identification with Structured Clinical Documentation and Biosignal Derived Phenotypes Synthesis’ project: conceptual design, project …",
+      "jahr": "2025",
+      "zitationen": 4,
+      "cites_id": "14671592087249503107"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:YFjsv_pBGBYC",
+      "titel": "Quality Assessment Framework of Clinical Routine Data for Secondary Use",
+      "jahr": "2024",
+      "zitationen": 4,
+      "cites_id": "17925965512467014201"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:blknAaTinKkC",
+      "titel": "Leveraging Clinical Data Treasures: Integration of an AI Platform into Clinical IT",
+      "jahr": "2024",
+      "zitationen": 4,
+      "cites_id": "15066261554032799750"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:R3hNpaxXUhUC",
+      "titel": "Structured Data Retrieval and Analysis of HL7 v2 Messages with Elasticsearch.",
+      "jahr": "2024",
+      "zitationen": 4,
+      "cites_id": "49595608994083421"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:M3ejUd6NZC8C",
+      "titel": "Überblick über ethische und soziale Herausforderungen im Kontext der klinischen Nutzung von KI-Systemen= Overview of ethical and social challenges in the context of clinical …",
+      "jahr": "2021",
+      "zitationen": 4,
+      "cites_id": "13145863333918422752"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:0EnyYjriUFMC",
+      "titel": "Patient Portal Integration–A Native IHE Connector Implementation for PEHR",
+      "jahr": "2016",
+      "zitationen": 4,
+      "cites_id": "15062687565844551730"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:LkGwnXOMwfcC",
+      "titel": "Implementing the Patient Portal of the PEHR in the Metropolitan Region Rhine-Neckar–Experiences with Liferay",
+      "jahr": "2016",
+      "zitationen": 4,
+      "cites_id": "12064168271640388208"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:SeFeTyx0c_EC",
+      "titel": "A Data-Centric Approach for Health Care and Research in a Health Knowledge Management Platform: Implementation and Requirement-Based Evaluation Study",
+      "jahr": "2026",
+      "zitationen": 3,
+      "cites_id": "15976280972567004909,7123541304496811788"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:35N4QoGY0k4C",
+      "titel": "Time for Clarity in Exploring the Evidence and Key Concepts of Human-Centered Design in Digital Health Care: Protocol for a Scoping Review",
+      "jahr": "2025",
+      "zitationen": 3,
+      "cites_id": "11596008264320325633"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:M3NEmzRMIkIC",
+      "titel": "Challenges and Lessons Learned in Mapping HL7 v2 Data to openEHR: Insights from UKSH Medical Data Integration Center",
+      "jahr": "2024",
+      "zitationen": 3,
+      "cites_id": "10098728268661759585"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:4JMBOYKVnBMC",
+      "titel": "Datenintegrationszentren (DIZ) für eine bessere Vernetzung von Krankenversorgung und Forschung: Organisation trifft auf Technik und Recht",
+      "jahr": "2024",
+      "zitationen": 3,
+      "cites_id": "1350208456415728589"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:L8Ckcad2t8MC",
+      "titel": "Strategies and Recommendation for Data Loading of FHIR-Based Data Marts with Focus on GDPR Compliance.",
+      "jahr": "2022",
+      "zitationen": 3,
+      "cites_id": "7365884958710502564"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:eQOLeE2rZwMC",
+      "titel": "Implementing PEHR: Design and integration of a consent creator service",
+      "jahr": "2016",
+      "zitationen": 3,
+      "cites_id": "9622137818568892402"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:2osOgNQ5qMEC",
+      "titel": "Report on the HEC 2016 Workshop: Opportunities and Challenges of Consumer-centric eHealth Services–An Interdisciplinary Workshop",
+      "jahr": "2016",
+      "zitationen": 3,
+      "cites_id": "3520229960178984592"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:lSLTfruPkqcC",
+      "titel": "From Text to Knowledge: An End-To-End Extraction Pipeline for Clinical Information",
+      "jahr": "2025",
+      "zitationen": 2,
+      "cites_id": "3015841827011645158"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:RGFaLdJalmkC",
+      "titel": "Extracting LOINC Codes from a Laboratory Information System's Index: Addressing Semantic Interoperability with Web Scraping",
+      "jahr": "2025",
+      "zitationen": 2,
+      "cites_id": "5423158887254211623"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:BqipwSGYUEgC",
+      "titel": "Development, Involvement and Use of an Overarching In-House Registry for Clinical Trials",
+      "jahr": "2024",
+      "zitationen": 2,
+      "cites_id": "9663442737072654550"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:TQgYirikUcIC",
+      "titel": "Interdisciplinary Teams in Health Informatics: Using FHIR Standards to Share Computable Knowledge.",
+      "jahr": "2023",
+      "zitationen": 2,
+      "cites_id": "11204771672747129254"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:qxL8FJ1GzNcC",
+      "titel": "One Conference, Three Proceedings–Which Papers Should I Submit and How? A Publication Strategy for Young Scientists Regarding the GMDS Annual Conference and Beyond",
+      "jahr": "2021",
+      "zitationen": 2,
+      "cites_id": "12968984439814183178"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:MXK_kJrjxJIC",
+      "titel": "Technical Report des GMDS-Workshops: Professionelle Nutzung der von Bürgern nicht-professionell erhobenen Daten? Ein interdisziplinärer CAFÉ-Dialog",
+      "jahr": "2018",
+      "zitationen": 2,
+      "cites_id": "5105116987204157580"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:RYcK_YlVTxYC",
+      "titel": "Big data und e-health",
+      "jahr": "2017",
+      "zitationen": 2,
+      "cites_id": "12050634736615647313"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:vV6vV6tmYwMC",
+      "titel": "Implementation of a Patient Consent Management at a German Medical Data Integration Center",
+      "jahr": "2025",
+      "zitationen": 1,
+      "cites_id": "10586426759088829635"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:NaGl4SEjCO4C",
+      "titel": "Mind the Gap: Design Thinking and Human Centered Design for eHealth Applications-Insights from Vulnerable Populations in a Scoping Review",
+      "jahr": "2025",
+      "zitationen": 1,
+      "cites_id": "3153163803204802910"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:hMod-77fHWUC",
+      "titel": "Implementation of an Atrioventricular Valve Intervention Registry: Comparative Study of REDCap vs. CDR-Based openEHR Registry",
+      "jahr": "2024",
+      "zitationen": 1,
+      "cites_id": "16956276650398708235"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:JV2RwH3_ST0C",
+      "titel": "Integration of Oncological Data into openEHR: A Path Towards Improved Cancer Care and Research",
+      "jahr": "2024",
+      "zitationen": 1,
+      "cites_id": "14592103557748733430"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:7PzlFSSx8tAC",
+      "titel": "Information Technology's Role in Global Healthcare Systems",
+      "jahr": "2022",
+      "zitationen": 1,
+      "cites_id": "13830386122735577346"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:aqlVkmm33-oC",
+      "titel": "Applicability of Different Electronic Record Types for Use in Patient Recruitment Support Systems: Comparative Analysis",
+      "jahr": "2021",
+      "zitationen": 1,
+      "cites_id": "16092162672778736745,2262645073087796951"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:4OULZ7Gr8RgC",
+      "titel": "German Medical Data Sciences 2021: Digital Medicine: Recognize–Understand–Heal: Proceedings of the Joint Conference of the 66th Annual Meeting of the German Association of …",
+      "jahr": "2021",
+      "zitationen": 1,
+      "cites_id": "8095704184481700312"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:kNdYIx-mwKoC",
+      "titel": "Mapping Medication Metadata from the ABDA Data Model to an OpenEHR Medication Archetype: A Qualitative Analysis.",
+      "jahr": "2019",
+      "zitationen": 1,
+      "cites_id": "16928044809503615714"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:u5HHmVD_uO8C",
+      "titel": "Towards a Holistic Biomedical Information Platform for Primary and Secondary Use Settings",
+      "jahr": "2016",
+      "zitationen": 1,
+      "cites_id": "2482199333198294331"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:YsMSGLbcyi4C",
+      "titel": "First Experiences Implementing an IHE-based Open Source Patient Portal",
+      "jahr": "2015",
+      "zitationen": 1,
+      "cites_id": "8649403648158581581"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:IjCSPb-OGe4C",
+      "titel": "Applicability of different types of Patient Records for Patient Recruitment Systems",
+      "jahr": "2015",
+      "zitationen": 1,
+      "cites_id": "5302028094976827836"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:UebtZRa9Y70C",
+      "titel": "A Generic Software Architecture for Patient Recruitment Systems Using Hospital Information System Tools",
+      "jahr": "2012",
+      "zitationen": 1,
+      "cites_id": "17549922685847921192"
+    },
+    {
+      "id": "Cr10S-gAAAAJ:dfsIfKJdRG4C",
+      "titel": "What Users Say About Reimbursable Digital Therapeutics in Germany: Large-Scale App Store Review Analysis Using a Large Language Model",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:zA6iFVUQeVQC",
+      "titel": "GlobalMedQA: A Standardized Multilingual Dataset for Assessing Medical Knowledge in LLMs",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:rO6llkc54NcC",
+      "titel": "Timely, AQL-Driven Clinical Cohort Identification in openEHR Infrastructures",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:3s1wT3WcHBgC",
+      "titel": "Patient Rights to Correct Errors in the Electronic Health Record: Comparison of Legislation in Sweden, UK, and Germany",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:ZHo1McVdvXMC",
+      "titel": "ePA für alle–alles geklärt? Ergebnisse eines interdisziplinären Panels auf der GMDS-Jahrestagung 2025",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:u_35RYKgDlwC",
+      "titel": "Setting up a DataSHIELD Hub for the German Medical Informatics Initiative: Challenges and Lessons Learned.",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:maZDTaKrznsC",
+      "titel": "Full-scale indexing and semantic annotation of CT imaging: boosting FAIRness",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:2P1L_qKh6hAC",
+      "titel": "Wie wird die Datenspende zum Erfolgsmodell? Workshopbericht zu effektiven Kommunikations-und Vermittlungsstrategien für Bürger: innen und Patient: innen",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:fPk4N6BV_jEC",
+      "titel": "The Anatomy of a Failed DiGA: Taxonomic Insights from Withdrawn Reimbursable Digital Therapeutics",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:pqnbT2bcN3wC",
+      "titel": "Bowel urgency across inflammatory bowel disease phenotypes: A large real-world analysis reveals high symptom burden in ileal Crohn's disease",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:70eg2SAEIzsC",
+      "titel": "What Patients Say About Reimbursable Digital Therapeutics in Germany: A Large-Scale App Store Review Analysis Using a Large Language Model",
+      "jahr": "2025",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:j3f4tGmQtD8C",
+      "titel": "Die Wissensmanagementplattform für Versorgung und Forschung am Universitätsklinikum Schleswig-Holstein–Ein Praxisbeispiel",
+      "jahr": "2024",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:GnPB-g6toBAC",
+      "titel": "Assessing Patient Health Dynamics by Comparative CT Analysis: An Automatic Approach to Organ and Body Feature Evaluation",
+      "jahr": "2024",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:-f6ydRqryjwC",
+      "titel": "German Medical Data Sciences 2022-Future Medicine: More Precise, More Integrative, More Sustainable!: Proceedings of the Joint Conference of the 67th Annual Meeting of the …",
+      "jahr": "2022",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:qUcmZB5y_30C",
+      "titel": "Requirements Analysis for Core Medical Research IT Infrastructure Components: A Systematic Literature Analysis",
+      "jahr": "2022",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:IWHjjKOFINEC",
+      "titel": "Telemonitoring of real-world health data in cardiology: a systematic review",
+      "jahr": "2022",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:dhFuZR0502QC",
+      "titel": "Health Data Management, Wissensgenerierung und Datenkompetenzpotenziale",
+      "jahr": "2022",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:isC4tDSrTZIC",
+      "titel": "ePA-Survey 2021: Bekanntheit, Bedarfe und Nutzung der elektronischen Patientenakte unter Versicherten in Deutschland",
+      "jahr": "2022",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:9ZlFYXVOiuMC",
+      "titel": "HiGHmed Medical Data Integration Centers and their Different Architecture Designs (Workshop)",
+      "jahr": "2021",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:Wp0gIr-vW9MC",
+      "titel": "Ebook: German Medical Data Sciences 2021: Digital Medicine: Recognize–Understand–Heal",
+      "jahr": "2021",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:4DMP91E08xMC",
+      "titel": "Digitale Medizin. Erkennen, Verstehen, Heilen–66. Jahrestagung der Deutschen Gesellschaft für Medizinische Informatik, Biometrie und Epidemiologie (GMDS) eV und 12 …",
+      "jahr": "2021",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:k_IJM867U9cC",
+      "titel": "Mapping HL7v2 ORU and BAR Messages to openEHR Archetypes",
+      "jahr": "2021",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:ULOm3_A8WrAC",
+      "titel": "Workshop Report – Erst zum Arzt oder gleich die App?!",
+      "jahr": "2019",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:5nxA0vEk-isC",
+      "titel": "Erratum zu: Die Rolle von Integrating the Healthcare Enterprise (IHE) in der Telemedizin",
+      "jahr": "2016",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:hC7cP41nSMkC",
+      "titel": "Einrichtungsübergreifendes Patientenrekrutierungssystem–Konzeption und Systemarchitektur",
+      "jahr": "2016",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:_FxGoFyzp5QC",
+      "titel": "Opportunities and Challenges of Consumer-centric eHealth Services: An Interdisciplinary Workshop",
+      "jahr": "2016",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:WF5omc3nYNoC",
+      "titel": "A model for data integration into a regional research platform.",
+      "jahr": "2014",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:8k81kl-MbHgC",
+      "titel": "Multizentrische Implementierung und Evaluation elektronisch unterstützter Patientenrekrutierung für Klinische Studien",
+      "jahr": "2012",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "Cr10S-gAAAAJ:Tyk-4Ss8FVUC",
+      "titel": "Multizentrische Analyse von Routinedaten im Hinblick auf Ein-/Ausschlusskriterien klinischer Studien",
+      "jahr": "2011",
+      "zitationen": 0,
+      "cites_id": null
     }
   ],
   "zitierend_openalex": [],
