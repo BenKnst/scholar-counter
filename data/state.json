@@ -90,7 +90,8 @@
   "zitationen": 126,
   "h_index": 5,
   "taeglich": {
-    "2026-11-21": 126
+    "2026-11-21": 126,
+    "2026-11-22": 126
   },
   "events": [
     {
@@ -108,7 +109,7 @@
     }
   ],
   "openalex_seen": [],
-  "letzter_erfolg": "2026-11-21T20:56:11Z",
+  "letzter_erfolg": "2026-11-22T01:23:55Z",
   "pubdates": {
     "Z05rTXoAAAAJ:UebtZRa9Y70C": "2025-09",
     "Z05rTXoAAAAJ:9yKSN-GCB0IC": "2025",
