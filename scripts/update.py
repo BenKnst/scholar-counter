@@ -203,8 +203,8 @@ def parse_serpapi(data: dict) -> dict:
     }
 
 
-# Uhrzeiten (UTC) der geplanten Laeufe, muss zum cron in update.yml passen ("17 6-21/3 * * *")
-RUN_HOURS_UTC = [6, 9, 12, 15, 18, 21]
+# Uhrzeiten (UTC) der geplanten Laeufe, muss zum cron in update.yml passen ("17 6,9,12,15,18,20 * * *")
+RUN_HOURS_UTC = [6, 9, 12, 15, 18, 20]
 SAVER_HOURS_UTC = [6, 15]   # im Sparmodus nur diese Laeufe (7 und 16 Uhr Winterzeit)
 EXTRA_RESERVE = 5           # Extras (Titel, Neu-Check) nur, wenn so viele Anfragen uebrig bleiben
 
@@ -501,12 +501,25 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime,
                               cfg.get("new_citation_hours", 48))
         seen_citing |= {w["id"] for w in citing}
 
-    # Tagesverlauf der Gesamtzitationen (fuer "+N seit gestern")
+    # Tagesverlauf der Gesamtzitationen (fuer Monatsbalken)
     daily = state.get("taeglich", {})
     daily[today] = total
     daily = dict(sorted(daily.items())[-400:])
-    prev_days = [d for d in daily if d < today]
-    delta = total - daily[prev_days[-1]] if prev_days else 0
+
+    # Zuwachs im selben Zeitfenster wie die Zitations-Neuigkeiten (Standard 48 h),
+    # damit "+N" und die Laufschrift zusammenpassen
+    window = dt.timedelta(hours=cfg.get("new_citation_hours", 48))
+    snaps = [s for s in state.get("verlauf", []) if parse_iso(s[0]) >= now - dt.timedelta(days=8)]
+    older = [s for s in snaps if parse_iso(s[0]) <= now - window]
+    if older:
+        base = older[-1][1]
+    else:
+        # noch kein Verlauf (aeltere Daten): letzter Tageswert vor Beginn des Fensters
+        cut = (now - window).date().isoformat()
+        before = [d for d in daily if d < cut]
+        base = daily[before[-1]] if before else (snaps[0][1] if snaps else total)
+    delta = total - base
+    snaps.append([iso(now), total])
 
     # abgelaufene Ereignisse fuer die Uhr ausfiltern, alte ganz loeschen
     keep_after = now - dt.timedelta(days=EVENT_KEEP_DAYS)
@@ -586,6 +599,7 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime,
         "zitationen": total,
         "h_index": h,
         "taeglich": daily,
+        "verlauf": snaps,            # Gesamtzitationen je Lauf (8 Tage), fuer den 48-h-Zuwachs
         "events": events,
         "openalex_seen": sorted(seen_citing)[-500:],
         "letzter_erfolg": iso(now),

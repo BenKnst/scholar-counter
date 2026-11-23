@@ -22,9 +22,9 @@ class SP
     self.start = 0
   end
 
-  # Daten kommen von der App "Scholar" (shared "scholar")
+  # Daten kommen von der App "Scholar" (shared "scholar", fuer andere Apps "Scholar.scholar")
   def loop()
-    var r = shared.get("scholar", nil)
+    var r = shared.get("Scholar.scholar", nil)
     if r != nil && r != self.raw
       self.raw = r
       var x = json.load(r)

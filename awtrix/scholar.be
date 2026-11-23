@@ -7,12 +7,12 @@
 # @config show_name bool "Namen als Laufschrift vorweg" default=true
 # @config author text "Name (leer = aus Google Scholar)" default="" help="Nur ausfuellen, wenn ein anderer Name laufen soll als im Scholar-Profil."
 # @config intro bool "CITATIONS als Laufschrift vorweg" default=true
-# @config anims text "Animationen vorweg (zufaellig)" default="enterprise-battle:11.2+enterprise-warp:9, nyan:3.6, yoshi:16.9, frog:2.5, mario-luigi:9.4, matrixcode:3.5" help="Pro Auftritt wird zufaellig eine Gruppe gezeigt. Gruppen mit Komma trennen, Name:Sekunden, mit + nacheinander. Leer = keine Animation."
+# @config test bool "Testmodus (Beispiel-Neuigkeiten statt echter Daten)" default=false help="Zeigt Beispieldaten mit neuen Zitationen, Party und Laufschrift. Danach wieder ausschalten."
 #
 # Ulanzi TC001 (32 x 8) mit AWTRIX NG.
 # Holt alle 30 Minuten die clock.json aus dem Gist und legt sie unter shared "scholar" ab.
 # Daraus lesen die Apps Scholar-hIndex, Scholar-Paper, Scholar-Chart und Scholar-News.
-# Diese App zeigt: Animation -> Name -> "CITATIONS" -> Anfuehrungszeichen + Zitationen
+# Diese App zeigt: Name -> "CITATIONS" -> Anfuehrungszeichen + Zitationen
 # (+ Zuwachs in Gruen), unterste Zeile = Fortschritt bis zum naechsten h-Index.
 # Party (neue Zitationen, neues Paper, h-Index, Meilenstein): bleibt stehen, bis jemand die
 # mittlere Taste drueckt. Nachts (22-7 Uhr) wartet sie bis 7 Uhr.
@@ -21,7 +21,6 @@ import json
 
 class Scholar
   var d, ticks, busy, party_ticks, phase, phase_start, cur_icon
-  var seq, seq_i, seq_fresh, last_group
 
   static GOLD  = 0xFFC800
   static WHITE = 0xFFFFFF
@@ -42,10 +41,6 @@ class Scholar
     self.phase = 3
     self.phase_start = 0
     self.cur_icon = nil
-    self.seq = []
-    self.seq_i = 0
-    self.seq_fresh = false
-    self.last_group = -1
   end
 
   def night()
@@ -63,6 +58,9 @@ class Scholar
 
   # ------------------------------------------------------------ Daten holen
   def loop()
+    if self.d == nil && !self.busy
+      self.load_cache()
+    end
     self.party_ticks -= 1
     if self.party_ticks <= 0
       self.party_ticks = 60          # jede Minute pruefen, ob eine Party wartet
@@ -73,9 +71,13 @@ class Scholar
       return
     end
     self.ticks = 1800                # ca. alle 30 Minuten
+    if store.get("test", false)
+      self.load_test()
+      return
+    end
     var url = store.get("url", "https://gist.githubusercontent.com/BenKnst/442b1a85615c2f88cb485fd3803e39f0/raw/clock.json")
     self.busy = true
-    var id = http.get(url, / body, status -> self.on_body(body, status), {"timeout": 20})
+    var id = http.get(url, / body, status -> self.on_body(body, status), {"timeout": 30})
     if id == nil
       self.busy = false
       self.ticks = 60
@@ -85,7 +87,7 @@ class Scholar
   def on_body(body, status)
     self.busy = false
     if body == nil || status != 200
-      self.ticks = 300
+      self.ticks = 60                # Fehler: in einer Minute nochmal
       log("Scholar: Abruf fehlgeschlagen, Status " + str(status))
       return
     end
@@ -96,6 +98,40 @@ class Scholar
     end
     self.d = data
     shared.set("scholar", body)
+    if store.get("cache", "") != body
+      store.set("cache", body)       # letzter guter Stand, damit nach einem Neustart sofort Daten da sind
+    end
+    self.celebrate()
+  end
+
+  # Nach einem Neustart: letzten guten Stand zeigen, bis der neue Abruf klappt
+  def load_cache()
+    var c = store.get("cache", nil)
+    if c == nil || c == "" || store.get("test", false)
+      return
+    end
+    var data = json.load(c)
+    if isinstance(data, map)
+      self.d = data
+      shared.set("scholar", c)
+    end
+  end
+
+  # Testmodus: Beispieldaten wie nach einem Lauf mit neuen Zitationen
+  def load_test()
+    var now = int(epoch_ms() / 1000)
+    var t = {"v": 1, "upd": now, "ok": true, "name": "Matthew J Page",
+             "cites": 373094, "delta": 57, "h": 92, "i10": 217, "h_next": 93, "h_need": 1,
+             "h_prog": 99, "y0": 2016,
+             "years": [1227, 2087, 3229, 4762, 8245, 15999, 32381, 45213, 60145, 84806, 108938],
+             "m0": "2026-11", "months": [57], "py": 17, "py_prev": 4, "p12": 17, "y_now": 2026,
+             "ticker": [
+               {"t": "Cited by Smith et al. 2026: \"Machine learning to speed up screening in systematic reviews\" -> \"The PRISMA 2020 statement: an updated guideline for reporting systematic reviews\" (+41 more)", "c": "zitiert_in"},
+               {"t": "+9 citations: RoB 2: a revised tool for assessing risk of bias in randomised trials", "c": "zitiert"}],
+             "celebrate": {"id": "test" + str(now), "t": "+57 citations!", "lvl": "small"}}
+    self.d = t
+    shared.set("scholar", json.dump(t))
+    log("Scholar: Testdaten geladen")
     self.celebrate()
   end
 
@@ -109,16 +145,18 @@ class Scholar
       return
     end
     store.set("feier", cid)
-    var spec = {"text": c.find("t"), "textColor": "#FFC800", "hold": true, "wakeup": true}
+    var big = c.find("lvl") == "big"
+    # neue Zitationen in Gruen, grosse Party (Paper, h-Index, Meilenstein) in Gold
+    var spec = {"text": c.find("t"), "textColor": big ? "#FFC800" : "#00FF66", "hold": true, "wakeup": true}
     var pi = store.get("party_icon", "")
     if pi != nil && pi != ""
       spec["icon"] = pi
     end
-    if store.get("sound", true)
-      if c.find("lvl") == "big"
-        spec["sound"] = {"rtttl": "fanfare:d=8,o=6,b=180:c,e,g,4c7,p,g,2c7"}
+    if store.get("sound", true)          # Melodie dreimal hintereinander
+      if big
+        spec["sound"] = {"rtttl": "fanfare:d=8,o=6,b=180:c,e,g,4c7,p,g,2c7,2p,c,e,g,4c7,p,g,2c7,2p,c,e,g,4c7,p,g,2c7"}
       else
-        spec["sound"] = {"rtttl": "yay:d=16,o=6,b=200:c,e,g,8c7"}
+        spec["sound"] = {"rtttl": "yay:d=16,o=6,b=200:c,e,g,8c7,4p,c,e,g,8c7,4p,c,e,g,8c7"}
       end
     end
     notify(spec)
@@ -135,52 +173,6 @@ class Scholar
       b -= 1
     end
     return a > b ? "" : t[a .. b]
-  end
-
-  def anim_groups()
-    import string
-    var raw = store.get("anims", "")
-    var groups = []
-    if raw == nil || raw == ""
-      return groups
-    end
-    for g: string.split(raw, ",")
-      var steps = []
-      for part: string.split(g, "+")
-        var bits = string.split(part, ":")
-        var name = self.trim(bits[0])
-        var ms = 5000
-        if bits.size() > 1
-          ms = int(real(self.trim(bits[1])) * 1000)
-        end
-        if name != ""
-          steps.push([name, ms])
-        end
-      end
-      if steps.size() > 0
-        groups.push(steps)
-      end
-    end
-    return groups
-  end
-
-  # Zufaellig eine Gruppe waehlen (nicht zweimal hintereinander dieselbe)
-  def pick_anim()
-    if self.seq_fresh
-      return
-    end
-    var groups = self.anim_groups()
-    self.seq = []
-    if groups.size() > 0
-      var i = now_ms() % groups.size()
-      if groups.size() > 1 && i == self.last_group
-        i = (i + 1) % groups.size()
-      end
-      self.last_group = i
-      self.seq = groups[i]
-    end
-    self.seq_i = 0
-    self.seq_fresh = true
   end
 
   def author_name()
@@ -207,11 +199,8 @@ class Scholar
     return x < -text_width(txt)
   end
 
-  # Phasen: 0 Animation, 1 Name, 2 CITATIONS, 3 Zahl. Abgeschaltete werden uebersprungen.
+  # Phasen: 1 Name, 2 CITATIONS, 3 Zahl. Abgeschaltete werden uebersprungen.
   def go(p)
-    if p == 0 && self.seq.size() == 0
-      p = 1
-    end
     if p == 1 && !self.show_name()
       p = 2
     end
@@ -228,18 +217,12 @@ class Scholar
   end
 
   def on_show()
-    self.pick_anim()
-    self.seq_i = 0
     self.pick_icon()
-    self.go(0)
+    self.go(1)
   end
 
   def duration()
-    self.pick_anim()
     var ms = self.NUMBER_MS
-    for st: self.seq
-      ms += st[1]
-    end
     if self.show_name()
       ms += self.scroll_ms(self.author_name())
     end
@@ -321,18 +304,7 @@ class Scholar
     end
     var elapsed = now_ms() - self.phase_start
 
-    if self.phase == 0
-      var st = self.seq[self.seq_i]
-      if icon(st[0], 0, 0) == false || elapsed > st[1]
-        self.seq_i += 1
-        self.phase_start = now_ms()
-        if self.seq_i >= self.seq.size()
-          self.seq_fresh = false     # beim naechsten Auftritt neu auslosen
-          self.go(1)
-        end
-      end
-
-    elif self.phase == 1
+    if self.phase == 1
       var nm = self.author_name()
       if self.scroll_once(nm, self.WHITE, elapsed) || elapsed > self.scroll_ms(nm) + 1000
         self.go(2)
