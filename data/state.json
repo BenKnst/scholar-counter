@@ -91,7 +91,8 @@
   "h_index": 5,
   "taeglich": {
     "2026-11-21": 126,
-    "2026-11-22": 126
+    "2026-11-22": 126,
+    "2026-11-23": 126
   },
   "events": [
     {
@@ -109,7 +110,7 @@
     }
   ],
   "openalex_seen": [],
-  "letzter_erfolg": "2026-11-22T21:05:45Z",
+  "letzter_erfolg": "2026-11-23T01:47:40Z",
   "pubdates": {
     "Z05rTXoAAAAJ:UebtZRa9Y70C": "2025-09",
     "Z05rTXoAAAAJ:9yKSN-GCB0IC": "2025",
