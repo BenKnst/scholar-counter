@@ -435,6 +435,34 @@ def papers_per_year(pubs: dict, now: dt.datetime) -> dict:
     return {"this_year": years.count(str(now.year)), "prev_year": years.count(str(now.year - 1))}
 
 
+def next_milestone(total: int, cfg: dict):
+    """Naechster Meilenstein ueber der aktuellen Zahl: eigene Liste aus config.json,
+    darueber hinaus 1-2.5-5-Reihe (10.000, 25.000, 50.000, 100.000 ...)."""
+    steps = set(cfg.get("citation_milestones", []))
+    base = 10
+    while base <= 100_000_000:
+        steps |= {base, int(base * 2.5), base * 5}
+        base *= 10
+    higher = sorted(m for m in steps if m > total)
+    return higher[0] if higher else None
+
+
+def top_papers(prof: dict, n: int = 3) -> list:
+    """Die n meistzitierten Paper."""
+    return sorted((p for p in prof["publikationen"] if p.get("id")),
+                  key=lambda p: p.get("zitationen", 0), reverse=True)[:n]
+
+
+def anniversaries(prof: dict, pubdates: dict) -> list:
+    """Jahrestage der 3 meistzitierten Paper (nur mit vollem Datum JJJJ-MM-TT)."""
+    out = []
+    for p in top_papers(prof, 3):
+        d = (pubdates or {}).get(p["id"]) or ""
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
+            out.append({"t": clean_title(p.get("titel") or "", 90), "y": int(d[:4]), "md": d[5:]})
+    return out
+
+
 def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime,
            citing_by_pub: dict = None, pubdates: dict = None) -> tuple:
     """Vergleicht neues Profil mit altem Zustand. Gibt (state, clock, full) zurueck."""
@@ -575,6 +603,16 @@ def update(cfg: dict, state: dict, prof: dict, citing: list, now: dt.datetime,
         "p12": papers_last_12_months(merged_pubs_preview(old_pubs, pubs), pubdates or {}, now),
         "y_now": now.year,
     }
+    # Naechster Meilenstein, meistzitiertes Paper, Jahrestage der Top 3
+    m_next = next_milestone(total, cfg)
+    if m_next:
+        clock["m_next"] = m_next
+        clock["m_need"] = m_next - total
+    tops = top_papers(prof, 1)
+    if tops:
+        clock["top"] = {"t": clean_title(tops[0].get("titel") or "", 90),
+                        "c": tops[0].get("zitationen", 0), "y": tops[0].get("jahr")}
+    clock["anniv"] = anniversaries(prof, pubdates)
     if celebrate:
         clock["celebrate"] = celebrate
 
@@ -691,10 +729,13 @@ def main():
     if args.citing_by_fixture:
         citing_by_pub = load_json(Path(args.citing_by_fixture), {})
     if serpapi_key and plan["extras"] and not args.fixture and not args.serpapi_fixture:
-        # a) Erscheinungsdaten fuer Paper aus diesem und letztem Jahr (einmalig, max. 5 pro Lauf)
-        todo = [p for p in prof["publikationen"]
-                if p.get("id") and p["id"] not in pubdates
-                and str(p.get("jahr") or "") in (str(now.year), str(now.year - 1))][:5]
+        # a) Erscheinungsdaten (einmalig je Paper, max. 5 pro Lauf): zuerst die 3 meistzitierten
+        #    (fuer die Jahrestage), dann Paper aus diesem und letztem Jahr (fuer "letzte 12 Monate")
+        tops = [p for p in top_papers(prof, 3) if p["id"] not in pubdates]
+        recent = [p for p in prof["publikationen"]
+                  if p.get("id") and p["id"] not in pubdates and p not in tops
+                  and str(p.get("jahr") or "") in (str(now.year), str(now.year - 1))]
+        todo = (tops + recent)[:5]
         for p in todo:
             try:
                 pubdates[p["id"]] = fetch_pub_date(serpapi_key, p["id"]) or str(p.get("jahr") or "")

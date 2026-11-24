@@ -1,6 +1,6 @@
 # @name Animation
 # @description Zufaellige Vollbild-Animation (32x8), jede laeuft einmal komplett durch
-# @config anims text "Animationen (zufaellig)" default="enterprise-battle:11.2+enterprise-warp:9, nyan:3.6, yoshi:16.9, frog:2.5, mario-luigi:9.4, matrixcode:3.5" help="Pro Auftritt wird zufaellig eine Gruppe gezeigt. Gruppen mit Komma trennen, Name:Sekunden, mit + nacheinander. Die Icons muessen auf der Uhr sein."
+# @config anims text "Animationen (zufaellig)" default="enterprise-battle:11.2+enterprise-warp:9, nyan:3.6, yoshi:16.9, frog:2.5, mario-luigi:9.4, matrixcode:3.5, pikachu-2~:5, watermelon:7.6, st-george:4.3, minecraft-enderman:10.5, wx-snow:9@12-2" help="Pro Auftritt wird zufaellig eine Gruppe gezeigt. Gruppen mit Komma trennen, Name:Sekunden, mit + nacheinander. Name~ = kleines 8x8-Icon laeuft durchs Bild. @12-2 = nur in diesen Monaten (hier Dezember bis Februar). Die Icons muessen auf der Uhr sein."
 #
 # Nachts (22-7 Uhr) ausgeblendet. Fehlt ein Icon, wird es uebersprungen.
 
@@ -37,18 +37,36 @@ class Animation
     end
     for g: string.split(raw, ",")
       var steps = []
-      for part: string.split(g, "+")
+      var in_season = true
+      for part0: string.split(g, "+")
+        var part = part0
+        var at = string.split(part0, "@")      # "...@12-2" = nur von Monat 12 bis 2
+        if at.size() > 1
+          part = at[0]
+          var mm = string.split(self.trim(at[1]), "-")
+          var m1 = int(mm[0])
+          var m2 = mm.size() > 1 ? int(mm[1]) : m1
+          var m = month()
+          if m > 0
+            in_season = m1 <= m2 ? (m >= m1 && m <= m2) : (m >= m1 || m <= m2)
+          end
+        end
         var bits = string.split(part, ":")
         var name = self.trim(bits[0])
+        var walk = false
+        if size(name) > 1 && name[-1] == "~"   # "name~" = 8x8-Icon laeuft durchs Bild
+          walk = true
+          name = name[0 .. size(name) - 2]
+        end
         var ms = 5000
         if bits.size() > 1
           ms = int(real(self.trim(bits[1])) * 1000)
         end
         if name != ""
-          steps.push([name, ms])
+          steps.push([name, ms, walk])
         end
       end
-      if steps.size() > 0
+      if steps.size() > 0 && in_season
         out.push(steps)
       end
     end
@@ -104,7 +122,16 @@ class Animation
       return
     end
     var st = self.seq[self.seq_i]
-    if icon(st[0], 0, 0) == false || now_ms() - self.start > st[1]
+    var e = now_ms() - self.start
+    var gone = false
+    if st[2]
+      # von rechts herein, links hinaus (Icon 8 Pixel breit)
+      var x = width() - int(e * (width() + 8) / st[1])
+      icon(st[0], x, 0)
+    else
+      gone = icon(st[0], 0, 0) == false
+    end
+    if gone || e > st[1]
       self.seq_i += 1
       self.start = now_ms()
       if self.seq_i >= self.seq.size()

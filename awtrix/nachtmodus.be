@@ -2,12 +2,12 @@
 # @description Nachts nur die Uhrzeit: stellt die App-Reihenfolge abends um und morgens zurueck
 # @config from number "Nachts ab" default=22 min=0 max=23 unit=h
 # @config to number "Morgens ab" default=7 min=0 max=23 unit=h
-# @config day text "Reihenfolge tagsueber" default="Time,Date,Time,Nachricht,Time,Animation,Time,Scholar,Time,Scholar-News,Time,Scholar-hIndex,Time,Scholar-Paper,Time,Scholar-Chart,Time,Weather-Script,Time,Ghost-Parade" help="App-Namen mit Komma, wie im Skript-Tab. Wird jeden Morgen gesetzt - Aenderungen an der Reihenfolge bitte hier machen."
+# @config day text "Reihenfolge tagsueber" default="Time,Date,Time,Geburtstag,Time,Nachricht,Time,Animation,Time,Scholar,Time,Scholar-News,Time,Scholar-Jahr,Time,Scholar-Ziel,Time,Scholar-hIndex,Time,Scholar-Paper,Time,Scholar-Top,Time,Scholar-Chart,Time,Scholar-Jubilaeum,Time,Weather-Script,Time,Ghost-Parade" help="App-Namen mit Komma, wie im Skript-Tab. Wird jeden Morgen gesetzt - Aenderungen an der Reihenfolge bitte hier machen."
 # @config night text "Reihenfolge nachts" default="Time"
 # @config off text "Immer aus" default="Temperature,Humidity,Battery"
 # @config host text "Adresse der Uhr" default="127.0.0.1" help="Nur aendern, falls die Umstellung im Log fehlschlaegt (dann die IP der Uhr eintragen)."
 #
-# Scholar-News und Nachricht stehen nur in der Reihenfolge, wenn sie etwas zu zeigen haben
+# Scholar-News, Geburtstag, Nachricht und Scholar-Jubilaeum stehen nur in der Reihenfolge, wenn sie etwas zu zeigen haben
 # (sonst kaeme zweimal hintereinander die Uhrzeit).
 # Diese App zeigt selbst nichts. Sie muss eingeschaltet bleiben, damit sie laufen kann.
 
@@ -15,6 +15,10 @@ import json
 
 class Nachtmodus
   var ticks, busy, mode
+
+  # Apps, die selbst melden (shared "aktiv"), ob sie etwas zu zeigen haben.
+  # Ohne Inhalt laufen sie unsichtbar am Ende weiter, damit sie neue Inhalte melden koennen.
+  static OPTIONAL = ["Nachricht", "Geburtstag", "Scholar-Jubilaeum"]
 
   def init()
     self.ticks = 5
@@ -100,8 +104,10 @@ class Nachtmodus
     if !self.has_news()
       drop.push("Scholar-News")
     end
-    if shared.get("Nachricht.aktiv", false) != true
-      drop.push("Nachricht")
+    for a: self.OPTIONAL
+      if shared.get(a + ".aktiv", false) != true
+        drop.push(a)
+      end
     end
     var want = n ? "night" : "day ohne " + str(drop)
     if want == self.mode
@@ -110,8 +116,10 @@ class Nachtmodus
     var day = self.names("day", "Time")
     var order = n ? self.names("night", "Time") : self.without(day, drop)
     order.push("Nachtmodus")            # muss immer laufen
-    if drop.find("Nachricht") != nil || n
-      order.push("Nachricht")           # laeuft weiter (am Ende, zeigt nichts), damit sie neuen Text meldet
+    for a: self.OPTIONAL
+      if (drop.find(a) != nil || n) && order.find(a) == nil
+        order.push(a)                   # laeuft weiter (am Ende, zeigt nichts), damit sie Neues melden kann
+      end
     end
     var dis = []
     for x: day + self.names("night", "Time") + self.names("off", "")

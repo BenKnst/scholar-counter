@@ -13,15 +13,20 @@ Jede Seite ist eine eigene App. Dazwischen steht jeweils 30 s die Uhrzeit
 
 | App (Skript) | Inhalt |
 |---|---|
-| Animation (`animation.be`) | zufällige Vollbild-Animation vor Scholar, läuft einmal komplett durch (Liste in den App-Einstellungen) |
+| Animation (`animation.be`) | zufällige Animation, läuft einmal komplett durch (Liste in den App-Einstellungen; `name~` = kleines 8x8-Icon läuft durchs Bild) |
 | Scholar (`scholar.be`) | holt die Daten für alle Scholar-Apps. Zeigt: Name als Laufschrift → „CITATIONS“ → goldene Anführungszeichen, Zitationen in Weiß, Zuwachs der letzten 48 h in Grün (gleiches Zeitfenster wie die News), unterste Zeile Fortschritt bis zum nächsten h-Index |
 | Scholar-hIndex (`scholar_hindex.be`) | „h-index 5 · 2 more to h6“ |
 | Scholar-Paper (`scholar_paper.be`) | „7 papers in the last 12 months“ |
-| Scholar-Chart (`scholar_chart.be`) | Erklärung als Laufschrift, dann Balken: Zitationen pro Monat (ab 3 aufgezeichneten Monaten), vorher pro Jahr |
+| Scholar-Jahr (`scholar_jahr.be`) | „Citations in 2026: 1,234“ |
+| Scholar-Ziel (`scholar_ziel.be`) | „22 citations to 150!“ (nächster Meilenstein) |
+| Scholar-Top (`scholar_top.be`) | meistzitiertes Paper mit Jahr und Zitationszahl |
+| Scholar-Jubilaeum (`scholar_jubilaeum.be`) | nur am Jahrestag eines der 3 meistzitierten Paper: „5 years ago today: …“ |
+| Scholar-Chart (`scholar_chart.be`) | Erklärung als Laufschrift, dann laufen die Balken von rechts herein (laufendes Jahr in Gold): Zitationen pro Monat (ab 3 aufgezeichneten Monaten), vorher pro Jahr |
 | Scholar-News (`scholar_news.be`) | nur wenn es etwas gibt: „New paper: …“ (24 h), „Cited by …“ (48 h), eigene Nachricht |
+| Geburtstag (`geburtstag.be`) | am eingestellten Tag (6.12.) bunte Laufschrift mit Konfetti in der Rotation, um 8:30 Uhr große Party mit Happy-Birthday-Melodie. Daten nur auf der Uhr gespeichert |
 | Nachricht (`nachricht.be`) | eigener Text als Laufschrift (Text, Farbe, Anzahl Durchläufe in den App-Einstellungen). Leer = nicht in der Rotation |
 | Nachtmodus (`nachtmodus.be`) | zeigt nichts. 22–7 Uhr nur Uhrzeit, morgens wieder alle Apps |
-| Party | klein bei neuen Zitationen, groß bei neuem Paper, h-Index oder Meilenstein. Bleibt stehen, bis die mittlere Taste gedrückt wird. Nachts wartet sie bis 7 Uhr |
+| Party | klein bei neuen Zitationen („Heureka! +3 citations!“), groß bei neuem Paper, h-Index oder Meilenstein. Bleibt stehen, bis die mittlere Taste gedrückt wird. Nachts wartet sie bis 7 Uhr |
 
 Ein roter Punkt oben rechts heißt: Die Daten sind veraltet (letzter Abruf fehlgeschlagen oder älter als 2 Tage).
 
@@ -56,7 +61,7 @@ tests/fixtures/                 Testdaten für Läufe ohne Internet
    Der erste Lauf legt nur den Ausgangsstand fest. Neuigkeiten gibt es ab dem zweiten Lauf.
 5. **Uhr:** In der Weboberfläche von AWTRIX NG je ein Skript pro Datei in `awtrix/` anlegen,
    Namen genau so: `Scholar`, `Scholar-hIndex`, `Scholar-Paper`, `Scholar-Chart`,
-   `Scholar-News`, `Animation`, `Nachricht`, `Nachtmodus`. Display → „Time per app“ = 30000 ms (Uhrzeit 30 s; die
+   `Scholar-News`, `Animation`, `Geburtstag`, `Nachricht`, `Nachtmodus`. Display → „Time per app“ = 30000 ms (Uhrzeit 30 s; die
    Scholar-Apps bestimmen ihre Dauer selbst). Die Reihenfolge stellt der Nachtmodus ein.
 
 ## Einstellungen (`config.json`)

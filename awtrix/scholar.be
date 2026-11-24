@@ -147,7 +147,11 @@ class Scholar
     store.set("feier", cid)
     var big = c.find("lvl") == "big"
     # neue Zitationen in Gruen, grosse Party (Paper, h-Index, Meilenstein) in Gold
-    var spec = {"text": c.find("t"), "textColor": big ? "#FFC800" : "#00FF66", "hold": true, "wakeup": true}
+    var t = str(c.find("t"))
+    if !big
+      t = "Heureka! " + t              # neue Zitationen: erst "Heureka!", dann z. B. "+3 citations!"
+    end
+    var spec = {"text": t, "textColor": big ? "#FFC800" : "#00FF66", "hold": true, "wakeup": true}
     var pi = store.get("party_icon", "")
     if pi != nil && pi != ""
       spec["icon"] = pi
