@@ -605,18 +605,30 @@
   "zitationen": 374925,
   "h_index": 92,
   "taeglich": {
-    "2026-11-23": 374925
+    "2026-11-23": 374925,
+    "2026-11-24": 374925
   },
+  "verlauf": [
+    [
+      "2026-11-24T02:19:05Z",
+      374925
+    ]
+  ],
   "events": [],
   "openalex_seen": [],
-  "letzter_erfolg": "2026-11-23T13:53:01Z",
+  "letzter_erfolg": "2026-11-24T02:19:05Z",
   "pubdates": {
     "YNUamsYAAAAJ:rbm3iO8VlycC": "2025-01-20",
     "YNUamsYAAAAJ:sJPMR1oEGYQC": "2026-10-21",
     "YNUamsYAAAAJ:qE4H1tSSYIIC": "2026-09-26",
     "YNUamsYAAAAJ:ifOnle78iJkC": "2026-09-24",
-    "YNUamsYAAAAJ:aEW5N-EHWIMC": "2026-09-20"
+    "YNUamsYAAAAJ:aEW5N-EHWIMC": "2026-09-20",
+    "YNUamsYAAAAJ:g8uWPOAv7ggC": "2026-08-22",
+    "YNUamsYAAAAJ:H7nrzBkawXsC": "2026-08-18",
+    "YNUamsYAAAAJ:nPT8s1NX_-sC": "2026-08-10",
+    "YNUamsYAAAAJ:bVQMTfhMCi4C": "2026-07-29",
+    "YNUamsYAAAAJ:QsKbpXNoaWkC": "2026-06-30"
   },
   "scholar_citing_seen": [],
-  "neueste_geprueft": "2026-11-23"
+  "neueste_geprueft": "2026-11-24"
 }
