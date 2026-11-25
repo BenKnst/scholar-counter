@@ -606,7 +606,8 @@
   "h_index": 92,
   "taeglich": {
     "2026-11-23": 374925,
-    "2026-11-24": 374925
+    "2026-11-24": 374925,
+    "2026-11-25": 374925
   },
   "verlauf": [
     [
@@ -616,11 +617,15 @@
     [
       "2026-11-24T17:55:45Z",
       374925
+    ],
+    [
+      "2026-11-25T02:35:18Z",
+      374925
     ]
   ],
   "events": [],
   "openalex_seen": [],
-  "letzter_erfolg": "2026-11-24T17:55:45Z",
+  "letzter_erfolg": "2026-11-25T02:35:18Z",
   "pubdates": {
     "YNUamsYAAAAJ:rbm3iO8VlycC": "2025-01-20",
     "YNUamsYAAAAJ:sJPMR1oEGYQC": "2026-10-21",
@@ -631,8 +636,13 @@
     "YNUamsYAAAAJ:H7nrzBkawXsC": "2026-08-18",
     "YNUamsYAAAAJ:nPT8s1NX_-sC": "2026-08-10",
     "YNUamsYAAAAJ:bVQMTfhMCi4C": "2026-07-29",
-    "YNUamsYAAAAJ:QsKbpXNoaWkC": "2026-06-30"
+    "YNUamsYAAAAJ:QsKbpXNoaWkC": "2026-06-30",
+    "YNUamsYAAAAJ:tuHXwOkdijsC": "2021-03-29",
+    "YNUamsYAAAAJ:OU6Ihb5iCvQC": "2019-08-28",
+    "YNUamsYAAAAJ:geHnlv5EZngC": "2015-01-01",
+    "YNUamsYAAAAJ:c1e4I3QdEKYC": "2026-06",
+    "YNUamsYAAAAJ:t-hv7AR41mYC": "2026-05-28"
   },
   "scholar_citing_seen": [],
-  "neueste_geprueft": "2026-11-24"
+  "neueste_geprueft": "2026-11-25"
 }
