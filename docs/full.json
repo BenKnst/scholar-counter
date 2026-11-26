@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-11-25T17:23:54Z",
+  "aktualisiert": "2026-11-26T01:49:50Z",
   "profil": {
     "name": "Matthew J Page",
     "affiliation": "School of Public Health and Preventive Medicine, Monash University",
@@ -725,6 +725,146 @@
       "jahr": "2022",
       "zitationen": 83,
       "cites_id": "15967688918798018245"
+    },
+    {
+      "id": "YNUamsYAAAAJ:KWzIFqRkAKkC",
+      "titel": "Evaluation of tools used to assess adherence to PRISMA 2020 reveals inconsistent methods and poor tool implementability: part I of a systematic review",
+      "jahr": "2026",
+      "zitationen": 11,
+      "cites_id": "16130528523431406548"
+    },
+    {
+      "id": "YNUamsYAAAAJ:A8cqit5AE6sC",
+      "titel": "Evaluation of the replicability of systematic reviews with meta-analyses of the effects of health interventions",
+      "jahr": "2026",
+      "zitationen": 11,
+      "cites_id": "16274273190454514651"
+    },
+    {
+      "id": "YNUamsYAAAAJ:G1UMdFYMoxkC",
+      "titel": "Reproducibility of meta-analytic results in systematic reviews of interventions: meta-research study",
+      "jahr": "2025",
+      "zitationen": 10,
+      "cites_id": "8416400377211763199"
+    },
+    {
+      "id": "YNUamsYAAAAJ:hvmnpdAuIbkC",
+      "titel": "MATES: A tool for appraising the completeness with which a meta-analysis has been reported",
+      "jahr": "2025",
+      "zitationen": 5,
+      "cites_id": "5979919075897087334"
+    },
+    {
+      "id": "YNUamsYAAAAJ:c1e4I3QdEKYC",
+      "titel": "Intracranial Dotter angioplasty using Tenzing (Tenzingplasty) for acute ischemic stroke with underlying intracranial atherosclerotic disease",
+      "jahr": "2026",
+      "zitationen": 4,
+      "cites_id": "2897333764630673559"
+    },
+    {
+      "id": "YNUamsYAAAAJ:hQUaER0FWQ4C",
+      "titel": "Reporting Completeness of Systematic Reviews of Nutrition or Diet-Related Randomised Controlled Trials: A Meta-Research on Adherence to PRISMA Items",
+      "jahr": "2026",
+      "zitationen": 4,
+      "cites_id": "7806290896951233221"
+    },
+    {
+      "id": "YNUamsYAAAAJ:bVQMTfhMCi4C",
+      "titel": "An automated approach to improve clinical trial registration and to identify outcome changes on ClinicalTrials. gov",
+      "jahr": "2026",
+      "zitationen": 3,
+      "cites_id": "15962275373827517041"
+    },
+    {
+      "id": "YNUamsYAAAAJ:m4fbC6XIj1kC",
+      "titel": "Artificial intelligence tools for automating assessments of reporting guideline adherence: a protocol for a systematic review",
+      "jahr": "2026",
+      "zitationen": 2,
+      "cites_id": "961820994415694285"
+    },
+    {
+      "id": "YNUamsYAAAAJ:sJPMR1oEGYQC",
+      "titel": "Guidance for defining outcomes in clinical trials",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "4566167478027274051"
+    },
+    {
+      "id": "YNUamsYAAAAJ:H7nrzBkawXsC",
+      "titel": "PRISMA-trAIce: A Name Without Endorsement",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "11022908663448539340"
+    },
+    {
+      "id": "YNUamsYAAAAJ:nPT8s1NX_-sC",
+      "titel": "Discrepancies in reporting of study design and analysis methods between protocols and reports of interrupted time series (ITS) studies: a methodological study",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "3413712448724761321"
+    },
+    {
+      "id": "YNUamsYAAAAJ:R-LXmdHK_14C",
+      "titel": "An investigation of discrepancies in outcome reporting and selective reporting bias in interrupted time series studies of health interventions: a methodological study",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "13727118454132044069"
+    },
+    {
+      "id": "YNUamsYAAAAJ:sfnaS5RM6jYC",
+      "titel": "Evaluation of automated assessments of systematic review adherence to the PRISMA 2020 statement: study protocol",
+      "jahr": "2026",
+      "zitationen": 1,
+      "cites_id": "18136750342396502102"
+    },
+    {
+      "id": "YNUamsYAAAAJ:KTwcwpFFj4wC",
+      "titel": "Artificial Intelligence tools for Risk of Bias assessment in systematic reviews (AI4RoB): a protocol for a living systematic review",
+      "jahr": "2025",
+      "zitationen": 1,
+      "cites_id": "16506958782024985084"
+    },
+    {
+      "id": "YNUamsYAAAAJ:qE4H1tSSYIIC",
+      "titel": "Time-lag reporting bias in interrupted time series studies: a methodological study",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:ifOnle78iJkC",
+      "titel": "Developing the PRISMA reporting guideline extension for rapid reviews: a scoping review to identify potential reporting items",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:aEW5N-EHWIMC",
+      "titel": "PRISMA 2020: strengthening transparency and usefulness of systematic reviews",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:g8uWPOAv7ggC",
+      "titel": "Artificial intelligence tools for automating assessment s of reporting guideline adherence: a protocol for a systemati c",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:QsKbpXNoaWkC",
+      "titel": "Development of a tool to assess the risk of bias in statistical simulation studies: study protocol",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
+    },
+    {
+      "id": "YNUamsYAAAAJ:t-hv7AR41mYC",
+      "titel": "Author adherence and experiences with PRISMA-P 2015: a cross-sectional study",
+      "jahr": "2026",
+      "zitationen": 0,
+      "cites_id": null
     }
   ],
   "zitierend_openalex": [],
