@@ -649,6 +649,10 @@
     [
       "2026-11-27T01:48:03Z",
       376712
+    ],
+    [
+      "2026-11-27T16:48:53Z",
+      376712
     ]
   ],
   "events": [
@@ -1132,7 +1136,7 @@
     }
   ],
   "openalex_seen": [],
-  "letzter_erfolg": "2026-11-27T01:48:03Z",
+  "letzter_erfolg": "2026-11-27T16:48:53Z",
   "pubdates": {
     "YNUamsYAAAAJ:rbm3iO8VlycC": "2025-01-20",
     "YNUamsYAAAAJ:sJPMR1oEGYQC": "2026-10-21",
